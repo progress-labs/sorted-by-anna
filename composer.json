@@ -1,0 +1,14 @@
+{
+	"name": "expandtheroom/etr-wordpress",
+    "version": "2.0",
+	"description": "The second incarnation of ETR's base Wordpress install.",
+    "authors": [
+        {
+            "name": "Ryan Ogden",
+            "email": "ryan@expandtheroom.com"
+        }
+    ],
+    "require": {
+		"vlucas/phpdotenv": "~1.0"
+	}
+}
