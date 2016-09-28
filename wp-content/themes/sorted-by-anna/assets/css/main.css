@@ -584,6 +584,11 @@ img {
 svg {
   fill: currentColor; }
 
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
 /*-----------------------------------------------------------------------------
  *-----------------------------------------------------------------------------
  *
@@ -743,6 +748,38 @@ svg {
   .btn:hover {
     color: currentColor;
     background-color: #fff; }
+
+.nav {
+  position: fixed;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #000;
+  z-index: 90; }
+  .nav__wrap {
+    max-width: 1140px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 100%; }
+
+.menu {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
 
 /*-------------------------------------------- */
 /** Pages */

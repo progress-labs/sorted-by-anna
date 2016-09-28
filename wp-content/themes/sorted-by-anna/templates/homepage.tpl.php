@@ -28,6 +28,8 @@ $testimonial_query = new WP_Query( $testimonial_args );
 
 
 get_header();
+
+the_partial('nav');
 ?>
 
 <?php the_partial('hero', array(

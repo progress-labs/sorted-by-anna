@@ -54,3 +54,23 @@
         height: 100%;
     }
 }
+
+@mixin ul-reset() {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+@mixin page-container() {
+    @if $is-responsive {
+        max-width: $page-container-width;
+    } @else {
+        width: $page-container-width;
+    }
+
+    padding-right: $page-container-padding;
+    padding-left: $page-container-padding;
+    margin-left: auto;
+    margin-right: auto;
+}
