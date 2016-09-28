@@ -1,0 +1,10 @@
+.grid {
+  display: flex;
+
+  &-3-up {
+    .col {
+      width: percentage(1/3);
+      border: 1px solid black;
+    }
+  }
+}

@@ -578,6 +578,12 @@ a {
 strong {
   font-weight: 700; }
 
+img {
+  max-width: 100%; }
+
+svg {
+  fill: currentColor; }
+
 /*-----------------------------------------------------------------------------
  *-----------------------------------------------------------------------------
  *
@@ -662,6 +668,13 @@ strong {
  *
  *-----------------------------------------------------------------------------
  *----------------------------------------------------------------------------- */
+.grid {
+  display: -ms-flexbox;
+  display: flex; }
+  .grid-3-up .col {
+    width: 33.3333333333%;
+    border: 1px solid black; }
+
 /*-------------------------------------------- */
 /** Modules */
 /*-------------------------------------------- */
@@ -674,6 +687,63 @@ strong {
  *
  *-----------------------------------------------------------------------------
  *----------------------------------------------------------------------------- */
+.responsive-embed {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; }
+  .responsive-embed video, .responsive-embed img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+.hero {
+  position: relative; }
+  .hero--overlay:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.6); }
+  .hero__content {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 1;
+    -webkit-backface-visibility: hidden; }
+  .hero__title {
+    margin-top: 0;
+    color: #fff; }
+
+.btn {
+  color: #fff;
+  background: transparent;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 35px;
+  padding-right: 35px;
+  border: 1px solid #fff;
+  transition: background-color .300s ease-out,  color .300s ease-out; }
+  .btn:hover {
+    color: currentColor;
+    background-color: #fff; }
+
 /*-------------------------------------------- */
 /** Pages */
 /*-------------------------------------------- */

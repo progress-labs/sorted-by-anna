@@ -1,0 +1,32 @@
+.hero {
+  position: relative;
+
+
+  &--overlay:after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    background-color: rgba(color(black), .6);
+  }
+
+
+  &__content {
+    @include vertically-centered(absolute);
+    left: 0;
+    right: 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+  }
+
+  &__title {
+    margin-top: 0;
+    color: color(white);
+  }
+}
