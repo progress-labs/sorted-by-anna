@@ -1,0 +1,25 @@
+$vertical-padding: 15px;
+$horizontal-padding: 35px;
+
+.btn {
+  color: color(white);
+  background: transparent;
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding-top: $vertical-padding;
+  padding-bottom: $vertical-padding;
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+  border: 1px solid color(white);
+  transition: background-color .300s ease-out, 
+              color .300s ease-out;
+
+  &:hover {
+    color: currentColor;
+    background-color: color(white);
+  }
+}

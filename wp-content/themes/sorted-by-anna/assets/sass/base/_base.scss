@@ -81,3 +81,11 @@ a {
 strong {
     font-weight: $bold-font-weight;
 }
+
+img {
+    max-width: 100%;
+}
+
+svg {
+    fill: currentColor;
+}
