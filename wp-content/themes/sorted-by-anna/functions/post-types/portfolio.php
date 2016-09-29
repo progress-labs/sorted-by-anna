@@ -21,7 +21,7 @@ function portfolio_init() {
 		'hierarchical'      => false,
 		'show_ui'           => true,
 		'show_in_nav_menus' => true,
-		'supports'          => array( 'title', 'editor', 'thumbnail' ),
+		'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'has_archive'       => false,
 		'rewrite'           => true,
 		'query_var'         => true,

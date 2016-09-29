@@ -605,25 +605,25 @@ ul {
 [class*="show-at"] {
   display: none; }
 
-@media (min-width: 700px) {
+@media (min-width: 768px) {
   .hide-at-small {
     display: none; }
   .show-at-small {
     display: block; } }
 
-@media (min-width: 980px) {
+@media (min-width: 992px) {
   .hide-at-medium {
     display: none; }
   .show-at-medium {
     display: block; } }
 
-@media (min-width: 1280px) {
+@media (min-width: 1024px) {
   .hide-at-large {
     display: none; }
   .show-at-large {
     display: block; } }
 
-@media (min-width: 1400px) {
+@media (min-width: 1200px) {
   .hide-at-xlarge {
     display: none; }
   .show-at-xlarge {
@@ -748,6 +748,11 @@ ul {
   .btn:hover {
     color: currentColor;
     background-color: #fff; }
+  .btn--dark {
+    color: #000;
+    border: 1px solid #000; }
+    .btn--dark:hover {
+      background-color: #fff; }
 
 .nav {
   position: fixed;
@@ -780,6 +785,58 @@ ul {
   display: flex;
   -ms-flex-align: center;
       align-items: center; }
+
+.portfolio-preview {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  border: 1px solid black;
+  text-decoration: none; }
+  .portfolio-preview + .portfolio-preview {
+    margin-top: 20px; }
+  .portfolio-preview__media {
+    position: relative; }
+  .portfolio-preview__img {
+    display: block; }
+  .portfolio-preview__title {
+    margin-top: 0;
+    margin-bottom: 0; }
+  .portfolio-preview__content {
+    position: relative;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+    font-size: 1rem; }
+  @media (max-width: 767px) {
+    .portfolio-preview {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto; }
+      .portfolio-preview__cta {
+        display: inline-block;
+        margin-top: 15px; } }
+  @media (min-width: 768px) {
+    .portfolio-preview {
+      -ms-flex-direction: row;
+          flex-direction: row; }
+      .portfolio-preview:nth-child(odd) .portfolio-preview__media {
+        -ms-flex-order: 2;
+            order: 2; }
+    .portfolio-preview__cta {
+      position: absolute;
+      bottom: 20px;
+      left: 20px; }
+    .portfolio-preview__content {
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+      max-width: calc(100% - 300px); } }
+
+.consultation-cta {
+  text-align: center; }
 
 /*-------------------------------------------- */
 /** Pages */

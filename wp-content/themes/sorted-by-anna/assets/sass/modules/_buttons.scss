@@ -22,4 +22,13 @@ $horizontal-padding: 35px;
     color: currentColor;
     background-color: color(white);
   }
+
+  &--dark {
+    color: color(black);
+    border: 1px solid color(black);
+
+    &:hover {
+      background-color: color(white);
+    }
+  }
 }
