@@ -4,4 +4,4 @@
     <meta charset="UTF-8">
     <?php wp_head(); ?>    
 </head>
-<body>
+<body <?php body_class(); ?>>
