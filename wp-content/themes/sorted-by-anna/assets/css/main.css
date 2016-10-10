@@ -753,6 +753,10 @@ ul {
     border: 1px solid #000; }
     .btn--dark:hover {
       background-color: #fff; }
+  .btn--centered {
+    display: table;
+    margin-left: auto;
+    margin-right: auto; }
 
 .nav {
   position: fixed;
@@ -837,6 +841,54 @@ ul {
 
 .consultation-cta {
   text-align: center; }
+
+.feature-section__wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.feature-section__title {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0; }
+
+.feature-section__card {
+  width: 100%;
+  text-align: center; }
+
+.feature-section__card-title {
+  margin-top: 0;
+  margin-bottom: 0; }
+
+@media (min-width: 768px) {
+  .feature-section__card {
+    width: 50%; } }
+
+@media (min-width: 992px) {
+  .feature-section__card {
+    width: 33.3333333333%; } }
+
+@media (max-width: 767px) {
+  .alignleft,
+  .alignright {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto; } }
+
+@media (min-width: 768px) {
+  .alignleft {
+    float: left;
+    margin-right: 20px; }
+  .alignright {
+    float: right;
+    margin-left: 20px; } }
 
 /*-------------------------------------------- */
 /** Pages */
