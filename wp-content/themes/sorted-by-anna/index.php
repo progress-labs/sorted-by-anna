@@ -2,10 +2,27 @@
 /**
  * Base index file for the template
  */
-get_header();
+get_header(); ?>
 
-the_post();
-the_title();
-the_content();
+<?php
 
-get_footer();
+the_post(); ?>
+
+<main>
+  <div class="page-container">
+    <?php the_partial( 'page-hero', array(
+    'title' => get_the_title() ) ); ?>
+    
+    <div class="content-wrap">
+      <div class="page-content">
+        
+        <?php the_content(); ?>
+        
+      </div>
+    </div>
+    
+  </div>
+</main>
+
+<?php 
+get_footer(); ?>

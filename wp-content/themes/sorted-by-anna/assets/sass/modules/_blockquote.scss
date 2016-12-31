@@ -1,0 +1,41 @@
+blockquote {
+    @include playfair-bold;
+    max-width: 600px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-style: italic;
+    line-height: 1.75;
+    text-align: center;
+    box-sizing: border-box;
+
+    h3 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    @include respond-to('small and up') {
+
+        & {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+
+    }
+
+    @include respond-to('medium and up') {
+        &,
+        h3 {
+            font-size: rem(30);
+        }
+
+        & {
+            max-width: 850px;
+        }
+    }
+}

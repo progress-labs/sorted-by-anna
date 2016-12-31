@@ -1,0 +1,51 @@
+/**
+ * Block: site-footer
+ * Element: site-footer__element
+ * Modifier: site-footer--modifier
+ */
+
+.site-footer {
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    background-color: color(black);
+    color: color(white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .social-links__item {
+        color: color(white);
+    }
+
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}

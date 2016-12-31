@@ -14,13 +14,12 @@ module.exports = {
         },
         options: {
             watchTask: true,
-            server: true,
             port: 8081,
             /**
              * Uncomment the below if you need to proxy to a local
              * server and delete server: true above.
              */
-            // proxy: 'myserver.loc'
+            proxy: 'sorted-by-anna.loc'
         }
     }
 };

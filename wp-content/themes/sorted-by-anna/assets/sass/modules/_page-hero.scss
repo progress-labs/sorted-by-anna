@@ -1,0 +1,83 @@
+/**
+ * Block: page-hero
+ * Element: page-hero__element
+ * Modifier: page-hero--modifier
+ */
+
+.page-hero {
+    position: relative;
+    margin-left: -$page-container-padding;
+    margin-right: -$page-container-padding;
+    margin-bottom: 25px;
+
+    &__img {
+        display: block;
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    &__title {
+        @include playfair-bold;
+        font-size: rem(54);
+        color: color(white);
+
+        &:after {
+            content: "";
+            display: block;
+            width: 80%;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 2px;
+            background-color: color(white);
+        }
+
+        // @include vertically-centered(absolute);
+        // left: 0;
+        // right: 0;
+        // text-align: center;
+        // margin-top: 0;
+        // margin-bottom: 0;
+
+    }
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}

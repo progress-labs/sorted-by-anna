@@ -16,31 +16,64 @@ $portfolio_args = array(
 $related_portfolios = new WP_Query( $portfolio_args );
 ?>
 
-<?php while (have_posts()): the_post(); ?>
-  <h1><?php the_title(); ?></h1>
-  <?php the_content(); ?>
-  
-  <?php 
+<main class="single-project">
+    <div class="page-container">
 
-    /**
-     *
-     * Iteratve over each portfolio type
-     * Display the :
-     *   1. Title 
-     *   2. Content 
-     *   3. Image
-     *   4. Add CTA to portfolio item 
-     *
-     * At the bottom have a CTA for book a consultation
-     */
+    <?php while (have_posts()): the_post(); 
+
+    $project = new Portfolio_View_Model($post); ?>
+    
+    <div class="content-wrap">
+        <div class="single-project__header">
+            <h1 class="project-title">
+                <?php echo $post->post_title; ?>
+            </h1>
+
+            <span class="project-date">
+                <?php echo date( 'F jS, Y', strtotime( $post->post_date) );?>
+            </span>
+        </div>
+        
+        <?php the_content(); ?>
+            
+        <?php if ( $project->gallery() ) : ?>
+            <div class="gallery">
+                <?php foreach ($project->gallery() as $gallery) : ?>
+                  <div class="gallery__item">
+                    <div class="gallery__img-wrap">
+                       <img class="gallery__img" src="<?php echo $gallery['image']; ?>" alt=""> 
+                    </div>
+                      
+                  </div>
+
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+      
+      
+    <?php endwhile; ?>
+
+    </div>
 
 
-   ?>
-<?php endwhile; ?>
+    <div class="related-projects">
+        <?php while ( $related_portfolios->have_posts() ) : $related_portfolios->the_post(); $related_project = new Portfolio_View_Model( $post );?>
 
-<?php while ( $related_portfolios->have_posts() ): $related_portfolios->the_post(); $related_portfolio = new Portfolio_View_Model( $post );?>
-    <h3><?php echo $related_portfolio->get_title(); ?></h3>
+            <?php the_partial( 'related-project', array(
+                'project' => $related_project
+            )); ?>
+           
+            
+        <?php endwhile; ?>
+    </div>
     
 
-<?php endwhile; ?>
+    <?php the_partial('consultation-cta'); ?>
+</main>
+
+
+
+
+
 <?php get_footer();?>

@@ -4,6 +4,14 @@ include_once( get_template_directory() . '/functions/view-models/class-portfolio
 
 get_header();
 
+
+$services = array(
+    'post_type' => 'service',
+    'posts_per_page' => -1,
+    'orderby' => 'rand'
+);
+$services_query = new WP_Query( $serivce );
+
 $serivce_args = array(
     'post_type' => 'portfolio',
     'posts_per_page' => 2,
@@ -12,6 +20,10 @@ $serivce_args = array(
 );
 
 $related_services = new WP_Query( $serivce_args );
+
+
+
+the_partial('page-hero');
 ?>
 
 <h1>Single Service Page</h1>
@@ -37,4 +49,6 @@ $related_services = new WP_Query( $serivce_args );
 
      ?>
   <?php endwhile; ?>
+
+  
 <?php get_footer();?>

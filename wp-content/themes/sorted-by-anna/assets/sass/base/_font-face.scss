@@ -7,3 +7,23 @@
  *
  *-----------------------------------------------------------------------------
  *----------------------------------------------------------------------------- */
+
+
+$serif: 'Playfair Display', serif;
+$sans-serif: 'Source Sans Pro', sans-serif;
+
+@mixin playfair() {
+  font-family: $serif;
+  font-weight: 400;
+}
+
+
+@mixin playfair-bold() {
+  font-family: $serif;
+  font-weight: 700;
+}
+
+@mixin source-sans() {
+  font-family: $sans-serif;
+  font-weight: 400;
+}

@@ -7,35 +7,31 @@
  *
  **/
 
-
-
-$url = $portfolio->get_permalink();
-$title = $portfolio->get_title();
-$excerpt = $portfolio->get_excerpt();
-$cta = $portfolio->portfolio_preview_cta;
-
 $media = array(
   'src' => 'http://placehold.it/300x300',
   'alt' => 'This is alt text'
 );
+
 ?>
 
+<a class="portfolio-preview <?php echo $portfolio->featured_image() ? '' : 'no-image'; ?>" href="<?php echo $portfolio->get_permalink(); ?>">
+  
 
-
-<a class="portfolio-preview" href="<?php echo $url; ; ?>">
-
-  <div class="portfolio-preview__media">
-    <img class="portfolio-preview__img" src="<?php echo $media['src']; ?>" alt="<?php $media['alt']; ?>">
-  </div>
+  <?php if ( $portfolio->featured_image() ) : ?>
+    <div class="portfolio-preview__media">
+      <img class="portfolio-preview__img" src="<?php echo $portfolio->featured_image(); ?>" alt="<?php echo $portfolio->get_title(); ?>">
+    </div>
+  <?php endif; ?>
+  
 
   <div class="portfolio-preview__content">
-    <h2 class="portfolio-preview__title"><?php echo $title; ?></h2>  
-    <?php if ( $excerpt  ) : ?>
-      <p><?php echo $excerpt; ?></p>
+    <h2 class="portfolio-preview__title"><?php echo $portfolio->get_title();; ?></h2>  
+    <?php if ( $portfolio->get_excerpt()  ) : ?>
+      <p><?php echo $portfolio->get_excerpt(); ?></p>
     <?php endif; ?>
 
-    <?php if ( $cta ) : ?>
-      <span class="portfolio-preview__cta"><?php echo $cta ?></span>
+    <?php if ( $portfolio->portfolio_preview_cta ) : ?>
+      <span class="portfolio-preview__cta"><?php echo $portfolio->portfolio_preview_cta; ?> &rarr;</span>
     <?php endif; ?>
     
   </div>

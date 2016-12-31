@@ -25,3 +25,9 @@
     padding-left: $page-container-padding;
     background: $page-container-bg-color;
 }
+
+.content-wrap {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}

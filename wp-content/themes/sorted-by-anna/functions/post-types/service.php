@@ -17,7 +17,7 @@ function service_init() {
 			'parent_item_colon'   => __( 'Parent Service', 'YOUR-TEXTDOMAIN' ),
 			'menu_name'           => __( 'Services', 'YOUR-TEXTDOMAIN' ),
 		),
-		'public'            => true,
+		'public'            => false,
 		'hierarchical'      => false,
 		'show_ui'           => true,
 		'show_in_nav_menus' => true,

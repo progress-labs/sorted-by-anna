@@ -16,21 +16,28 @@
 
 // Change these values as needed
 $breakpoints-map: (
+    smallish: 600px,
     small: 768px,
     medium: 992px,
     large: 1024px,
     xlarge: 1200px
 );
 
+$breakpoints: add-breakpoint('smallish and up',    map-get($breakpoints-map, smallish));
 $breakpoints: add-breakpoint('small and up',    map-get($breakpoints-map, small));
 $breakpoints: add-breakpoint('medium and up',   map-get($breakpoints-map, medium));
 $breakpoints: add-breakpoint('large and up',    map-get($breakpoints-map, large));
 $breakpoints: add-breakpoint('xlarge and up',   map-get($breakpoints-map, xlarge));
 
+$breakpoints: add-breakpoint('up to smallish',     max-width map-get($breakpoints-map, smallish) - 1px);
 $breakpoints: add-breakpoint('up to small',     max-width map-get($breakpoints-map, small) - 1px);
 $breakpoints: add-breakpoint('up to medium',    max-width map-get($breakpoints-map, medium) - 1px);
 $breakpoints: add-breakpoint('up to large',     max-width map-get($breakpoints-map, large) - 1px);
 $breakpoints: add-breakpoint('up to xlarge',    max-width map-get($breakpoints-map, xlarge) - 1px);
+
+$breakpoints: add-breakpoint('between smallish and small',
+                              map-get($breakpoints-map, smallish)
+                              map-get($breakpoints-map, small));
 
 $breakpoints: add-breakpoint('between small and medium',
                               map-get($breakpoints-map, small)

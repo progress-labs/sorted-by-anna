@@ -6,6 +6,15 @@ $block: 'portfolio-preview';
   flex-direction: column;
   border: 1px solid black;
   text-decoration: none;
+
+  &.no-image {
+    .#{$block}__cta {
+      display: block;
+      position: relative;
+      bottom: auto;
+      left: auto;
+    }
+  }
   
   & + & {
     margin-top: 20px;
@@ -20,6 +29,7 @@ $block: 'portfolio-preview';
   }
 
   &__title {
+    @include playfair-bold;
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -28,10 +38,11 @@ $block: 'portfolio-preview';
     position: relative;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     box-sizing: border-box;
     font-size: rem(16);
+    color: color(black);
   }
 
 

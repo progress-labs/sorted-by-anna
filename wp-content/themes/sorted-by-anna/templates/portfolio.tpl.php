@@ -19,19 +19,25 @@ get_header();
 
 <main>
   <div class="page-container">
-    <h1><?php echo get_the_title(); ?></h1>
+    
+
+    <?php the_partial( 'page-hero', array(
+    'title' => get_the_title() 
+    )); ?>
 
     <?php if ( $the_query->have_posts() ) : ?>
+      <div class="content-wrap">
 
-      <?php while ( $the_query->have_posts() ) : $the_query->the_post(); $portfolio = new Portfolio_View_Model( $post );?>
+        <?php while ( $the_query->have_posts() ) : $the_query->the_post(); $portfolio = new Portfolio_View_Model( $post );?>
+            
+            <?php the_partial( 'portfolio-preview', array(
+              'portfolio' => $portfolio
+            )); ?>
           
-          <?php the_partial( 'portfolio-preview', array(
-            'portfolio' => $portfolio
-          )); ?>
-        
-      <?php endwhile; ?>
+        <?php endwhile; ?>
 
-      <?php wp_reset_postdata(); ?>
+        <?php wp_reset_postdata(); ?>
+      </div>
       
     <?php endif; ?>
 
