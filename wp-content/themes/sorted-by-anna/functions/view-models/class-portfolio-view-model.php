@@ -11,11 +11,13 @@ class Portfolio_View_Model extends Post_View_Model {
 
       foreach ($this->gallery_images as $index => $image) {
         $image_url = $image['image']['sizes']['gallery_preview'];
+
         $title = $image['image']['title'];
         
         $gallery[$index] = [
-          'image' => $image_url,
-          'alt' => $title
+          'image' => $image['image']['sizes']['gallery_preview'],
+          'image_lg' => $image['image']['sizes']['large'],
+          'alt' => $image['image']['title']
         ];
       }
 

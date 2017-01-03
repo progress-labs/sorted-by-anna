@@ -37,14 +37,17 @@ $related_portfolios = new WP_Query( $portfolio_args );
         <?php the_content(); ?>
             
         <?php if ( $project->gallery() ) : ?>
-            <div class="gallery">
+            <div class="gallery" data-js-component="gallery">
                 <?php foreach ($project->gallery() as $gallery) : ?>
-                  <div class="gallery__item">
-                    <div class="gallery__img-wrap">
-                       <img class="gallery__img" src="<?php echo $gallery['image']; ?>" alt=""> 
-                    </div>
-                      
-                  </div>
+                    <a href="<?php echo $gallery['image_lg']; ?>"
+                    class="gallery__item" 
+                    data-featherlight="image">
+                        <div class="gallery__img-wrap">
+                            <img class="gallery__img" src="<?php echo $gallery['image']; ?>" alt="">     
+                        </div>
+                        
+                    </a>
+
 
                 <?php endforeach; ?>
             </div>

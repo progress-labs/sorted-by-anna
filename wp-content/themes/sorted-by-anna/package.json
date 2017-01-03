@@ -1,7 +1,7 @@
 {
   "name": "sorted-by-anna",
   "version": "0.0.0",
-  "description": "Made by ETR",
+  "description": "Made by Progress Labs",
   "main": "Gruntfile.js",
   "scripts": {},
   "devDependencies": {
@@ -22,6 +22,7 @@
     "lodash": "^4.8.2"
   },
   "dependencies": {
+    "featherlight": "^1.6.1",
     "slick-carousel": "^1.6.0",
     "svg4everybody": "^2.1.4"
   }

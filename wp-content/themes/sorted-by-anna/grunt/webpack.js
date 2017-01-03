@@ -29,11 +29,14 @@ module.exports = {
              */
 
             // to the below array.
-            vendor: ['slick']
+            vendor: ['slick', 'featherlight', 'featherlight-gallery', 'detect-swipe']
         },
         resolve : {
             alias: {
-              slick: path.join(__dirname, '../node_modules/slick-carousel/slick/slick.min.js')
+              slick: path.join(__dirname, '../node_modules/slick-carousel/slick/slick.min.js'),
+              featherlight: path.join(__dirname, '../node_modules/featherlight/release/featherlight.min.js'),
+              'featherlight-gallery': path.join(__dirname, '../node_modules/featherlight/release/featherlight.gallery.min.js'),
+              'detect-swipe': path.join(__dirname, '../assets/js/lib/detect-swipe.min.js'),
             }
         },
         module: {
@@ -48,7 +51,15 @@ module.exports = {
                     }
                 }
             ]
-        }
+        },
+        plugins: [
+            new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+            new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            "window.jQuery": "jquery"
+            })
+        ]
     },
 
     dev: {
