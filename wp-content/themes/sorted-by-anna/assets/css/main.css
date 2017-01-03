@@ -1836,6 +1836,42 @@ blockquote {
 .featherlight .featherlight-close-icon {
   color: #fff; }
 
+/**
+ * Block: bio
+ * Element: bio__element
+ * Modifier: bio--modifier
+ */
+.bio {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  .bio__img {
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
+  .bio__content-title {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 5px; }
+  .bio__content {
+    padding-left: 30px; }
+
 /*-------------------------------------------- */
 /** Pages */
 /*-------------------------------------------- */

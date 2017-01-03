@@ -30,6 +30,23 @@ the_partial('nav');
 
 <div class="page-container">
 
+  <?php if ( have_posts() ) : ?>
+    <?php while ( have_posts() ) : the_post(); ?>
+      
+      <div class="content-wrap">
+        <div class="page-content">
+          
+          <?php the_content(); ?>
+          
+        </div>
+      </div>
+      
+  
+    <?php endwhile; ?> 
+  <?php endif; ?>
+
+  <?php the_partial('bio'); ?>
+
   <?php the_partial('homepage-feature-section', array(
     'title'         => 'Services', 
     'object_group'  => $service_objects,
