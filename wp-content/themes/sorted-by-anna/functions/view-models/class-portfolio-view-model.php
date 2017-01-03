@@ -10,13 +10,11 @@ class Portfolio_View_Model extends Post_View_Model {
       if ( !$this->gallery_images ) return;
 
       foreach ($this->gallery_images as $index => $image) {
-        $image_url = $image['image']['sizes']['gallery_preview'];
-
-        $title = $image['image']['title'];
+        $image_url = $image['image']['sizes'];
         
         $gallery[$index] = [
-          'image' => $image['image']['sizes']['gallery_preview'],
-          'image_lg' => $image['image']['sizes']['large'],
+          'image' => $image_url['gallery_preview'],
+          'image_lg' => $image_url['large'],
           'alt' => $image['image']['title']
         ];
       }
@@ -27,14 +25,20 @@ class Portfolio_View_Model extends Post_View_Model {
     public function featured_image() {
       $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $this->post->ID ), 'portfolio')[0];
 
-      $gallery_image = array_shift( $this->gallery() );
+      $gallery = $this->gallery();
 
       if ( $image_url ) {
+        
         return $image_url;
-      } else if ( $gallery_image ) {
-        return $gallery_image;
+
+      } elseif ( !empty( $gallery ) ) {
+
+        return array_shift( $gallery );
+
       } else {
+
         return false;
+
       }
     }
     

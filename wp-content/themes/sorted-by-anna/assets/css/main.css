@@ -1099,7 +1099,9 @@ ul {
   .portfolio-preview + .portfolio-preview {
     margin-top: 20px; }
   .portfolio-preview__media {
-    position: relative; }
+    position: relative;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
   .portfolio-preview__img {
     display: block; }
   .portfolio-preview__title {
@@ -1614,6 +1616,7 @@ blockquote {
       align-items: center;
   -ms-flex-pack: center;
       justify-content: center;
+  margin-top: 35px;
   /*-------------------------------------------- */
   /** Variables */
   /*-------------------------------------------- */

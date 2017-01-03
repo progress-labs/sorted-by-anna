@@ -11,6 +11,9 @@
  * page_id - used to get the page ID to create the 'view all' link
  */
 
+include_once( get_template_directory() . '/functions/lib/data/class-post-view-model.php' );
+include_once( get_template_directory() . '/functions/view-models/class-portfolio-view-model.php' );
+
 ?>
 
 <div class="feature-section">
@@ -21,13 +24,20 @@
 
     <div class="feature-section__wrap">
       
-      <?php foreach ( $object_group as $object ) : setup_postdata($object); ?>
+      <?php foreach ( $object_group as $object ) : setup_postdata( $object ); ?>
 
         <div class="feature-section__card">
 
           <a href="<?php the_permalink($object); ?>">
-            <?php if ( has_post_thumbnail( $object->ID ) ) : ?>
 
+            <?php if ( get_field('gallery_images', $object->ID) ) : 
+              $img = get_field('gallery_images', $object->ID)[0]['image']['sizes']['medium'];
+            ?>
+              
+              <img src="<?php echo $img; ?>" alt="">
+
+            <?php elseif ( has_post_thumbnail( $object->ID ) ) : ?>
+              
               <?php echo get_the_post_thumbnail( $object->ID, 'medium' ); ?>
 
             <?php endif; ?>
@@ -43,5 +53,7 @@
 
   <?php endif; ?>
     <!-- Services Page ID -->
-    <a class="btn btn--dark btn--centered" href="<?php echo get_page_link($page_id); ?>">view all</a>
+    <a class="btn btn--dark btn--centered" href="<?php echo get_page_link($page_id); ?>">
+      <?php echo $btn_cta; ?>
+    </a>
 </div>

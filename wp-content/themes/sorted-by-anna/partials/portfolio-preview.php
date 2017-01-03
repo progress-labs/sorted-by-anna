@@ -6,12 +6,6 @@
  * Shows one item from the portfolio
  *
  **/
-
-$media = array(
-  'src' => 'http://placehold.it/300x300',
-  'alt' => 'This is alt text'
-);
-
 ?>
 
 <a class="portfolio-preview <?php echo $portfolio->featured_image() ? '' : 'no-image'; ?>" href="<?php echo $portfolio->get_permalink(); ?>">
@@ -19,7 +13,7 @@ $media = array(
 
   <?php if ( $portfolio->featured_image() ) : ?>
     <div class="portfolio-preview__media">
-      <img class="portfolio-preview__img" src="<?php echo $portfolio->featured_image(); ?>" alt="<?php echo $portfolio->get_title(); ?>">
+      <img class="portfolio-preview__img" src="<?php echo $portfolio->featured_image()['image']; ?>" alt="<?php echo $portfolio->get_title(); ?>">
     </div>
   <?php endif; ?>
   

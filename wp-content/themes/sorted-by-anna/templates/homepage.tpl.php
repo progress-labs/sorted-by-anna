@@ -33,13 +33,15 @@ the_partial('nav');
   <?php the_partial('homepage-feature-section', array(
     'title'         => 'Services', 
     'object_group'  => $service_objects,
-    'page_id'       => 13
+    'page_id'       => 13,
+    'btn_cta'       => 'See All Services'
   )); ?>
 
   <?php the_partial('homepage-feature-section', array(
     'title'         => 'Portfolio', 
     'object_group'  => $portfolio_objects,
-    'page_id'       => 13
+    'page_id'       => 13,
+    'btn_cta'       => 'View Other Projects'
   )); ?>
 
 

@@ -22,6 +22,7 @@ $block: 'portfolio-preview';
 
   &__media {
     position: relative;
+    flex-shrink: 0;
   }
 
   &__img {
