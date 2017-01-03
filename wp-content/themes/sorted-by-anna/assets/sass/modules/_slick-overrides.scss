@@ -1,0 +1,15 @@
+.slick-dots {
+    li button:before {
+        content: "";
+        height: 15px;
+        width: 15px;
+        background-color: rgba(color(blues, turquoise), .2);
+        opacity: 1;
+        border-radius: 50%;
+        transition: background-color ease-out .125s;
+    }
+
+    li.slick-active button:before {
+        background-color: color(blues, turquoise);
+    }
+}

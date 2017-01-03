@@ -42,13 +42,15 @@ the_partial('nav');
     'page_id'       => 13
   )); ?>
 
-  <?php the_partial('homepage-feature-section', array(
-    'title'         => 'Testimonials', 
-    'object_group'  => $testimonial_objects,
-    'page_id'       => 13
-  )); ?>
 
+  <?php the_partial('post-slider', [
+    'title'         => 'Testimonials', 
+    'slides' => $testimonial_objects
+  ]); ?>
+
+  <?php the_partial('consultation-cta'); ?>
 </div>
+
 
 
 

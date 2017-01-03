@@ -29,7 +29,12 @@ module.exports = {
              */
 
             // to the below array.
-            // vendor: []
+            vendor: ['slick']
+        },
+        resolve : {
+            alias: {
+              slick: path.join(__dirname, '../node_modules/slick-carousel/slick/slick.min.js')
+            }
         },
         module: {
             loaders: [

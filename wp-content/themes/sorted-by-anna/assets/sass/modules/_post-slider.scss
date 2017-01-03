@@ -1,0 +1,95 @@
+/**
+ * Block: post-slider
+ * Element: post-slider__element
+ * Modifier: post-slider--modifier
+ */
+
+.post-slider {
+    &__slide {
+        float: left;
+        width: 100%;
+    }
+
+    &__quote {
+        @include source-sans;
+        position: relative;
+        font-size: rem(18);
+
+        p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__cite {
+        position: relative;
+        display: inline-block;
+        margin-top: 25px;
+        line-height: 1.4;
+    }
+
+    &__quote-date {
+        display: block;
+        line-height: 1.4;
+    }
+
+    &__quote-icon {
+        @include vertically-centered(absolute);
+        position: relative;
+        display: inline-block;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 65px;
+        height: 65px;
+        background-color: rgba(color(blues, turquoise), .6);
+        border-radius: 50%;
+        font-size: rem(70);
+        position: absolute;
+        z-index: -1;
+
+        &:before {
+            content: "";
+            position: absolute;
+            background-image: url(#{$img-base-path}/icon-quotes.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: inline-block;
+            color: color(white);
+        }
+    }
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}
