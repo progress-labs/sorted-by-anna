@@ -21,6 +21,15 @@ body {
     line-height: $base-line-height;
 }
 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+    @include playfair-bold;
+}
+
 h1,
 .h1 {
     color: $h1-font-color;

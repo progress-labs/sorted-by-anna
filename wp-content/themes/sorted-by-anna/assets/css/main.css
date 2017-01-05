@@ -812,6 +812,15 @@ body {
   line-height: 1.4; }
 
 h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700; }
+
+h1,
 .h1 {
   color: #181818;
   font-size: 2.5rem;
@@ -960,15 +969,42 @@ ul {
     content: "";
     display: table; }
 
+.grid:after {
+  clear: both;
+  content: "";
+  display: table; }
+
 @media (min-width: 768px) {
   .page-content.has-aside {
     width: calc(100% - 300px);
-    padding-right: 50px;
-    float: left;
-    box-sizing: border-box; }
+    padding-right: 50px; }
+  .has-aside,
+  .aside,
+  .two-third,
+  .one-third {
+    box-sizing: border-box;
+    float: left; }
+    .has-aside:after,
+    .aside:after,
+    .two-third:after,
+    .one-third:after {
+      clear: both;
+      content: "";
+      display: table; }
   .aside {
-    width: 300px;
-    float: left; } }
+    width: 300px; } }
+
+@media (min-width: 992px) {
+  .two-third {
+    width: 66.6666666667%; }
+  .one-third {
+    width: 33.3333333333%; }
+  .main-content {
+    padding-right: 45px; }
+  .content-aside {
+    padding-left: 35px; }
+  .has-left-border {
+    border-left: 1px solid #181818; } }
 
 /*-----------------------------------------------------------------------------
  *-----------------------------------------------------------------------------
@@ -982,10 +1018,16 @@ ul {
  *----------------------------------------------------------------------------- */
 .grid {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
   .grid-3-up .col {
     width: 33.3333333333%;
     border: 1px solid black; }
+  @media (min-width: 992px) {
+    .grid {
+      -ms-flex-direction: row;
+          flex-direction: row; } }
 
 /*-------------------------------------------- */
 /** Modules */
@@ -1720,7 +1762,7 @@ blockquote {
       margin-bottom: 0; }
   .post-slider__cite {
     position: relative;
-    display: inline-block;
+    display: block;
     margin-top: 25px;
     line-height: 1.4; }
   .post-slider__quote-date {
@@ -1791,7 +1833,7 @@ blockquote {
       margin-bottom: 0; }
   .post-slider__cite {
     position: relative;
-    display: inline-block;
+    display: block;
     margin-top: 25px;
     line-height: 1.4; }
   .post-slider__quote-date {
@@ -1932,6 +1974,197 @@ select {
   position: relative;
   width: 100%;
   box-sizing: border-box; }
+
+/**
+ * Block: custom-numbered-list
+ * Element: custom-numbered-list__element
+ * Modifier: custom-numbered-list--modifier
+ */
+.custom-numbered-list {
+  padding-left: 0;
+  counter-reset: my-badass-counter;
+  list-style: none;
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  .custom-numbered-list li + li {
+    margin-top: 20px; }
+  .custom-numbered-list li {
+    position: relative;
+    width: calc(100% - 50px);
+    margin-left: 50px; }
+  .custom-numbered-list li:before {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    font-style: italic;
+    content: counter(my-badass-counter);
+    counter-increment: my-badass-counter;
+    position: absolute;
+    left: -50px;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #40e0d0;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 1.1;
+    font-size: 1.4375rem;
+    vertical-align: middle;
+    margin-right: 15px; }
+
+/**
+ * Block: section-title
+ * Element: section-title__element
+ * Modifier: section-title--modifier
+ */
+.section-title {
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+
+/**
+ * Block: callout
+ * Element: callout__element
+ * Modifier: callout--modifier
+ */
+.callout {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  max-width: 600px;
+  padding-top: 25px;
+  padding-bottom: 60px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+  line-height: 1.75;
+  text-align: center;
+  box-sizing: border-box; }
+  @media (min-width: 992px) {
+    .callout {
+      font-size: 1.875rem; }
+    .callout {
+      max-width: 850px; } }
+
+.img-wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  height: 100%;
+  background-color: #e6e6e6;
+  text-align: center; }
+
+/**
+ * Block: image-cluster
+ * Element: image-cluster__element
+ * Modifier: image-cluster--modifier
+ */
+.image-cluster {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin-top: 25px;
+  margin-left: -2.5%;
+  margin-right: -2.5%;
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  @media (max-width: 767px) {
+    .image-cluster__item {
+      display: block;
+      width: auto;
+      margin-left: auto;
+      margin-right: auto; }
+      .image-cluster__item + .image-cluster__item {
+        margin-top: 5%;
+        width: auto; } }
+  @media (min-width: 768px) {
+    .image-cluster {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      margin-top: 50px; }
+    .image-cluster__item {
+      width: 50%;
+      padding-bottom: 5%;
+      padding-left: 2.5%;
+      padding-right: 2.5%;
+      box-sizing: border-box; } }
+
+/**
+ * Block: calendly-embed
+ * Element: calendly-embed__element
+ * Modifier: calendly-embed--modifier
+ */
+.calendly {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  .calendly:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: #666A73; }
 
 /*-------------------------------------------- */
 /** Pages */

@@ -6,7 +6,7 @@
 
 $service_objects = get_field( 'services' );
 $portfolio_objects = get_field( 'portfolio_items' );
-$testimonial_objects = get_field( 'testimonials' );
+$testimonial_objects = get_field( 'testimonials_slider' );
 
 get_header();
 
