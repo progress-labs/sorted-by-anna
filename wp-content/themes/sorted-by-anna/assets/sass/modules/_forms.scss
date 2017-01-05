@@ -1,0 +1,54 @@
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+textarea, 
+select {
+    background: #ffffff;
+    color: #aaaaaa;
+    display: block;
+    letter-spacing: 1.4px;
+    margin: 0;
+    max-width: 100%;
+    margin-bottom: 20px;
+    outline: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-transform: uppercase;
+    width: 100%;
+    transition: border-color .150s ease-out;
+    border-bottom: 1px solid color(gray);
+
+    &:focus,
+    &:active {
+        border-color: color(black); 
+        color: color(black);
+    }
+}
+
+input[type="text"], 
+input[type="password"], 
+input[type="email"], 
+select {
+    border-bottom: 1px solid color(gray);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.wpcf7-form-control-wrap {
+    // position: relative;
+    // width: 100%;
+}
+
+.wpcf7-form-control {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wpcf7-submit {
+    @extend .btn;
+    @extend .btn--dark;
+}

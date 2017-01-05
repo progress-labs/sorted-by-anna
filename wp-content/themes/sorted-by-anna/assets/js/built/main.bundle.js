@@ -3106,7 +3106,7 @@ webpackJsonp([0],[
 	
 	var _featherlight2 = _interopRequireDefault(_featherlight);
 	
-	var _featherlightGallery = __webpack_require__(10);
+	var _featherlightGallery = __webpack_require__(9);
 	
 	var _featherlightGallery2 = _interopRequireDefault(_featherlightGallery);
 	

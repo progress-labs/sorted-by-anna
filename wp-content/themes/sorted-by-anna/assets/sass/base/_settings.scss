@@ -54,13 +54,13 @@ $h6-font-size: 16;
 /** Color Settings */
 /*-------------------------------------------- */
 
-$body-bg-color: #ffffff;
-$body-font-color: #444444;
-$page-container-bg-color: #ffffff;
+$body-bg-color: color(white);
+$body-font-color: color(black);
+$page-container-bg-color: $body-bg-color;
 
-$link-color: limegreen;
-$link-color-hover: limegreen;
-$link-color-active: limegreen;
+$link-color: color(black);
+$link-color-hover: color(black);
+$link-color-active: color(black);
 
 $h1-font-color: $body-font-color;
 $h2-font-color: $body-font-color;

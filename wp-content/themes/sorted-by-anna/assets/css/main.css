@@ -806,44 +806,44 @@ body {
   font-size: 16px; }
 
 body {
-  background: #ffffff;
-  color: #444444;
+  background: #fff;
+  color: #181818;
   font-weight: 400;
   line-height: 1.4; }
 
 h1,
 .h1 {
-  color: #444444;
+  color: #181818;
   font-size: 2.5rem;
   font-weight: 700; }
 
 h2,
 .h2 {
-  color: #444444;
+  color: #181818;
   font-size: 2rem;
   font-weight: 700; }
 
 h3,
 .h3 {
-  color: #444444;
+  color: #181818;
   font-size: 1.5rem;
   font-weight: 700; }
 
 h4,
 .h4 {
-  color: #444444;
+  color: #181818;
   font-size: 1.25rem;
   font-weight: 700; }
 
 h5,
 .h5 {
-  color: #444444;
+  color: #181818;
   font-size: 1rem;
   font-weight: 700; }
 
 h6,
 .h6 {
-  color: #444444;
+  color: #181818;
   font-size: 1rem;
   font-weight: 700; }
 
@@ -851,11 +851,11 @@ p {
   margin-bottom: 20px; }
 
 a {
-  color: limegreen; }
+  color: #181818; }
   a:hover {
-    color: limegreen; }
+    color: #181818; }
   a.active {
-    color: limegreen; }
+    color: #181818; }
 
 strong {
   font-weight: 700; }
@@ -949,12 +949,26 @@ ul {
   margin: 0 auto;
   padding-right: 20px;
   padding-left: 20px;
-  background: #ffffff; }
+  background: #fff; }
 
 .content-wrap {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto; }
+  .content-wrap:after {
+    clear: both;
+    content: "";
+    display: table; }
+
+@media (min-width: 768px) {
+  .page-content.has-aside {
+    width: calc(100% - 300px);
+    padding-right: 50px;
+    float: left;
+    box-sizing: border-box; }
+  .aside {
+    width: 300px;
+    float: left; } }
 
 /*-----------------------------------------------------------------------------
  *-----------------------------------------------------------------------------
@@ -1023,7 +1037,7 @@ ul {
     margin-top: 0;
     color: #fff; }
 
-.btn {
+.btn, .wpcf7-submit {
   color: #fff;
   background: transparent;
   display: inline-block;
@@ -1038,13 +1052,13 @@ ul {
   padding-right: 35px;
   border: 1px solid #fff;
   transition: background-color .300s ease-out,  color .300s ease-out; }
-  .btn:hover {
+  .btn:hover, .wpcf7-submit:hover {
     color: currentColor;
     background-color: #fff; }
-  .btn--dark {
+  .btn--dark, .wpcf7-submit {
     color: #181818;
     border: 1px solid #181818; }
-    .btn--dark:hover {
+    .btn--dark:hover, .wpcf7-submit:hover {
       background-color: #fff; }
   .btn--centered {
     display: table;
@@ -1871,6 +1885,53 @@ blockquote {
     margin-bottom: 5px; }
   .bio__content {
     padding-left: 30px; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
+select {
+  background: #ffffff;
+  color: #aaaaaa;
+  display: block;
+  letter-spacing: 1.4px;
+  margin: 0;
+  max-width: 100%;
+  margin-bottom: 20px;
+  outline: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-transform: uppercase;
+  width: 100%;
+  transition: border-color .150s ease-out;
+  border-bottom: 1px solid #aaaaaa; }
+  input[type="text"]:focus, input[type="text"]:active,
+  input[type="password"]:focus,
+  input[type="password"]:active,
+  input[type="email"]:focus,
+  input[type="email"]:active,
+  textarea:focus,
+  textarea:active,
+  select:focus,
+  select:active {
+    border-color: #181818;
+    color: #181818; }
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  border-bottom: 1px solid #aaaaaa;
+  border-top: none;
+  border-left: none;
+  border-right: none; }
+
+.wpcf7-form-control {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box; }
 
 /*-------------------------------------------- */
 /** Pages */
