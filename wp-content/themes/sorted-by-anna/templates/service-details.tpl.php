@@ -4,6 +4,9 @@
  * Template Name: Service Details
  */
 
+include_once( get_template_directory() . '/functions/lib/data/class-post-view-model.php' );
+include_once( get_template_directory() . '/functions/view-models/class-service-view-model.php' );
+
 $service_objects = get_field( 'services' );
 $portfolio_objects = get_field( 'portfolio_items' );
 $testimonial_objects = get_field( 'testimonials_slider' );
@@ -32,7 +35,7 @@ the_partial('nav');
             <div class="two-third main-content">
               <?php the_content(); ?>
 
-              <?php the_partial('image-cluster'); ?>
+              <?php the_partial('image-cluster') ?>
             </div>
 
             <aside class="content-aside one-third has-left-border">
@@ -47,8 +50,45 @@ the_partial('nav');
 
         <?php endwhile; ?> 
       <?php endif; ?>
+      
+      <h2 class="services-grid__title">Services Include:</h2>
+      <div class="services-grid">
 
-      <?php the_partial('calendly-embed'); ?>
+
+        <?php foreach ($service_objects as $object) :  ?>
+          <div class="services-grid__col">
+
+            <div class="services-card">
+
+                <?php if ( get_field('gallery_images', $object->ID) ) : 
+                  $img = get_field('gallery_images', $object->ID)[0]['image']['sizes']['medium'];
+                ?>
+                  <div class="services-card__wrap">
+                    <img src="<?php echo $img; ?>" alt="">                  
+                  </div>
+
+                <?php elseif ( has_post_thumbnail( $object->ID ) ) : ?>
+                  
+                  <div class="services-card__wrap">
+                    <?php echo get_the_post_thumbnail( $object->ID, 'medium' ); ?>
+                  </div>
+
+                <?php endif; ?>
+
+                <h2 class="services-card__title"><?php echo get_the_title( $object->ID ); ?></h2>
+                <p><?php echo get_the_content( $object->ID ); ?></p>
+
+            </div>
+          </div>
+        <?php endforeach; ?>
+
+      </div>
+
+      <?php if( get_field('display_calendar') ) : ?>
+        
+        <?php the_partial('calendly-embed'); ?>
+
+      <?php endif; ?>
 
       <?php if ( $testimonial_objects ) {
         the_partial('post-slider', [

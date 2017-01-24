@@ -1288,7 +1288,6 @@ ul {
       -ms-flex-direction: row;
           flex-direction: row;
       -ms-flex-align: start;
-          -ms-grid-row-align: flex-start;
           align-items: flex-start; }
       .services-preview__content {
         padding-top: 5px; } }
@@ -2165,6 +2164,64 @@ select {
     width: 100%;
     height: 5px;
     background-color: #666A73; }
+
+/**
+ * Block: services-grid
+ * Element: services-grid__element
+ * Modifier: services-grid--modifier
+ */
+.services-grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  @media (min-width: 768px) {
+    .services-grid {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+      margin-top: 100px; }
+      .services-grid__col {
+        width: 50%;
+        margin-bottom: 50px; } }
+
+/**
+ * Block: services-card
+ * Element: services-card__element
+ * Modifier: services-card--modifier
+ */
+.services-card {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  font-size: 1rem;
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  .services-card__title {
+    min-width: 100%;
+    text-align: center;
+    font-size: 1.375rem; }
+  .services-card__wrap {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+    .services-card__wrap img {
+      display: inline-block; }
 
 /*-------------------------------------------- */
 /** Pages */

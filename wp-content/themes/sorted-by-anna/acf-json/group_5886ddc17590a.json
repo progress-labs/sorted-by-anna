@@ -1,12 +1,12 @@
 {
-    "key": "group_586dd054dd289",
-    "title": "Featured Services",
+    "key": "group_5886ddc17590a",
+    "title": "Display Calendar",
     "fields": [
         {
-            "key": "field_586dd061419ab",
-            "label": "Featured Services",
-            "name": "services",
-            "type": "post_object",
+            "key": "field_5886ddc6026bf",
+            "label": "Display Calendar",
+            "name": "display_calendar",
+            "type": "true_false",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,24 +15,11 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "service"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
+            "message": "Should the consultation calendar display on this page?",
+            "default_value": 0
         }
     ],
     "location": [
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "templates\/homepage.tpl.php"
-            }
-        ],
         [
             {
                 "param": "page_template",
@@ -49,5 +36,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1485230240
+    "modified": 1485233689
 }

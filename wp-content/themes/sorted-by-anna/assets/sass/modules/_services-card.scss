@@ -1,0 +1,59 @@
+/**
+ * Block: services-card
+ * Element: services-card__element
+ * Modifier: services-card--modifier
+ */
+
+.services-card {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: rem(16);
+
+    &__title {
+        min-width: 100%;
+        text-align: center;
+        font-size: rem(22);
+    }
+
+    &__wrap {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+        img {
+            display: inline-block;
+        }
+    }
+
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}
