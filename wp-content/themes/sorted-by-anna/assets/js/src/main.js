@@ -17,6 +17,7 @@ var componentRegistry = new ComponentRegistry();
 
 componentRegistry.registerComponent('postSlider', require('./modules/postSlider'));
 componentRegistry.registerComponent('gallery', require('./modules/gallery'));
+componentRegistry.registerComponent('nav', require('./modules/nav'));
 
 
 

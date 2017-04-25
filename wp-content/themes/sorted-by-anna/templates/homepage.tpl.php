@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Template Name: Home Page Template
@@ -9,8 +9,6 @@ $portfolio_objects = get_field( 'portfolio_items' );
 $testimonial_objects = get_field( 'testimonials_slider' );
 
 get_header();
-
-the_partial('nav');
 ?>
 
 <?php the_partial('hero', array(
@@ -32,30 +30,30 @@ the_partial('nav');
 
   <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
-      
+
       <div class="content-wrap">
         <div class="page-content">
-          
+
           <?php the_content(); ?>
-          
+
         </div>
       </div>
-      
-  
-    <?php endwhile; ?> 
+
+
+    <?php endwhile; ?>
   <?php endif; ?>
 
   <?php the_partial('bio'); ?>
 
   <?php the_partial('homepage-feature-section', array(
-    'title'         => 'Services', 
+    'title'         => 'Services',
     'object_group'  => $service_objects,
     'page_id'       => 13,
     'btn_cta'       => 'See All Services'
   )); ?>
 
   <?php the_partial('homepage-feature-section', array(
-    'title'         => 'Portfolio', 
+    'title'         => 'Portfolio',
     'object_group'  => $portfolio_objects,
     'page_id'       => 13,
     'btn_cta'       => 'View Other Projects'
@@ -63,7 +61,7 @@ the_partial('nav');
 
 
   <?php the_partial('post-slider', [
-    'title'         => 'Testimonials', 
+    'title'         => 'Testimonials',
     'slides' => $testimonial_objects
   ]); ?>
 
@@ -73,7 +71,7 @@ the_partial('nav');
 
 
 
-<?php 
+<?php
 
 get_footer();
 

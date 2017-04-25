@@ -1,4 +1,113 @@
+.menu-primary-menu-container {
+    height: 100%;
+}
+
 .menu {
-  display: flex;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+    height: 100%;
+
+    &-item {
+        position: relative;
+        margin-left: 15px;
+        margin-right: 15px;
+        width: 100%;
+        text-align: center;
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+    &-item a {
+        position: relative;
+        display: inline-block;
+        color: black;
+        font-size: rem(24);
+        text-decoration: none;
+    }
+
+    &-item:hover {
+        .sub-menu {
+            left: 0;
+        }
+    }
+
+    @include respond-to('small and up') {
+
+        & {
+            flex-direction: row;
+        }
+
+        &-item + &-item {
+            margin-top: 0;
+        }
+
+        &-item a {
+            position: relative;
+            color: white;
+        }
+
+
+    }
+}
+
+
+.sub-menu {
+    width: 100%;
+    margin-top: 5px;
+
+    .menu-item {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .menu-item + .menu-item {
+        margin-top: 5px;
+    }
+
+    .menu-item a {
+        font-size: rem(18);
+    }
+
+    @include respond-to('small and up') {
+        position: absolute;
+        width: 200%;
+        transform: translateX(-25%);
+        left: -9999px;
+    }
+
+}
+
+
+
+@include respond-to('small and up') {
+    .menu-item-has-children > a {
+        display: flex;
+        align-items: center;
+
+        &:after {
+            content: "";
+            position: relative;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+            margin-top: 7px;
+            margin-left: 10px;
+            transition: transform .150s ease-out;
+            transform-origin: center;
+        }
+
+        &:hover {
+            &:after {
+                transform: rotate(180deg);
+                margin-top: 4px;
+            }
+        }
+    }
 }

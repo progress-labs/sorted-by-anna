@@ -1108,36 +1108,163 @@ ul {
     margin-right: auto; }
 
 .nav {
-  position: fixed;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background-color: #181818;
-  z-index: 90; }
+  position: relative;
+  height: 50px;
+  z-index: 10;
+  background-color: white;
+  color: black; }
+  .nav-header {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    height: 50px;
+    border-bottom: 1px solid black;
+    z-index: 10;
+    background-color: white; }
+  .nav.is-open .nav-wrap {
+    -ms-transform: translateY(0);
+        transform: translateY(0); }
+  .nav-logo {
+    margin-left: auto;
+    margin-right: auto; }
+  .nav-wrap {
+    -ms-transform: translateY(-125%);
+        transform: translateY(-125%);
+    height: calc(100vh - 50px);
+    background-color: white;
+    transition: transform .250s ease-out; }
+  .nav-menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    left: 0;
+    width: 60px;
+    height: 50px;
+    cursor: pointer;
+    border-right: 1px solid black; }
+  .nav-menu__bar {
+    display: block;
+    height: 2px;
+    width: 30px;
+    background: black; }
+    .nav-menu__bar + .nav-menu__bar {
+      margin-top: 5px; }
   .nav__wrap {
     max-width: 1140px;
     padding-right: 20px;
     padding-left: 20px;
     margin-left: auto;
-    margin-right: auto;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-        justify-content: space-between;
-    -ms-flex-align: center;
-        align-items: center;
-    width: 100%; }
+    margin-right: auto; }
+  @media (min-width: 768px) {
+    .nav {
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-align: center;
+          align-items: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+      height: 70px;
+      background-color: transparent;
+      color: white; }
+      .nav-header {
+        display: none; }
+      .nav-wrap {
+        width: auto;
+        height: auto;
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+        background-color: transparent; } }
+
+.menu-primary-menu-container {
+  height: 100%; }
 
 .menu {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
   -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+  padding-top: 25px;
+  height: 100%; }
+  .menu-item {
+    position: relative;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 100%;
+    text-align: center; }
+    .menu-item + .menu-item {
+      margin-top: 15px; }
+  .menu-item a {
+    position: relative;
+    display: inline-block;
+    color: black;
+    font-size: 1.5rem;
+    text-decoration: none; }
+  .menu-item:hover .sub-menu {
+    left: 0; }
+  @media (min-width: 768px) {
+    .menu {
+      -ms-flex-direction: row;
+          flex-direction: row; }
+    .menu-item + .menu-item {
+      margin-top: 0; }
+    .menu-item a {
+      position: relative;
+      color: white; } }
+
+.sub-menu {
+  width: 100%;
+  margin-top: 5px; }
+  .sub-menu .menu-item {
+    margin-left: 0;
+    margin-right: 0; }
+  .sub-menu .menu-item + .menu-item {
+    margin-top: 5px; }
+  .sub-menu .menu-item a {
+    font-size: 1.125rem; }
+  @media (min-width: 768px) {
+    .sub-menu {
+      position: absolute;
+      width: 200%;
+      -ms-transform: translateX(-25%);
+          transform: translateX(-25%);
+      left: -9999px; } }
+
+@media (min-width: 768px) {
+  .menu-item-has-children > a {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center; }
+    .menu-item-has-children > a:after {
+      content: "";
+      position: relative;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid white;
+      margin-top: 7px;
+      margin-left: 10px;
+      transition: transform .150s ease-out;
+      -ms-transform-origin: center;
+          transform-origin: center; }
+    .menu-item-has-children > a:hover:after {
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+      margin-top: 4px; } }
 
 .portfolio-preview {
   position: relative;

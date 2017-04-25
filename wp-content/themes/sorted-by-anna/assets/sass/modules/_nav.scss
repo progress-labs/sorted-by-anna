@@ -1,19 +1,88 @@
-.nav {
-  position: fixed;
-  display: flex;
-  align-items: center;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background-color: color(black);
-  z-index: $z-9;
+$nav-height: 50px;
 
-  &__wrap {
-    @include page-container();
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
+.nav {
+    position: relative;
+    height: $nav-height;
+    z-index: $z-1;
+    background-color: white;
+    color: black;
+
+    &-header {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: $nav-height;
+        border-bottom: 1px solid black;
+        z-index: $z-1;
+        background-color: white;
+    }
+
+    &.is-open {
+        .nav-wrap {
+            transform: translateY(0);
+        }
+    }
+
+    &-logo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &-wrap {
+        transform: translateY(-125%);
+        height: calc(100vh - #{$nav-height});
+        background-color: white;
+        transition: transform .250s ease-out;
+    }
+
+    &-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        left: 0;
+        width: 60px;
+        height: $nav-height;
+        cursor: pointer;
+        border-right: 1px solid black;
+    }
+
+    &-menu__bar {
+        display: block;
+        height: 2px;
+        width: 30px;
+        background: black;
+
+        & + & {
+            margin-top: 5px;
+        }
+    }
+
+    &__wrap {
+        @include page-container();
+
+    }
+
+    @include respond-to('small and up') {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        background-color: transparent;
+        color: white;
+
+        &-header {
+            display: none;
+        }
+
+        &-wrap {
+            width: auto;
+            height: auto;
+            transform: translateY(0);
+            background-color: transparent;
+        }
+    }
 }

@@ -22,6 +22,7 @@ webpackJsonp([0],[
 	
 	componentRegistry.registerComponent('postSlider', __webpack_require__(4));
 	componentRegistry.registerComponent('gallery', __webpack_require__(6));
+	componentRegistry.registerComponent('nav', __webpack_require__(11));
 	
 	componentRegistry.initComponents();
 
@@ -3124,6 +3125,39 @@ webpackJsonp([0],[
 	    galleryFadeIn: 100, /* fadeIn speed when slide is loaded */
 	    galleryFadeOut: 300
 	  });
+	};
+
+/***/ },
+/* 7 */,
+/* 8 */,
+/* 9 */,
+/* 10 */,
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var $ = __webpack_require__(2);
+	
+	module.exports = function (el) {
+	    var $el = $(el),
+	        $navTrigger = $('.nav-menu'),
+	        openClass = 'is-open',
+	        state = {
+	        isOpen: false
+	    };
+	
+	    $navTrigger.on('click', toggleMenuState);
+	
+	    function toggleMenuState() {
+	        state.isOpen = !state.isOpen;
+	
+	        if (state.isOpen) {
+	            $el.addClass(openClass);
+	        } else {
+	            $el.removeClass(openClass);
+	        }
+	    }
 	};
 
 /***/ }
