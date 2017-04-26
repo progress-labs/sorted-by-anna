@@ -1,0 +1,54 @@
+/**
+ * Block: discount-section
+ * Element: discount-section__element
+ * Modifier: discount-section--modifier
+ */
+
+.discount-section {
+    max-width: 500px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__list {
+        list-style: inherit;
+        padding-left: 30px;
+        margin-top: 10px;
+    }
+
+    &__list-item {
+        & + & {
+            margin-top: 5px;
+        }
+    }
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}
