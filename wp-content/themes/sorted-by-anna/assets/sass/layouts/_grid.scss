@@ -1,15 +1,24 @@
 .grid {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  &-3-up {
-    .col {
-      width: percentage(1/3);
-      border: 1px solid black;
+
+    @include respond-to('small and up') {
+        &-3-up {
+            flex-wrap: wrap;
+
+            .col {
+                width: percentage(1/3);
+                border: 1px solid black;
+
+                &--no-border {
+                    border: 0;
+                }
+            }
+        }
     }
-  }
 
-  @include respond-to('medium and up') {
-    flex-direction: row;
-  }
+    @include respond-to('small and up') {
+        flex-direction: row;
+    }
 }

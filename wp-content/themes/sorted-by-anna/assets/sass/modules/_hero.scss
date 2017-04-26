@@ -28,5 +28,10 @@
   &__title {
     margin-top: 0;
     color: color(white);
+    text-align: center;
+
+    &--dark {
+        color: color(black);
+    }
   }
 }
