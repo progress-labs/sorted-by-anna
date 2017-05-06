@@ -1,0 +1,79 @@
+/**
+ * Block: how-it-works
+ * Element: how-it-works__element
+ * Modifier: how-it-works--modifier
+ */
+
+$circle-size: 70px;
+
+.how-it-works {
+
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        counter-reset: my-counter;
+        list-style-type: none;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+    }
+
+    &__list-item {
+        counter-increment: counter;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+        max-width: 400px;
+        font-size: rem(18);
+        margin-bottom: 40px;
+
+        &:before {
+            @include playfair;
+            content: counter(counter);
+            display: inline-block;
+            flex-shrink: 0;
+            height: $circle-size;
+            width: $circle-size;
+            text-align: center;
+            line-height: 50px;
+            background-color: skyblue;
+            color: color(white);
+            border-radius: 50%;
+            margin-right: 25px;
+            font-size: rem(38);
+        }
+    }
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}

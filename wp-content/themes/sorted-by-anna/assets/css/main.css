@@ -2211,21 +2211,12 @@ select {
  * Modifier: section-title--modifier
  */
 .section-title {
-  /*-------------------------------------------- */
-  /** Variables */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Styles */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Modifiers */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Elements */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Media Queries */
-  /*-------------------------------------------- */ }
+  font-family: "omnes-pro", sans-serif;
+  font-weight: 600;
+  font-size: 1.625rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
 
 /**
  * Block: callout
@@ -2472,6 +2463,82 @@ select {
     margin-top: 10px; }
   .discount-section__list-item + .discount-section__list-item {
     margin-top: 5px; }
+
+/**
+ * Block: section-title
+ * Element: section-title__element
+ * Modifier: section-title--modifier
+ */
+.section-title {
+  font-family: "omnes-pro", sans-serif;
+  font-weight: 600;
+  font-size: 1.625rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto; }
+
+/**
+ * Block: how-it-works
+ * Element: how-it-works__element
+ * Modifier: how-it-works--modifier
+ */
+.how-it-works {
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  .how-it-works__list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    counter-reset: my-counter;
+    list-style-type: none;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0; }
+  .how-it-works__list-item {
+    counter-increment: counter;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 50%;
+    max-width: 400px;
+    font-size: 1.125rem;
+    margin-bottom: 40px; }
+    .how-it-works__list-item:before {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      content: counter(counter);
+      display: inline-block;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+      height: 70px;
+      width: 70px;
+      text-align: center;
+      line-height: 50px;
+      background-color: skyblue;
+      color: #fff;
+      border-radius: 50%;
+      margin-right: 25px;
+      font-size: 2.375rem; }
 
 /*-------------------------------------------- */
 /** Pages */
