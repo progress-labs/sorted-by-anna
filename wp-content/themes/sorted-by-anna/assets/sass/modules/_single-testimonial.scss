@@ -5,15 +5,15 @@
  */
 
 .single-testimonial {
+    position: relative;
+    background-color: color(marina);
+    min-height: 200px;
 
     &__slide {
         @include freight;
-        position: relative;
-        background-color: color(robin);
         color: color(white);
         font-size: rem(18);
         text-align: center;
-        min-height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -21,7 +21,6 @@
     }
 
     &__content {
-        @include centered(absolute);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -29,6 +28,8 @@
         width: 85%;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     &__client {
@@ -56,10 +57,6 @@
 
     @include respond-to('medium and up') {
 
-        &__slide {
-            min-height: 400px;
-            font-size: rem(34);
-        }
 
         &__client {
             font-size: rem(20);

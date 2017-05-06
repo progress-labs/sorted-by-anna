@@ -2183,14 +2183,13 @@ select {
   padding-bottom: 60px;
   padding-left: 30px;
   padding-right: 30px;
-  margin-top: 0;
-  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.75;
   text-align: center;
   box-sizing: border-box; }
   .callout__cta {
+    margin-top: 0;
     font-size: 1.5rem;
     line-height: 1.2; }
   @media (min-width: 992px) {
@@ -2658,70 +2657,88 @@ select {
  * Element: single-testimonial__element
  * Modifier: single-testimonial--modifier
  */
-.single-testimonial__slide {
-  font-family: "freight-text-pro", "Georgia", serif;
-  font-weight: 400;
+.single-testimonial {
   position: relative;
-  background-color: #3EB5C6;
-  color: #fff;
-  font-size: 1.125rem;
-  text-align: center;
-  min-height: 300px;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-direction: column;
-      flex-direction: column; }
-
-.single-testimonial__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translateY(-50%) translateX(-50%);
-      transform: translateY(-50%) translateX(-50%);
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-direction: column;
-      flex-direction: column;
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto; }
-
-.single-testimonial__client {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 400;
-  display: inline-block;
-  margin-top: 30px;
-  font-size: 1.125rem; }
-
-@media (min-width: 768px) {
+  background-color: #2874C7;
+  min-height: 200px; }
   .single-testimonial__slide {
-    font-size: 1.75rem; }
+    font-family: "freight-text-pro", "Georgia", serif;
+    font-weight: 400;
+    color: #fff;
+    font-size: 1.125rem;
+    text-align: center;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-direction: column;
+        flex-direction: column; }
   .single-testimonial__content {
-    width: 100%;
-    max-width: 75%; }
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    padding-bottom: 50px; }
   .single-testimonial__client {
     font-family: "omnes-pro", sans-serif;
     font-weight: 400;
-    margin-top: 50px; } }
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 1.125rem; }
+  @media (min-width: 768px) {
+    .single-testimonial__slide {
+      font-size: 1.75rem; }
+    .single-testimonial__content {
+      width: 100%;
+      max-width: 75%; }
+    .single-testimonial__client {
+      font-family: "omnes-pro", sans-serif;
+      font-weight: 400;
+      margin-top: 50px; } }
+  @media (min-width: 992px) {
+    .single-testimonial__client {
+      font-size: 1.25rem; } }
+  @media (min-width: 1024px) {
+    .single-testimonial__content {
+      max-width: 900px; } }
 
-@media (min-width: 992px) {
-  .single-testimonial__slide {
-    min-height: 400px;
-    font-size: 2.125rem; }
-  .single-testimonial__client {
-    font-size: 1.25rem; } }
-
-@media (min-width: 1024px) {
-  .single-testimonial__content {
-    max-width: 900px; } }
+/**
+ * Block: post-categories
+ * Element: post-categories__element
+ * Modifier: post-categories--modifier
+ */
+.post-categories {
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  .post-categories__list, .post-categories__item {
+    display: inline-block; }
+  .post-categories__list {
+    margin-left: 5px; }
+  .post-categories__item:after {
+    content: ", "; }
 
 /*-------------------------------------------- */
 /** Pages */

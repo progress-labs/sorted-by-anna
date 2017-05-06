@@ -33,7 +33,7 @@ get_header();
 
             </div>
 
-            <?php endwhile; ?>
+            <?php endwhile; wp_reset_postdata();?>
         </section>
 
     <?php endif; ?>
