@@ -1,0 +1,78 @@
+/**
+ * Block: post-preview
+ * Element: post-preview__element
+ * Modifier: post-preview--modifier
+ */
+
+.post-preview {
+    display: inline-block;
+    max-width: 400px;
+    text-decoration: none;
+
+    &__body {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: color(white);
+        padding-top: 13px;
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+    }
+
+    &__media-wrap {
+        position: relative;
+    }
+
+    &__media {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__title {
+        margin-top: 0;
+        font-size: rem(28);
+    }
+
+    &__content p {
+        font-size: rem(16);
+        line-height: 1.5;
+    }
+
+    @include respond-to('medium and up') {
+        &__body {
+            margin-top: -50px;
+            max-width: 90%;
+        }
+    }
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}

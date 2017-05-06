@@ -8,11 +8,9 @@ $circle-size: 70px;
 
 .how-it-works {
 
-
     &__list {
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        flex-direction: column;
         counter-reset: my-counter;
         list-style-type: none;
         max-width: 900px;
@@ -26,8 +24,6 @@ $circle-size: 70px;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        width: 50%;
-        max-width: 400px;
         font-size: rem(18);
         margin-bottom: 40px;
 
@@ -46,6 +42,21 @@ $circle-size: 70px;
             margin-right: 25px;
             font-size: rem(38);
         }
+    }
+
+    @include respond-to('small and up') {
+
+        &__list {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        &__list-item {
+            width: 50%;
+            max-width: 400px;
+        }
+
     }
     /*-------------------------------------------- */
     /** Variables */

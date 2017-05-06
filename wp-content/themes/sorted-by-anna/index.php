@@ -56,6 +56,64 @@ the_post(); ?>
     </div>
 </section>
 
+<section>
+
+    <div class="grid grid-3-up">
+        <div class="col">
+            <a href="#" class="post-preview">
+                <div class="post-preview__media-wrap">
+                    <img class="post-preview__media" src="http://placehold.it/400x300" alt="">
+                </div>
+                <div class="post-preview__body">
+                    <h3 class="post-preview__title">2 Years of Being a Boss Lady</h3>
+                    <div class="post-preview__content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+
+                    <span class="post-preview__cta">Read More &rarr;</span>
+                </div>
+
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="#" class="post-preview">
+                <div class="post-preview__media-wrap">
+                    <img class="post-preview__media" src="http://placehold.it/400x300" alt="">
+                </div>
+                <div class="post-preview__body">
+                    <h3 class="post-preview__title">2 Years of Being a Boss Lady</h3>
+                    <div class="post-preview__content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+
+                    <span class="post-preview__cta">Read More &rarr;</span>
+                </div>
+
+            </a>
+        </div>
+
+        <div class="col">
+            <a href="#" class="post-preview">
+                <div class="post-preview__media-wrap">
+                    <img class="post-preview__media" src="http://placehold.it/400x300" alt="">
+                </div>
+                <div class="post-preview__body">
+                    <h3 class="post-preview__title">2 Years of Being a Boss Lady</h3>
+                    <div class="post-preview__content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+
+                    <span class="post-preview__cta">Read More &rarr;</span>
+                </div>
+
+            </a>
+        </div>
+    </div>
+
+
+</section>
+
 
 <!-- <main>
   <div class="page-container">

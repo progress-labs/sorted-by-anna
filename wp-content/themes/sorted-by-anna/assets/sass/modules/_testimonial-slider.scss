@@ -5,6 +5,8 @@
  */
 
 .testimonial-slider {
+    overflow: hidden;
+
     &__slide {
         @include playfair;
         position: relative;
@@ -62,6 +64,12 @@
 
         &__client {
             font-size: rem(20);
+        }
+    }
+
+    @include respond-to('large and up') {
+        &__content {
+            max-width: 900px;
         }
     }
 }
