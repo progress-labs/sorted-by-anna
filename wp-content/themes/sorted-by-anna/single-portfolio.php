@@ -15,10 +15,7 @@ $portfolio_args = array(
 
 $related_portfolios = new WP_Query( $portfolio_args );
 
-$portfolio_categories = get_terms('services',[
-    'hide_empty' => false,
-]);
-
+$categories = wp_get_post_terms($post->ID, 'services');
 
 ?>
 
@@ -45,15 +42,17 @@ $portfolio_categories = get_terms('services',[
 
             <?php the_content(); ?>
 
+            <?php if ( !empty( $categories ) ): ?>
             <div class="post-categories">
                 <span>Services:</span>
                 <ul class="post-categories__list">
-                    <?php foreach ($portfolio_categories as $cat): ?>
+                    <?php foreach ($categories as $cat): ?>
                         <li class="post-categories__item"><?php echo $cat->name; ?></li>
                     <?php endforeach; ?>
                 </ul>
-
             </div>
+            <?php endif; ?>
+
         </div>
 
         <?php if ( $project->gallery() ) : ?>
@@ -81,11 +80,13 @@ $portfolio_categories = get_terms('services',[
 
 
 
-    <section class="page-section">
-        <?php the_partial( 'single-testimonial', [
-            'testimonial' => get_field( 'project_testimonial' ) ? get_field( 'project_testimonial' ) : false
-        ]); ?>
-    </section>
+    <?php if ( get_field( 'project_testimonial' ) ) : ?>
+        <section class="page-section">
+            <?php the_partial( 'single-testimonial', [
+                'testimonial' => get_field( 'project_testimonial' ) ? get_field( 'project_testimonial' ) : false
+            ]); ?>
+        </section>
+    <?php endif; ?>
 
     <section class="page-section">
         <?php the_partial('callout', [
