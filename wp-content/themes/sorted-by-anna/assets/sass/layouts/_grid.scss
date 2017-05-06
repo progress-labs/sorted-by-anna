@@ -1,11 +1,15 @@
 .grid {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    align-items: flex-start;
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+
+    .col {
+        width: 100%;
+    }
 
 
     @include respond-to('small and up') {
@@ -13,6 +17,7 @@
             padding-left: 1%;
             padding-right: 1%;
             box-sizing: border-box;
+            margin-bottom: 5%;
         }
 
         &-3-up,

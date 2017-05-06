@@ -9,30 +9,12 @@
  *----------------------------------------------------------------------------- */
 
 
-$serif: 'Playfair Display', serif;
-$sans-serif: 'Source Sans Pro', sans-serif;
+$freight: 'freight-text-pro', 'Georgia', serif;
 $omnes: 'omnes-pro', sans-serif;
 
-@mixin playfair() {
-  font-family: $serif;
-  font-weight: 400;
-}
-
-
-@mixin playfair-bold() {
-  font-family: $serif;
-  font-weight: 700;
-}
-
-@mixin playfair-bold-italic() {
-  font-family: $serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-@mixin source-sans() {
-  font-family: $sans-serif;
-  font-weight: 400;
+@mixin freight() {
+    font-family: $freight;
+    font-weight: 400;
 }
 
 @mixin omnes() {
@@ -48,14 +30,4 @@ $omnes: 'omnes-pro', sans-serif;
 @mixin omnes-semi() {
     font-family: $omnes;
     font-weight: 600;
-};
-
-@mixin omnes-bold() {
-    font-family: $omnes;
-    font-weight: 700;
-};
-
-@mixin omnes-black() {
-    font-family: $omnes;
-    font-weight: 900;
 };

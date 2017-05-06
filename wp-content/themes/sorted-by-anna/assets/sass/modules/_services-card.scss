@@ -5,6 +5,9 @@
  */
 
 .service-card {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
 
     &__name {
         @include omnes-med;
@@ -26,7 +29,7 @@
     }
 
     &__content {
-        font-size: rem(16);
+        font-size: rem(18);
         line-height: 1.5;
     }
 }

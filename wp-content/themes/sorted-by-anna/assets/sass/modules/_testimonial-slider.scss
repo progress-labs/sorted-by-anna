@@ -8,7 +8,7 @@
     overflow: hidden;
 
     &__slide {
-        @include playfair;
+        @include freight;
         position: relative;
         background-color: color(robin);
         color: color(white);

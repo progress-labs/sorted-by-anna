@@ -1,19 +1,19 @@
-<?php 
+<?php
 /**
- * How To List
+ * How It Works
  */
 ?>
 
 
 <?php  if( !empty( $list ) ) : ?>
-  <div class="how-to-list">
-    <h3><?php echo $title; ?></h3>
-    
-    <ol class="custom-numbered-list">
+  <div class="how-it-works">
+    <h3 class="section-title"><?php echo $title; ?></h3>
+
+    <ol class="how-it-works__list">
       <?php foreach ( $list as $item ): ?>
 
-        <li><?php echo $list[0]['step']; ?></li>
-        
+        <li class="how-it-works__list-item"><?php echo $list[0]['step']; ?></li>
+
       <?php endforeach ?>
     </ol>
   </div>

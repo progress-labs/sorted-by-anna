@@ -11,7 +11,7 @@
     & + & {
         margin-top: 25px;
     }
-    
+
 
     &__media-wrap {
         flex-shrink: 0;
@@ -30,7 +30,7 @@
     }
 
     &__title {
-        @include playfair-bold;
+        @include freight;
         margin-top: 0;
         text-transform: uppercase;
     }

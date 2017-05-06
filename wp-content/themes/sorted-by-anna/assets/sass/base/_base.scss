@@ -10,8 +10,9 @@
 
 html,
 body {
-    @include source-sans;
+    @include freight;
     font-size: $base-font-size;
+
 }
 
 body {
@@ -68,6 +69,8 @@ h6,
 
 p {
     margin-bottom: $paragraph-margin;
+    font-size: rem(20);
+    line-height: 1.5;
 }
 
 a {

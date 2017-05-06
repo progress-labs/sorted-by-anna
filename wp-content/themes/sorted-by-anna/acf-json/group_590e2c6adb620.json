@@ -1,5 +1,5 @@
 {
-    "key": "group_586ddae45c4a8",
+    "key": "group_590e2c6adb620",
     "title": "How It Works",
     "fields": [
         {
@@ -50,13 +50,6 @@
                 "operator": "==",
                 "value": "templates\/service-details.tpl.php"
             }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
-                "value": "templates\/services.tpl.php"
-            }
         ]
     ],
     "menu_order": 0,
@@ -67,5 +60,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494100493
+    "modified": 1494101158
 }

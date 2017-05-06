@@ -15,7 +15,7 @@ $block: 'portfolio-preview';
       left: auto;
     }
   }
-  
+
   & + & {
     margin-top: 20px;
   }
@@ -30,7 +30,6 @@ $block: 'portfolio-preview';
   }
 
   &__title {
-    @include playfair-bold;
     margin-top: 0;
     margin-bottom: 0;
   }
