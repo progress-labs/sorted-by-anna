@@ -2,8 +2,8 @@
  *-----------------------------------------------------------------------------
  *
  * FONT FACE
- * 
- * Define any @font-face declarations below. 
+ *
+ * Define any @font-face declarations below.
  *
  *-----------------------------------------------------------------------------
  *----------------------------------------------------------------------------- */
@@ -11,6 +11,7 @@
 
 $serif: 'Playfair Display', serif;
 $sans-serif: 'Source Sans Pro', sans-serif;
+$omnes: 'omnes-pro', sans-serif;
 
 @mixin playfair() {
   font-family: $serif;
@@ -33,3 +34,28 @@ $sans-serif: 'Source Sans Pro', sans-serif;
   font-family: $sans-serif;
   font-weight: 400;
 }
+
+@mixin omnes() {
+    font-family: $omnes;
+    font-weight: 400;
+};
+
+@mixin omnes-med() {
+    font-family: $omnes;
+    font-weight: 500;
+};
+
+@mixin omnes-semi() {
+    font-family: $omnes;
+    font-weight: 600;
+};
+
+@mixin omnes-bold() {
+    font-family: $omnes;
+    font-weight: 700;
+};
+
+@mixin omnes-black() {
+    font-family: $omnes;
+    font-weight: 900;
+};

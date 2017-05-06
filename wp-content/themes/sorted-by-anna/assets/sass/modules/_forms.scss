@@ -1,7 +1,7 @@
-input[type="text"], 
-input[type="password"], 
-input[type="email"], 
-textarea, 
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea,
 select {
     background: #ffffff;
     color: #aaaaaa;
@@ -22,14 +22,14 @@ select {
 
     &:focus,
     &:active {
-        border-color: color(black); 
+        border-color: color(black);
         color: color(black);
     }
 }
 
-input[type="text"], 
-input[type="password"], 
-input[type="email"], 
+input[type="text"],
+input[type="password"],
+input[type="email"],
 select {
     border-bottom: 1px solid color(gray);
     border-top: none;
@@ -49,6 +49,6 @@ select {
 }
 
 .wpcf7-submit {
-    @extend .btn;
-    @extend .btn--dark;
+    // @extend .btn;
+    // @extend .btn--dark;
 }

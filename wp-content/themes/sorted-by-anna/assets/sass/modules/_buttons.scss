@@ -2,7 +2,6 @@ $vertical-padding: 15px;
 $horizontal-padding: 35px;
 
 .btn {
-  color: color(white);
   background: transparent;
   display: inline-block;
   font-size: rem(16);
@@ -10,26 +9,19 @@ $horizontal-padding: 35px;
   outline: none;
   cursor: pointer;
   text-decoration: none;
+  background-color: color(aqua);
+  color: color(white);
+  border-radius: 4px;
   padding-top: $vertical-padding;
   padding-bottom: $vertical-padding;
   padding-left: $horizontal-padding;
   padding-right: $horizontal-padding;
-  border: 1px solid color(white);
-  transition: background-color .300s ease-out, 
+  transition: background-color .300s ease-out,
               color .300s ease-out;
 
   &:hover {
-    color: currentColor;
-    background-color: color(white);
-  }
-
-  &--dark {
-    color: color(black);
-    border: 1px solid color(black);
-
-    &:hover {
-      background-color: color(white);
-    }
+    color: color(white);
+    background-color: darken(color(aqua), 8%);
   }
 
   &--centered {

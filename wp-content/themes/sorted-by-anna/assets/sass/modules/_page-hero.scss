@@ -5,41 +5,39 @@
  */
 
 .page-hero {
+    @include intrinsic-ratio('.page-hero__img', 1200, 400);
     position: relative;
-    margin-left: -$page-container-padding;
-    margin-right: -$page-container-padding;
     margin-bottom: 25px;
+    background-color: skyblue;
 
     &__img {
         display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
-
-    &__content {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
 
     &__title {
-        @include playfair-bold;
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
         font-size: rem(54);
         color: color(white);
+        text-align: center;
 
         &:after {
             content: "";
             display: block;
             width: 80%;
+            max-width: 150px;
             margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
-            height: 2px;
+            height: 5px;
             background-color: color(white);
         }
 

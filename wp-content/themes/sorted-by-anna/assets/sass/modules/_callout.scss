@@ -5,29 +5,32 @@
  */
 
 .callout {
-    @include playfair-bold;
-    max-width: 600px;
+    @include omnes-semi;
     padding-top: 25px;
     padding-bottom: 60px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     margin-top: 0;
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    font-style: italic;
     line-height: 1.75;
     text-align: center;
     box-sizing: border-box;
 
+    &__cta {
+        font-size: rem(24);
+        line-height: 1.2;
+    }
+
     @include respond-to('medium and up') {
 
-        & {
-            font-size: rem(30);
-        }
-
-        & {
-            max-width: 850px;
+        &__cta {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: rem(48);
         }
 
     }

@@ -4,56 +4,29 @@
  * Modifier: services-card--modifier
  */
 
-.services-card {
-    margin-top: 25px;
-    margin-bottom: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
-    font-size: rem(16);
+.service-card {
 
-    &__title {
-        min-width: 100%;
-        text-align: center;
-        font-size: rem(22);
-    }
+    &__name {
+        @include omnes-med;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: rem(20);
 
-    &__wrap {
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            max-width: 70px;
+            height: 2px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            background-color: color(coral);
 
-        img {
-            display: inline-block;
         }
     }
 
-    /*-------------------------------------------- */
-    /** Variables */
-    /*-------------------------------------------- */
-
-
-
-    /*-------------------------------------------- */
-    /** Block Styles */
-    /*-------------------------------------------- */
-
-
-
-    /*-------------------------------------------- */
-    /** Block Modifiers */
-    /*-------------------------------------------- */
-
-
-
-    /*-------------------------------------------- */
-    /** Block Elements */
-    /*-------------------------------------------- */
-
-
-
-    /*-------------------------------------------- */
-    /** Block Media Queries */
-    /*-------------------------------------------- */
-
-
+    &__content {
+        font-size: rem(16);
+        line-height: 1.5;
+    }
 }

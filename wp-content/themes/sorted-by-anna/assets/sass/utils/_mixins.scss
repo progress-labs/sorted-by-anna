@@ -33,6 +33,18 @@
 }
 
 /**
+ * Vertical Centering
+ * $position: variable to set position value, Defaults to relative.
+ *
+ */
+@mixin centered($position: relative) {
+    position: $position;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+/**
  * Creates an intrinsic ratio container. Useful for videos and elements that
  * you want to scale proportionately.
  *
