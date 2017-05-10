@@ -1033,6 +1033,8 @@ ul {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto; }
+  .grid--small {
+    max-width: 600px; }
   .grid .col {
     width: 100%; }
   @media (min-width: 768px) {
@@ -1592,21 +1594,10 @@ ul {
  * Modifier: badge--modifier
  */
 .badge {
-  /*-------------------------------------------- */
-  /** Variables */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Styles */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Modifiers */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Elements */
-  /*-------------------------------------------- */
-  /*-------------------------------------------- */
-  /** Block Media Queries */
-  /*-------------------------------------------- */ }
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
 
 blockquote {
   max-width: 600px;
@@ -2359,11 +2350,13 @@ select {
   .press img {
     display: block;
     width: auto;
-    height: auto; }
+    height: auto;
+    margin-left: auto;
+    margin-right: auto; }
   .press__article-title {
     font-size: 1.25rem;
-    padding-left: 5%;
-    padding-right: 5%; }
+    padding-left: 8%;
+    padding-right: 8%; }
   .press__overlay {
     position: absolute;
     display: -ms-flexbox;

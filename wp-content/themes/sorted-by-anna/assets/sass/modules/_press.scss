@@ -21,12 +21,15 @@
         display: block;
         width: auto;
         height: auto;
+        margin-left: auto;
+        margin-right: auto;
+
     }
 
     &__article-title {
         font-size: rem(20);
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 8%;
+        padding-right: 8%;
     }
 
     &__overlay {

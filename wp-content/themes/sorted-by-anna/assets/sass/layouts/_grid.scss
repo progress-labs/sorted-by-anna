@@ -7,10 +7,13 @@
     margin-left: auto;
     margin-right: auto;
 
+    &--small {
+        max-width: 600px;
+    }
+
     .col {
         width: 100%;
     }
-
 
     @include respond-to('small and up') {
         .col {

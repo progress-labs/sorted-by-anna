@@ -10,60 +10,32 @@ the_partial( 'page-hero', [
     ]);
 
 
+$args = array(
+	'post_type' => 'service'
+);
+
+$services_query = new WP_Query( $args );
+
 
 ?>
 
+<section class="page-section page-content">
+        <?php the_content(); ?>
+</section>
+
 <section class="page-section">
-    <div class="grid grid-3-up">
-        <div class="col">
-            <?php the_partial( 'services-card', [
-                    'title' => 'Office / Paper',
-                    'content' => 'Not sure what solutions would work for you? Overwhelmed by shopping or even stepping foot inside the Container Store? Working with a professional organizer takes the guessing and stress out of shopping. With years of experience in finding the perfect solutions for each clients space, using our shopping services creates a unique experience catered to your life, taste and budget.'
-                ]);
-            ?>
+    <?php if ( $services_query->have_posts() ) :  ?>
+        <div class="grid grid-3-up">
+        <?php while( $services_query->have_posts() ) : $services_query->the_post(); ?>
+            <div class="col">
+                <?php the_partial( 'services-card', [
+                        'service' => $post
+                    ]);
+                ?>
+            </div>
+        <?php endwhile; wp_reset_postdata(); ?>
         </div>
-
-        <div class="col">
-            <?php the_partial( 'services-card', [
-                    'title' => 'Moving / Relocation',
-                    'content' => 'You can decide whether you want to tackle just your bedroom closets, your kids play room/area, or you entire home. Our home services cater to what you want to see organized first. We start by working together to sort through your belongings and gently ease into dividing pieces into keep, donate, sell and trash piles. Then I get to work putting everything back together in an organized way that not only looks good but will be easy for you to maintain long after I am gone.'
-                ]);
-            ?>
-        </div>
-
-        <div class="col">
-            <?php the_partial( 'services-card', [
-                    'title' => 'Moving / Relocation',
-                    'content' => 'You can decide whether you want to tackle just your bedroom closets, your kids play room/area, or you entire home. Our home services cater to what you want to see organized first. We start by working together to sort through your belongings and gently ease into dividing pieces into keep, donate, sell and trash piles. Then I get to work putting everything back together in an organized way that not only looks good but will be easy for you to maintain long after I am gone.'
-                ]);
-            ?>
-        </div>
-
-        <div class="col">
-            <?php the_partial( 'services-card', [
-                    'title' => 'Office / Paper',
-                    'content' => 'Not sure what solutions would work for you? Overwhelmed by shopping or even stepping foot inside the Container Store? Working with a professional organizer takes the guessing and stress out of shopping. With years of experience in finding the perfect solutions for each clients space, using our shopping services creates a unique experience catered to your life, taste and budget.'
-                ]);
-            ?>
-        </div>
-
-        <div class="col">
-            <?php the_partial( 'services-card', [
-                    'title' => 'Moving / Relocation',
-                    'content' => 'You can decide whether you want to tackle just your bedroom closets, your kids play room/area, or you entire home. Our home services cater to what you want to see organized first. We start by working together to sort through your belongings and gently ease into dividing pieces into keep, donate, sell and trash piles. Then I get to work putting everything back together in an organized way that not only looks good but will be easy for you to maintain long after I am gone.'
-                ]);
-            ?>
-        </div>
-
-        <div class="col">
-            <?php the_partial( 'services-card', [
-                    'title' => 'Moving / Relocation',
-                    'content' => 'You can decide whether you want to tackle just your bedroom closets, your kids play room/area, or you entire home. Our home services cater to what you want to see organized first. We start by working together to sort through your belongings and gently ease into dividing pieces into keep, donate, sell and trash piles. Then I get to work putting everything back together in an organized way that not only looks good but will be easy for you to maintain long after I am gone.'
-                ]);
-            ?>
-        </div>
-    </div>
-
+    <?php endif; ?>
 
 
 </section>
@@ -137,9 +109,6 @@ the_partial( 'page-hero', [
 
 </section>
 
-<section class="page-section">
-
-</section>
 
 <section class="page-section">
     <div class="color-block">
@@ -175,21 +144,49 @@ the_partial( 'page-hero', [
     </div>
 </section>
 
+<section class="page-section">
+    <?php the_partial('section-title', [
+        'title' => 'Press'
+    ]); ?>
+    <div class="grid grid-4-up">
+        <div class="col">
+            <a href="#" class="press">
+                <img src="http://placehold.it/200x50" alt="">
+                <div class="press__overlay">
+                    <h3 class="press__title">Article Title!</h3>
+                </div>
+            </a>
+        </div>
 
-<!-- <main>
-  <div class="page-container">
+        <div class="col">
+            <a href="#" class="press">
+                <img src="http://placehold.it/200x50" alt="">
+                <div class="press__overlay">
+                    <h3 class="press__title">Article Title!</h3>
+                </div>
+            </a>
+        </div>
 
+        <div class="col">
+            <a href="#" class="press">
+                <img src="http://placehold.it/200x50" alt="">
+                <div class="press__overlay">
+                    <h3 class="press__title">Article Title!</h3>
+                </div>
+            </a>
+        </div>
 
-    <div class="content-wrap">
-      <div class="page-content">
-
-        <?php the_content(); ?>
-
-      </div>
+        <div class="col">
+            <a href="#" class="press">
+                <img src="http://placehold.it/200x50" alt="">
+                <div class="press__overlay">
+                    <h3 class="press__title">Article Title!</h3>
+                </div>
+            </a>
+        </div>
     </div>
+</section>
 
-  </div>
-</main> -->
 
 <?php
 get_footer(); ?>
