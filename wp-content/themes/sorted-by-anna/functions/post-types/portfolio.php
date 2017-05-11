@@ -22,7 +22,7 @@ function portfolio_init() {
 		'show_ui'           => true,
 		'show_in_nav_menus' => true,
 		'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-		'has_archive'       => false,
+		'has_archive'       => true,
 		'rewrite'           => true,
 		'query_var'         => true,
 		'menu_icon'         => 'dashicons-list-view',
