@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Template Name: Contact Page Template
@@ -21,37 +21,36 @@ get_header();
 
 <main>
   <div class="page-container">
-    
+
     <?php the_partial( 'page-hero', array(
-    'title' => get_the_title() 
+    'title' => get_the_title()
     )); ?>
 
     <div class="content-wrap">
-    
-    <?php if ( have_posts() ) : ?>
-      <?php while ( have_posts() ) : the_post(); ?>
-        
-        <div class="page-content  has-aside">
-          
-          <?php the_content(); ?>
-          
-        </div>
-
-      <?php endwhile; ?> 
-    <?php endif; ?>
-
-      <aside class="aside">
         <h3>Need Help?</h3>
         <p>Don't hesitate to contact me directly at <a href="mailto:anna@sortedbyanna.com">anna@sortedbyanna.com</a></p>
-      </aside>
+
+    <?php if ( have_posts() ) : ?>
+      <?php while ( have_posts() ) : the_post(); ?>
+
+        <div class="page-content">
+
+          <?php the_content(); ?>
+
+        </div>
+
+      <?php endwhile; ?>
+    <?php endif; ?>
+
+
 
     </div>
   </div>
 
-  
 
 
- 
+
+
 </main>
 
 
@@ -61,7 +60,7 @@ get_header();
 
 
 
-<?php 
+<?php
 
 get_footer();
 

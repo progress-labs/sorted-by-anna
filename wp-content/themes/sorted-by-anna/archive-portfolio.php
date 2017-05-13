@@ -11,10 +11,6 @@ $terms = array_map( function($term){
     ];
 },  get_terms(['taxonomy' => $services_taxonomy ]));
 
-
-// var_dump( $terms );
-
-
 $services_posts = [];
 
 foreach ($terms as $term) {
@@ -30,9 +26,12 @@ foreach ($terms as $term) {
             )
         )
     ]);
+
+    echo get_term_link( $term['id'] );
+    echo '<hr>';
 }
 
-wp_reset_postdata();
+
 
 ?>
 
