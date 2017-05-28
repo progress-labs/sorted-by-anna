@@ -6,6 +6,7 @@ $services_taxonomy = 'services';
 
 $terms = array_map( function($term){
     return [
+        'name' => $term->name,
         'id' => $term->term_id,
         'slug' => $term->slug
     ];
@@ -15,21 +16,9 @@ $services_posts = [];
 
 foreach ($terms as $term) {
 
-    $services_posts[] = get_posts([
-        'numberposts'   => 4, // get all posts.
-        'post_type' => 'portfolio',
-        'tax_query'  => array(
-            array(
-                'taxonomy' => $services_taxonomy,
-                'field' => 'id',
-                'terms' => $term['id']
-            )
-        )
-    ]);
-
-    echo get_term_link( $term['id'] );
-    echo '<hr>';
 }
+
+
 
 
 
@@ -39,28 +28,60 @@ foreach ($terms as $term) {
 <?php the_partial('page-hero', [
     'title' => 'Portfolio'
 ]); ?>
- <?php if ( have_posts() ) : ?>
 
-     <section class="page-section">
-         <div class="grid grid-4-up">
-             <?php foreach ($services_posts as $item => $portfolio ) : ?>
+<div class="page-container">
+    <?php if ( have_posts() ) : ?>
 
-                 <div class="col">
-                     <?php the_partial('post-preview', [
-                         'url' => get_the_permalink($portfolio[0]->ID),
-                         'title' => $portfolio[0]->post_title,
-                         'category' => get_the_terms($portfolio[0]->ID, 'services')[0]->name,
-                         'img' => 'http://placehold.it/400x300',
-                         'excerpt' => false,
-                         'content' => false,
-                         'read_more' => false
-                     ]); ?>
-                 </div>
-             <?php endforeach; ?>
+        <?php foreach ( $terms as $term ) :
 
-        </div>
-     </section>
+            $args = array(
+                'post_type' => 'portfolio',
+                'posts_per_page' => 4,
+                'tax_query' => array(
+                    array(
+                    'taxonomy' => 'services',
+                    'field' => 'id',
+                    'terms' => $term['id']
+                     )
+                  )
+                );
+                $query = new WP_Query( $args );
+        ?>
+        <?php if ( $query->have_posts() ) : ?>
+            <section class="page-section">
 
- <?php endif; ?>
+                <h2 class="tax-title"> <?php echo $term['name']; ?></h2>
+
+                <div class="grid grid-4-up">
+                    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+                        <div class="col">
+                            <?php the_partial('post-preview', [
+                                'url' => get_the_permalink($post->ID),
+                                'title' => $post->post_title,
+                                'category' => get_the_terms($post->ID, 'services')[0]->name,
+                                'img' => 'http://placehold.it/400x300',
+                                'excerpt' => false,
+                                'content' => false,
+                                'read_more' => false
+                            ]); ?>
+                        </div>
+
+                    <?php wp_reset_postdata(); endwhile; ?>
+                </div>
+
+                <a class="btn btn--centered" href="<?php echo get_term_link( get_the_terms($post->ID, 'services')[0]->term_id ); ?>">View All</a>
+            </section>
+
+        <?php endif; ?>
+
+
+            </section>
+        <?php endforeach; ?>
+
+
+    <?php endif; ?>
+</div>
+
+
 
 <?php get_footer();?>

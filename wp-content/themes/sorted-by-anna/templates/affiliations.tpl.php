@@ -20,39 +20,48 @@ get_header();
 ?>
 
 <main>
-  <div class="page-container">
 
-    <?php the_partial( 'page-hero', array(
-    'title' => get_the_title()
-    )); ?>
+    <?php the_partial( 'page-hero', [
+        'title' => get_the_title()
+    ]); ?>
+
+  <div class="page-container">
 
     <div class="content-wrap">
 
     <?php if ( have_posts() ) : ?>
-      <?php while ( have_posts() ) : the_post(); ?>
+        <section class="page-section">
+            <?php while ( have_posts() ) : the_post(); ?>
 
-        <div class="page-content">
+              <div class="page-content">
 
-          <?php the_content(); ?>
+                <?php the_content(); ?>
 
-        </div>
+              </div>
 
-      <?php endwhile; ?>
+            <?php endwhile; ?>
+        </section>
     <?php endif; ?>
 
     <?php if ( $the_query->have_posts() ) : ?>
-        <div class="services-section">
+        <section class="page-section">
+            <div class="grid grid-3-up">
 
-          <?php while ( $the_query->have_posts() ) : $the_query->the_post();
-            $service = new Services_View_model( $post ); ?>
+                  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                      <div class="col">
+                          <?php the_partial( 'affiliate-card', [
+                            'affiliate' => $post,
+                            'is_centered' => true,
+                            'is_small' => true,
+                            'url' => get_field( 'affiliate_link' )
+                          ]) ?>
+                      </div>
 
-              <?php the_partial( 'services-preview', [
-                'service' => $service
-              ]) ?>
 
-          <?php endwhile; wp_reset_postdata();?>
+                  <?php endwhile; wp_reset_postdata();?>
 
-        </div>
+            </div>
+        </section>
     <?php endif; ?>
 
     <?php if ( get_field( 'discount_message' ) || get_field( 'discount_list' ) ) : ?>

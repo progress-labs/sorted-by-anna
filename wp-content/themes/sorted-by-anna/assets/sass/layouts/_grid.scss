@@ -58,3 +58,17 @@
         }
     }
 }
+
+.col {
+    & + & {
+        margin-top: 75px;
+    }
+
+    @include respond-to('medium an dup') {
+        & + & {
+            margin-top: 0;
+        }
+
+        margin-bottom: 50px;
+    }
+}

@@ -12,8 +12,9 @@ get_header();
 
 $badges = array_map(function( $badge ) {
     return [
+        'title' => $badge['badge_image']['title'],
         'image' => $badge['badge_image']['sizes']['thumbnail'],
-        'url' => $badge['badge_url']
+        'url'   => $badge['badge_url']
     ];
 }, get_field( 'badges' ));
 
@@ -48,7 +49,7 @@ $badges = array_map(function( $badge ) {
                 <?php foreach ($badges as $badge) : ?>
                     <div class="col">
                         <a class="badge" href="<?php echo $badge['url']; ?>">
-                            <img src="<?php echo $badge['image']; ?>" alt="">
+                            <img src="<?php echo $badge['image']; ?>" alt="<?php echo $badge['title']; ?>">
                         </a>
                     </div>
                 <?php endforeach; ?>
@@ -56,8 +57,6 @@ $badges = array_map(function( $badge ) {
             </div>
 
         <?php endif; ?>
-
-
     </div>
 </div>
 

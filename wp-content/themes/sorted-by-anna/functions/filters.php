@@ -37,3 +37,23 @@ add_filter( 'gform_pre_render', function( $form ) {
 
     return $form;
 });
+
+function my_image_class_filter($classes) {
+	return $classes . ' another-image-class';
+}
+add_filter('get_image_tag_class', function( $classes ){
+    return $classes . ' sba-image';
+});
+
+add_filter('the_content', function( $content ){
+  // match any iframes
+  $pattern = '~<iframe.*</iframe>|<embed.*</embed>~';
+  preg_match_all($pattern, $content, $matches);
+  foreach ($matches[0] as $match) {
+      // wrap matched iframe with div
+      $wrappedframe = '<div class="responsive-embed">' . $match . '</div>';
+      //replace original iframe with new in content
+      $content = str_replace($match, $wrappedframe, $content);
+  }
+  return $content;
+});

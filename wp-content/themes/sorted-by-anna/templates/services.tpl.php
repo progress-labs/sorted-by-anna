@@ -42,13 +42,12 @@ get_header();
         <?php if ( $the_query->have_posts() ) : ?>
             <div class="grid grid-3-up">
 
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post();
-                $service = new Services_View_model( $post ); ?>
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
                 <div class="col">
                     <?php the_partial( 'services-card', [
-                        'service' => $service
-                        ]) ?>
+                        'service' => $post
+                    ]); ?>
                     </div>
                 <?php endwhile; wp_reset_postdata();?>
 

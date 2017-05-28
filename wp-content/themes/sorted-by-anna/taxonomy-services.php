@@ -5,12 +5,20 @@ get_header();
 $post;
 
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-
 ?>
 
 <?php the_partial('page-hero', [
     'title' => $term->name
 ]); ?>
+
+<?php if ( $term->description ): ?>
+    <section class="page-section">
+        <div class="page-content">
+            <p><?php echo $term->description; ?></p>
+        </div>
+    </section>
+<?php endif; ?>
+
 
  <?php if ( have_posts() ) : ?>
 

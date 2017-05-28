@@ -983,7 +983,9 @@ ul {
   .page-content {
     max-width: 700px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    font-size: 1.25rem;
+    line-height: 1.5; }
   .has-aside,
   .aside,
   .two-third,
@@ -1062,6 +1064,13 @@ ul {
         padding-left: 1%;
         padding-right: 1%;
         box-sizing: border-box; } }
+
+.col {
+  margin-bottom: 50px; }
+  .col + .col {
+    margin-top: 75px; }
+  .col + .col {
+    margin-top: 0; }
 
 /*-------------------------------------------- */
 /** Modules */
@@ -2617,16 +2626,20 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
       text-align: center;
       font-size: 3rem; } }
 
-.img-wrap {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-  height: 100%;
-  background-color: #e6e6e6;
-  text-align: center; }
+.sba-image {
+  position: relative;
+  margin-bottom: 5px; }
+
+.responsive-embed {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; }
+  .responsive-embed iframe, .responsive-embed object, .responsive-embed embed, .responsive-embed video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
 
 /**
  * Block: image-cluster
@@ -2736,13 +2749,15 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: services-card--modifier
  */
 .service-card {
+  display: block;
   max-width: 300px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  text-decoration: none; }
   .service-card__name {
     font-family: "omnes-pro", sans-serif;
     font-weight: 500;
-    margin-top: 0;
+    margin-top: 5px;
     margin-bottom: 0;
     font-size: 1.25rem; }
     .service-card__name:after {
@@ -2757,6 +2772,17 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
   .service-card__content {
     font-size: 1.125rem;
     line-height: 1.5; }
+  .service-card--centered {
+    text-align: center; }
+    .service-card--centered .service-card__name:after {
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #3EB5C6; }
+    .service-card--centered .service-card__content {
+      text-align: left; }
+  @media (min-width: 992px) {
+    .service-card--small {
+      max-width: 250px; } }
 
 /**
  * Block: press
@@ -2833,8 +2859,11 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
   /*-------------------------------------------- */ }
   .discount-section__list {
     list-style: inherit;
+    max-width: 250px;
     padding-left: 30px;
-    margin-top: 10px; }
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto; }
   .discount-section__list-item + .discount-section__list-item {
     margin-top: 5px; }
 
@@ -3145,6 +3174,39 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     margin-left: 5px; }
   .post-categories__item:after {
     content: ", "; }
+  .post-categories__item:last-child:after {
+    display: none; }
+
+.sba-image {
+  position: relative;
+  margin-bottom: 5px; }
+
+.responsive-embed {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; }
+  .responsive-embed iframe, .responsive-embed object, .responsive-embed embed, .responsive-embed video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+
+/**
+ * Block: tax-title
+ * Element: tax-title__element
+ * Modifier: tax-title--modifier
+ */
+.tax-title {
+  font-family: "omnes-pro", sans-serif;
+  font-weight: 500;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-size: 1.25rem;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .tax-title {
+      font-size: 1.5rem; } }
 
 /*-------------------------------------------- */
 /** Pages */
