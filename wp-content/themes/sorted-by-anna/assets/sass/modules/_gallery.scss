@@ -55,7 +55,84 @@ $block: 'collage';
             }
         }
     }
+}
 
 
+
+.gallery {
+    margin-top: 100px;
+    background-color: rgba(color(robin), .3);
+    margin-left: -#{$page-container-padding};
+    margin-right: -#{$page-container-padding};
+
+    &__slide-inner {
+        position: relative;
+        height: 0;
+        padding-bottom: percentage(540/809);
+    }
+
+    &__img-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img {
+        @include centered(absolute);
+        max-height: 100%;
+    }
+
+    @include respond-to('small and up') {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.slick-arrow {
+    appearance: none;
+    height: 50px;
+    width: 60px;
+    color: color(robin);
+    background-color: rgba(color(white), .6);
+    z-index: $z-1;
+    transition: background-color .250s ease-out;
+
+    &:before {
+        content: "";
+        color: color(robin);
+    display: block;
+    height: 12px;
+    width: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0) rotate(45deg);
+    border-bottom: 2px solid color(robin);
+    border-left: 2px solid color(robin);
+
+    }
+
+    &:hover,
+    &:focus {
+        background-color: rgba(color(white), .9);
+    }
+
+}
+
+.slick-next {
+    right: 0;
+
+    &:before {
+        left: 45%;
+        transform: translate3d(-50%, -50%, 0) rotate(225deg);
+    }
+
+}
+
+.slick-prev {
+    left: 0;
 
 }

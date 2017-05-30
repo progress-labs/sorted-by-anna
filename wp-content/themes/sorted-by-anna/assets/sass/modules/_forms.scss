@@ -201,6 +201,8 @@
         margin: 0 !important;
         padding: 0 !important;
     }
+
+
 }
 
 
@@ -216,7 +218,7 @@
 }
 
 .gform_button {
-    // @extend .button;
+    @extend .btn;
 }
 
 .gform_wrapper .gform_title,
@@ -243,7 +245,7 @@ body .gform_wrapper .top_label div.ginput_container {
 // override any styles GF may have done
 // PS - Their styles are UGH
 
-body .gform_wrapper div.validation_error {
+.gform_wrapper div.validation_error {
     margin-bottom: 15px !important;
 }
 
@@ -288,8 +290,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 }
 
 .validation_error {
-    color: red !important;
-    border-color: red !important;
+    color: color(warning) !important;
+    border-color: color(warning) !important;
 }
 
 .gform_wrapper {
@@ -304,9 +306,11 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
         display: block !important;;
     }
 
+    .gfield_error .gfield_required,
     .gfield_error .gfield_label,
+    .gfield_error label,
     .validation_message {
-        color: red !important;
+        color: color(warning) !important;
     }
 
     li.gfield_error ul.gfield_radio,
@@ -314,9 +318,10 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
         color: color(black) !important;
     }
 
+
     li.gfield_error textarea,
     li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-        border-color: red !important;
+        border-color: color(warning) !important;
     }
 
 }

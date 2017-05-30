@@ -3101,17 +3101,7 @@ webpackJsonp([0],[
 
 	'use strict';
 	
-	__webpack_require__(7);
-	
-	var _featherlight = __webpack_require__(8);
-	
-	var _featherlight2 = _interopRequireDefault(_featherlight);
-	
-	var _featherlightGallery = __webpack_require__(9);
-	
-	var _featherlightGallery2 = _interopRequireDefault(_featherlightGallery);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	__webpack_require__(5);
 	
 	var $ = __webpack_require__(2);
 	
@@ -3119,12 +3109,7 @@ webpackJsonp([0],[
 	module.exports = function (el) {
 	  var $el = $(el);
 	
-	  $el.find('.gallery__item').featherlightGallery({
-	    previousIcon: '', /* Code that is used as previous icon */
-	    nextIcon: '', /* Code that is used as next icon */
-	    galleryFadeIn: 100, /* fadeIn speed when slide is loaded */
-	    galleryFadeOut: 300
-	  });
+	  $el.slick();
 	};
 
 /***/ },

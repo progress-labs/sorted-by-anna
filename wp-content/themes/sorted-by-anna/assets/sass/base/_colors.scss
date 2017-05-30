@@ -13,7 +13,7 @@ $colors: (
   black: #181818,
   gray: #aaaaaa,
   white: #fff,
-  fire-red: #ff0000,
+  warning: #e7040f,
   coral: #FF7676,
   aqua: #A3DBCE,
   robin: #3EB5C6,
@@ -24,11 +24,3 @@ $colors: (
       turquoise: #40e0d0
   )
 );
-
-
-/*-------------------------------------------- */
-/** Theme Variables */
-/*-------------------------------------------- */
-
-$brand-primary: color(fire-red);
-$brand-secondary: color(blues, dark);

@@ -29,11 +29,11 @@ $categories = wp_get_post_terms($post->ID, 'services');
     <div class="content-wrap">
         <div class="single-project__header">
             <h1 class="project-title">
-                <?php echo $post->post_title; ?>
+                <?php echo $project->get_title(); ?>
             </h1>
 
             <span class="project-date">
-                <?php echo date( 'F jS, Y', strtotime( $post->post_date) );?>
+                <?php echo $project->post_date(); ?>
             </span>
         </div>
 
@@ -58,15 +58,14 @@ $categories = wp_get_post_terms($post->ID, 'services');
         <?php if ( $project->gallery() ) : ?>
             <div class="gallery" data-js-component="gallery">
                 <?php foreach ($project->gallery() as $gallery) : ?>
-                    <a href="<?php echo $gallery['image_lg']; ?>"
-                    class="gallery__item"
-                    data-featherlight="image">
-                        <div class="gallery__img-wrap">
-                            <img class="gallery__img" src="<?php echo $gallery['image']; ?>" alt="">
+
+                    <div class="gallery__slide">
+                        <div class="gallery__slide-inner">
+                            <div class="gallery__img-wrap">
+                                <img class="gallery__img" src="<?php echo $gallery['image']; ?>" alt="">
+                            </div>
                         </div>
-
-                    </a>
-
+                    </div>
 
                 <?php endforeach; ?>
             </div>

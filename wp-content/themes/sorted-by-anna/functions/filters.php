@@ -5,22 +5,13 @@
  */
 
 
-function custom_excerpt_length( $length ) {
-  return 30;
-}
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', function( $length ){
+      return 30;
+}, 999 );
 
 add_filter('excerpt_more', function() {
   return '...';
 });
-
-add_filter( 'wpcf7_form_class_attr', function( $class ) {
-
-  $class .= ' form';
-
-  return $class;
-});
-
 
 add_filter( 'gform_form_tag', function( $form_tag, $form ) {
     $form_tag = preg_replace( '/>/', 'class="sba-form">', $form_tag );
@@ -38,11 +29,12 @@ add_filter( 'gform_pre_render', function( $form ) {
     return $form;
 });
 
-function my_image_class_filter($classes) {
-	return $classes . ' another-image-class';
-}
-add_filter('get_image_tag_class', function( $classes ){
-    return $classes . ' sba-image';
+add_filter('the_content', function( $content ) {
+   global $post;
+   $pattern ="/<img(.*?)class=\"(.*?)\"(.*?)>/i";
+   $replacement = '<img$1class="$2 sba-image"$3>';
+   $content = preg_replace($pattern, $replacement, $content);
+   return $content;
 });
 
 add_filter('the_content', function( $content ){
