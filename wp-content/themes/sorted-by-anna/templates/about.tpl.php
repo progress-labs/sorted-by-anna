@@ -8,8 +8,6 @@ include_once( get_template_directory() . '/functions/lib/data/class-post-view-mo
 
 global $post;
 
-get_header();
-
 $badges = array_map(function( $badge ) {
     return [
         'title' => $badge['badge_image']['title'],
@@ -18,7 +16,9 @@ $badges = array_map(function( $badge ) {
     ];
 }, get_field( 'badges' ));
 
+get_header();
 
+the_partial('nav');
 ?>
 
 <main>

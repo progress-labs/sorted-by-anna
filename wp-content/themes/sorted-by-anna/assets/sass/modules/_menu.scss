@@ -39,6 +39,7 @@
 
         & {
             flex-direction: row;
+            padding-top: 0;
         }
 
         &-item + &-item {
@@ -47,7 +48,7 @@
 
         &-item a {
             position: relative;
-            color: white;
+            color: color(black);
         }
 
 
@@ -65,7 +66,7 @@
     }
 
     .menu-item + .menu-item {
-        margin-top: 5px;
+        margin-top: 15px;
     }
 
     .menu-item a {
@@ -74,9 +75,12 @@
 
     @include respond-to('small and up') {
         position: absolute;
-        width: 200%;
+        width: 215px;
+        padding-bottom: 10px;
+        background-color: color(white);
         transform: translateX(-25%);
         left: -9999px;
+
     }
 
 }
@@ -96,7 +100,7 @@
             height: 0;
             border-left: 8px solid transparent;
             border-right: 8px solid transparent;
-            border-top: 8px solid white;
+            border-top: 8px solid color(black);
             margin-top: 7px;
             margin-left: 10px;
             transition: transform .150s ease-out;

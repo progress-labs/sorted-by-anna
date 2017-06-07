@@ -17,6 +17,8 @@ $the_query = new WP_Query( $args );
 
 
 get_header();
+
+the_partial('nav');
 ?>
 
 <main>

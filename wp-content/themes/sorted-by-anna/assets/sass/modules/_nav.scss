@@ -4,7 +4,6 @@ $nav-height: 50px;
     position: relative;
     height: $nav-height;
     z-index: $z-1;
-    background-color: white;
     color: black;
 
     &-header {
@@ -14,7 +13,7 @@ $nav-height: 50px;
         height: $nav-height;
         border-bottom: 1px solid black;
         z-index: $z-1;
-        background-color: white;
+        background-color: color(white);
     }
 
     &.is-open {
@@ -31,7 +30,6 @@ $nav-height: 50px;
     &-wrap {
         transform: translateY(-125%);
         height: calc(100vh - #{$nav-height});
-        background-color: white;
         transition: transform .250s ease-out;
     }
 
@@ -58,21 +56,38 @@ $nav-height: 50px;
         }
     }
 
-    &__wrap {
-        @include page-container();
-
+    &-wrap {
+        background-color: color(white);
     }
 
     @include respond-to('small and up') {
-        position: absolute;
-        left: 0;
-        right: 0;
+        position: relative;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
         height: 70px;
-        background-color: transparent;
-        color: white;
+        color: black;
+        padding-left: $page-container-padding;
+        padding-right: $page-container-padding;
+
+        &.has-bg {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            color: white;
+
+            .menu-item a {
+                color: color(white);
+            }
+
+            .menu-item-has-children > a:after {
+                border-top: 8px solid color(white);
+            }
+
+        }
+
+
 
         &-header {
             display: none;

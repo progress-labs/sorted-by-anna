@@ -5,11 +5,14 @@ get_header();
 $post;
 
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
-?>
 
-<?php the_partial('page-hero', [
+the_partial('nav');
+
+the_partial('page-hero', [
     'title' => $term->name
-]); ?>
+]);
+
+?>
 
 <div class="page-container">
 

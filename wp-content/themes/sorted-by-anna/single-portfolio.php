@@ -17,6 +17,8 @@ $related_portfolios = new WP_Query( $portfolio_args );
 
 $categories = wp_get_post_terms($post->ID, 'services');
 
+the_partial('nav');
+
 ?>
 
 <main class="single-project">

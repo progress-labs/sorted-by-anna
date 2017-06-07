@@ -4,9 +4,10 @@ get_header();
 
 $title = 'Press';
 $page_content = get_field( 'press_content', 'option');
-?>
 
-<?php the_partial('page-hero', [
+the_partial('nav');
+
+the_partial('page-hero', [
     'title' => $title
 ]); ?>
 

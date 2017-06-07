@@ -2,6 +2,8 @@
 
 get_header();
 
+
+
 $services_taxonomy = 'services';
 
 $terms = array_map( function($term){
@@ -12,10 +14,10 @@ $terms = array_map( function($term){
     ];
 },  get_terms(['taxonomy' => $services_taxonomy ]));
 
-?>
 
+the_partial('nav');
 
-<?php the_partial('page-hero', [
+the_partial('page-hero', [
     'title' => 'Portfolio'
 ]); ?>
 

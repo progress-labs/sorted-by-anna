@@ -9,22 +9,24 @@ $portfolio_objects = get_field( 'portfolio_items' );
 $testimonial_objects = get_field( 'testimonials_slider' );
 
 get_header();
+
+the_partial('nav');
 ?>
 
-<?php the_partial('hero', array(
+<?php the_partial('hero', [
   'title' => 'How can I help you do stuff?',
-  'media' => array(
+  'media' => [
     'img' => get_field('hero', $post->ID)['sizes']['large'],
-    'video' => array(
+    'video' => [
       'src' => get_field('video_file', $post->ID),
       'fallback' => get_field('video_fallback_image', $post->ID)['sizes']['large']
-    )
-  ),
-  'btn' => array(
+    ]
+  ],
+  'btn' => [
     'text' => 'Book A Thing',
     'url' => '#'
-  )
-)); ?>
+  ]
+]); ?>
 
 <div class="page-container">
 

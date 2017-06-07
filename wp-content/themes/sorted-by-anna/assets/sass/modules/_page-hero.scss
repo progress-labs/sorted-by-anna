@@ -8,46 +8,61 @@
     @include intrinsic-ratio('.page-hero__img', 1200, 400);
     position: relative;
     margin-bottom: 25px;
-    background-color: skyblue;
 
     &__img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
+        display: none;
     }
 
     &__title {
-        position: absolute;
-        bottom: 25px;
-        left: 0;
-        right: 0;
-        margin-top: 0;
         margin-bottom: 0;
         margin-left: auto;
         margin-right: auto;
-        font-size: rem(54);
-        color: color(white);
+        font-size: rem(38);
+        color: color(black);
         text-align: center;
 
         &:after {
             content: "";
             display: block;
             width: 80%;
-            max-width: 150px;
+            max-width: 100px;
             margin-top: 10px;
             margin-left: auto;
             margin-right: auto;
             height: 5px;
-            background-color: color(white);
+            background-color: color(black);
+        }
+    }
+
+    @include respond-to('small and up') {
+        margin-bottom: 65px;
+
+        &__img {
+            display: none;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        // @include vertically-centered(absolute);
-        // left: 0;
-        // right: 0;
-        // text-align: center;
-        // margin-top: 0;
-        // margin-bottom: 0;
+        &__title {
+            $color: color(white);
 
+            position: absolute;
+            bottom: 25px;
+            left: 0;
+            right: 0;
+            margin-top: 0;
+            font-size: rem(54);
+            color: $color;
+
+            &:after {
+                background-color: $color;
+            }
+        }
+    }
+
+    @include respond-to('medium and up') {
+        margin-bottom: 105px;
     }
     /*-------------------------------------------- */
     /** Variables */
