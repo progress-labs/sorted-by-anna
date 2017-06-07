@@ -14,16 +14,11 @@
  * contain the width to $page-container-width
  */
 .page-container {
-    @if $is-responsive {
-        max-width: $page-container-width;
-    } @else {
-        width: $page-container-width;
-    }
-
-    margin: 0 auto;
+    max-width: $page-container-width;
+    margin-left: auto;
+    margin-right: auto;
     padding-right: $page-container-padding;
     padding-left: $page-container-padding;
-    background: $page-container-bg-color;
 }
 
 .content-wrap {
@@ -66,9 +61,10 @@
     width: 300px;
   }
 
+}
 
-
-
+.article {
+ overflow: hidden;
 }
 
 @include respond-to('medium and up') {

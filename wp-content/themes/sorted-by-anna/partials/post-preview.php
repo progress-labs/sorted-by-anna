@@ -11,10 +11,18 @@
   </div>
   <div class="post-preview__body">
       <h3 class="post-preview__title"><?php echo $title; ?></h3>
+      <?php if ( $date || $category ) : ?>
+      <div class="post-preview__meta">
+          <?php if ( $date ) : ?>
+                <span><?php echo $date; ?></span>
+          <?php endif; ?>
 
-      <?php if ( $category ) : ?>
-            <span><?php echo $category; ?></span>
+          <?php if ( $category ) : ?>
+                <span><?php echo $category; ?></span>
+          <?php endif; ?>
+      </div>
       <?php endif; ?>
+
 
       <?php if ( $excerpt || $content ) : ?>
       <div class="post-preview__content">

@@ -12,16 +12,6 @@ $terms = array_map( function($term){
     ];
 },  get_terms(['taxonomy' => $services_taxonomy ]));
 
-$services_posts = [];
-
-foreach ($terms as $term) {
-
-}
-
-
-
-
-
 ?>
 
 

@@ -22,7 +22,7 @@ webpackJsonp([0],[
 	
 	componentRegistry.registerComponent('postSlider', __webpack_require__(4));
 	componentRegistry.registerComponent('gallery', __webpack_require__(6));
-	componentRegistry.registerComponent('nav', __webpack_require__(10));
+	componentRegistry.registerComponent('nav', __webpack_require__(7));
 	
 	componentRegistry.initComponents();
 
@@ -3113,10 +3113,7 @@ webpackJsonp([0],[
 	};
 
 /***/ },
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
