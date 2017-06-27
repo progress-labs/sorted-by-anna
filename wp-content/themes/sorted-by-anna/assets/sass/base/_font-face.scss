@@ -9,8 +9,15 @@
  *----------------------------------------------------------------------------- */
 
 
+@include font-face("Argent", '../font/argent/ArgentCF-Regular', normal);
+@include font-face("Argent", '../font/argent/ArgentCF-Light', light);
+@include font-face("Argent", '../font/argent/ArgentCF-LightItalic', light, italic);
+
+
+
 $freight: 'freight-text-pro', 'Georgia', serif;
 $omnes: 'omnes-pro', sans-serif;
+$argent: 'Argent', serif;
 
 @mixin freight() {
     font-family: $freight;
@@ -31,3 +38,8 @@ $omnes: 'omnes-pro', sans-serif;
     font-family: $omnes;
     font-weight: 600;
 };
+
+@mixin argent() {
+    font-family: $argent;
+    font-weight: 400;
+}

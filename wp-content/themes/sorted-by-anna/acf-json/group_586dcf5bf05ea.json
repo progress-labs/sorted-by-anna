@@ -30,13 +30,6 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "templates\/homepage.tpl.php"
-            }
-        ],
-        [
-            {
-                "param": "page_template",
-                "operator": "==",
                 "value": "templates\/service-details.tpl.php"
             }
         ]
@@ -51,5 +44,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1483594360
+    "modified": 1498523739
 }

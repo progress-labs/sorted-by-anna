@@ -1,5 +1,5 @@
-<?php 
-    
+<?php
+
   $hero_img     = $media['img'];
   $btn_text     = $btn['text'];
   $url          = $btn['url'];
@@ -13,7 +13,7 @@
 <div class="hero <?php echo $hasVideo ? 'hero--overlay': ''; ?>">
 
   <div class="hero__media responsive-embed">
-  
+
     <?php if ( $hasVideo ) : ?>
 
         <video id="movie" poster="<?php echo $fallback_img; ?>" preload="auto" autoplay="autoplay" loop="on" muted="">
@@ -22,16 +22,10 @@
 
     <?php else : ?>
 
-        <img src="<?php echo $hero_img; ?>" alt="">  
+        <img src="<?php echo $hero_img; ?>" alt="">
 
     <?php endif; ?>
 
-  </div>
-      
-  <div class="hero__content">
-    <h2 class="hero__title"><?php echo $title; ?></h2>
-    
-    <a class="btn" href="<?php echo $url ?>"><?php echo $btn_text ?></a>
   </div>
 
 </div>

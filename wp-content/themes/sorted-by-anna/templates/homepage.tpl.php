@@ -28,6 +28,14 @@ the_partial('nav');
   ]
 ]); ?>
 
+<div class="big-quote">
+    <blockquote>
+        Simplicity is making the journey of life with the things you love most.
+    </blockquote>
+</div>
+
+
+
 <div class="page-container">
 
   <?php if ( have_posts() ) : ?>
@@ -45,27 +53,6 @@ the_partial('nav');
     <?php endwhile; ?>
   <?php endif; ?>
 
-  <?php the_partial('bio'); ?>
-
-  <?php the_partial('homepage-feature-section', array(
-    'title'         => 'Services',
-    'object_group'  => $service_objects,
-    'page_id'       => 13,
-    'btn_cta'       => 'See All Services'
-  )); ?>
-
-  <?php the_partial('homepage-feature-section', array(
-    'title'         => 'Portfolio',
-    'object_group'  => $portfolio_objects,
-    'page_id'       => 13,
-    'btn_cta'       => 'View Other Projects'
-  )); ?>
-
-
-  <?php the_partial('post-slider', [
-    'title'         => 'Testimonials',
-    'slides' => $testimonial_objects
-  ]); ?>
 
   <?php the_partial('consultation-cta'); ?>
 </div>

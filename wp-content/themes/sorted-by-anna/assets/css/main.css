@@ -379,6 +379,22 @@
  *
  *-----------------------------------------------------------------------------
  *----------------------------------------------------------------------------- */
+@font-face {
+  font-family: "Argent";
+  font-weight: normal;
+  src: url("../font/argent/ArgentCF-Regular.eot?") format("eot"), url("../font/argent/ArgentCF-Regular.woff2") format("woff2"), url("../font/argent/ArgentCF-Regular.woff") format("woff"), url("../font/argent/ArgentCF-Regular.ttf") format("truetype"), url("../font/argent/ArgentCF-Regular.svg#Argent") format("svg"); }
+
+@font-face {
+  font-family: "Argent";
+  font-weight: light;
+  src: url("../font/argent/ArgentCF-Light.eot?") format("eot"), url("../font/argent/ArgentCF-Light.woff2") format("woff2"), url("../font/argent/ArgentCF-Light.woff") format("woff"), url("../font/argent/ArgentCF-Light.ttf") format("truetype"), url("../font/argent/ArgentCF-Light.svg#Argent") format("svg"); }
+
+@font-face {
+  font-family: "Argent";
+  font-style: italic;
+  font-weight: light;
+  src: url("../font/argent/ArgentCF-LightItalic.eot?") format("eot"), url("../font/argent/ArgentCF-LightItalic.woff2") format("woff2"), url("../font/argent/ArgentCF-LightItalic.woff") format("woff"), url("../font/argent/ArgentCF-LightItalic.ttf") format("truetype"), url("../font/argent/ArgentCF-LightItalic.svg#Argent") format("svg"); }
+
 /*-----------------------------------------------------------------------------
  *-----------------------------------------------------------------------------
  *
@@ -3425,6 +3441,46 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     .related-posts .col,
     .related-posts .post-preview {
       margin-bottom: 0; } }
+
+/**
+ * Block: big-quote
+ * Element: big-quote__element
+ * Modifier: big-quote--modifier
+ */
+.big-quote {
+  margin-top: 65px;
+  margin-bottom: 65px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  /*-------------------------------------------- */
+  /** Variables */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Styles */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Modifiers */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Elements */
+  /*-------------------------------------------- */
+  /*-------------------------------------------- */
+  /** Block Media Queries */
+  /*-------------------------------------------- */ }
+  .big-quote blockquote {
+    font-family: "Argent", serif;
+    font-weight: 400;
+    max-width: 740px;
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 2.5rem;
+    text-align: left;
+    line-height: 1.1; }
+  @media (min-width: 992px) {
+    .big-quote blockquote {
+      font-size: 3.75rem; } }
 
 /*-------------------------------------------- */
 /** Pages */

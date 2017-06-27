@@ -1,11 +1,11 @@
 {
-    "key": "group_586dd00988b01",
-    "title": "Featured Portfolio",
+    "key": "group_5951a88e93e09",
+    "title": "Home Page - Featured Projects",
     "fields": [
         {
-            "key": "field_586dd00eeee49",
-            "label": "Portfolio Items",
-            "name": "portfolio_items",
+            "key": "field_5951a8a054395",
+            "label": "Featured Projects",
+            "name": "featured_projects",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1483591804
+    "modified": 1498523840
 }
