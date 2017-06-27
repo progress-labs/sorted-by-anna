@@ -57,6 +57,10 @@ $content-offset: 7%;
         }
     }
 
+    &__media-wrap {
+        max-width: 905px;
+    }
+
     &__image {
         display: block;
     }

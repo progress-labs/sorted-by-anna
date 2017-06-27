@@ -25,6 +25,25 @@ $blog_args = array(
 );
 $blog_query = new WP_Query( $blog_args );
 
+$featured_projects = array_map(function( $project ) {
+
+    $term = get_the_terms($project->ID, 'services')[0];
+    $content = get_field( 'project_testimonial', $project->ID ) ? get_field( 'project_testimonial', $project->ID )[0]->post_content : $project->post_title;
+
+    return [
+        'id' => $project->ID,
+        'title' => $project->post_title,
+        'content' => $content,
+        'term' => [
+            'id' => $term->term_id,
+            'slug' => $term->slug,
+            'name' =>  $term->name
+        ]
+    ];
+
+}, get_field( 'featured_projects' ) );
+
+
 get_header();
 
 the_partial('nav');
@@ -54,50 +73,31 @@ the_partial('nav');
 </div>
 
 
+<?php foreach ($featured_projects as $project) : ?>
+    <div class="featured-project">
+        <div class="featured-project__primary">
+            <div class="featured-project__media-wrap">
+                <img class="featured-project__image" src="<?php echo get_the_post_thumbnail_url( $project['id'] );?>" alt="">
 
-<div class="featured-project">
-    <div class="featured-project__primary">
-        <div class="featured-project__media-wrap">
-            <img class="featured-project__image" src="http://imgur.com/OcP4tAP.jpg" alt="">
-        </div>
-        <div class="show-at-small">
-            <a class="featured-project__cat-cta" href="#">View All Living Rooms ⟶</a>
-        </div>
-    </div>
-
-    <a href="#" class="featured-project__content">
-        “Anna really made our home come to life. For months our home still felt like “a place we rented” until Anna taught us how to turn a house into a home that we love daily.”
-
-        <span  class="featured-project__cta">View Project ⟶</span>
-    </a>
-
-    <div class="hide-at-small">
-        <a class="featured-project__cta featured-project__cta--mobile" href="#">View All Living Rooms ⟶</a>
-    </div>
-</div>
-
-<div class="featured-project">
-    <div class="featured-project__primary">
-        <div class="featured-project__media-wrap">
-            <img class="featured-project__image" src="http://imgur.com/OcP4tAP.jpg" alt="">
-        </div>
-        <div class="show-at-small">
-            <a class="featured-project__cat-cta" href="#">View All Living Rooms ⟶</a>
+            </div>
+            <div class="show-at-small">
+                <a class="featured-project__cat-cta" href="<?php echo get_term_link( $project['term']['id'] ); ?>">View All <?php echo $project['term']['name']; ?> ⟶</a>
+            </div>
         </div>
 
+        <a href="<?php echo get_the_permalink( $project['id'] );?>" class="featured-project__content">
+            <?php echo $project['content']; ?>
+            <span  class="featured-project__cta">View Project ⟶</span>
+        </a>
+
+        <div class="hide-at-small">
+            <a class="featured-project__cta featured-project__cta--mobile" href="<?php echo get_term_link( $project['term']['id'] ); ?>">View All <?php echo $project['term']['name']; ?> ⟶</a>
+        </div>
     </div>
+<?php endforeach; ?>
 
-    <a href="#" class="featured-project__content">
-        “Anna really made our home come to life. For months our home still felt like “a place we rented” until Anna taught us how to turn a house into a home that we love daily.”
 
-        <span  class="featured-project__cta">View Project ⟶</span>
-    </a>
 
-    <div class="hide-at-small">
-        <a class="featured-project__cta featured-project__cta--mobile" href="#">View All Living Rooms ⟶</a>
-    </div>
-
-</div>
 
 
 <div class="page-section">

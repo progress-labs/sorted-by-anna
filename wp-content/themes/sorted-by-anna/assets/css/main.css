@@ -3144,7 +3144,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     font-weight: 300;
     margin-top: 8px;
     margin-bottom: 8px;
-    color: #656565; }
+    color: #656565;
+    font-size: 0.875rem; }
   .post-preview__content p {
     font-size: 1rem;
     line-height: 1.5; }
@@ -3576,6 +3577,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     .featured-project__content:hover {
       background-color: #f7f7f7;
       opacity: 1; }
+  .featured-project__media-wrap {
+    max-width: 905px; }
   .featured-project__image {
     display: block; }
   .featured-project__cta, .featured-project__cat-cta {
