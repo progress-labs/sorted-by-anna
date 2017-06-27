@@ -46,12 +46,14 @@ $content-offset: 7%;
         padding-right: 30px;
         font-size: rem(16);
         background-color: color(offwhite);
-        transition: background-color .250s ease-out;
+        transition: background-color .250s ease-out,
+                    opacity .250s ease-out;
         text-decoration: none;
         box-sizing: border-box;
 
         &:hover {
             background-color: darken(color(offwhite), 1.5%);
+            opacity: 1;
         }
     }
 

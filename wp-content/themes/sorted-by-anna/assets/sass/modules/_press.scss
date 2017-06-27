@@ -57,22 +57,12 @@
 }
 
 .press-grid {
-    padding-top: 50px;
-    padding-bottom: 75px;
-    padding-left: $page-container-padding;
-    padding-right: $page-container-padding;
-    background-color: color(offwhite);
-
     .grid {
         align-items: center;
     }
 
     .col + .col {
         margin-top: 25px;
-    }
-
-    .section-title {
-        margin-top: 0;
     }
 
     .press {

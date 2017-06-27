@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     align-items: flex-start;
-    max-width: 1400px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
 
@@ -31,7 +31,7 @@
         }
 
         &-4-up {
-            @include remove-last-row-margin(4, '.col');
+            @include remove-last-row-margin(4, 'col');
 
             .col {
                 width: percentage(1/2);
@@ -70,9 +70,5 @@
         & + & {
             margin-top: 0;;
         }
-    }
-
-    @include respond-to('medium and up') {
-        margin-bottom: 50px;
     }
 }

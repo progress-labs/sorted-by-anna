@@ -48,3 +48,9 @@ $argent: 'Argent', serif;
     font-family: $argent;
     font-weight: 300;
 }
+
+@mixin argent-light-italic() {
+    font-family: $argent;
+    font-style: italic;
+    font-weight: 300;
+}

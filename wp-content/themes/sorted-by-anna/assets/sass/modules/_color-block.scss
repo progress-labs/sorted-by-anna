@@ -42,6 +42,7 @@ $block: 'color-block';
     }
 
     &__content {
+        @include argent-light;
         width: percentage( 450 / 700 );
         margin-left: auto;
         margin-right: auto;

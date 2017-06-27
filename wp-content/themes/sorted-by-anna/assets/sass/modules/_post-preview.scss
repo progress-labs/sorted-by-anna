@@ -8,18 +8,21 @@
     display: block;
     max-width: 400px;
     text-decoration: none;
-    margin-bottom: 25px;
     margin-left: auto;
     margin-right: auto;
 
-
     &__body {
+        background-color: color(white);
+        padding-bottom: 20px;
+    }
+
+    &__body-inner {
+        @include argent-light;
         position: relative;
         margin-left: auto;
         margin-right: auto;
         background-color: color(white);
         padding-top: 13px;
-        padding-bottom: 8px;
         padding-left: 20px;
         padding-right: 20px;
         box-sizing: border-box;
@@ -42,18 +45,26 @@
         line-height: 1;
     }
 
+    &__meta {
+        @include argent-light-italic;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        color: lighten(color(black), 30%);
+    }
+
     &__content p {
         font-size: rem(16);
         line-height: 1.5;
     }
 
     &__cta {
+        color: color(coral);
         display: inline-block;
         margin-top: 30px;
     }
 
     @include respond-to('medium and up') {
-        &__body {
+        &__body-inner {
             margin-top: -50px;
             max-width: 90%;
             min-height: 100px;

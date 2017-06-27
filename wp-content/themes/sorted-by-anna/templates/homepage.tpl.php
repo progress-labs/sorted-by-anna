@@ -19,6 +19,12 @@ $press_args = array(
 );
 $press_query = new WP_Query( $press_args );
 
+$blog_args = array(
+    'post_type' => 'post',
+    'posts_per_page' => '3'
+);
+$blog_query = new WP_Query( $blog_args );
+
 get_header();
 
 the_partial('nav');
@@ -39,11 +45,14 @@ the_partial('nav');
   ]
 ]); ?>
 
-<div class="big-quote">
-    <blockquote>
-        Simplicity is making the journey of life with the things you love most.
-    </blockquote>
+<div class="page-section">
+    <div class="big-quote">
+        <blockquote>
+            Simplicity is making the journey of life with the things you love most.
+        </blockquote>
+    </div>
 </div>
+
 
 
 <div class="featured-project">
@@ -91,9 +100,12 @@ the_partial('nav');
 </div>
 
 
-<div class="service-statement">
-    <h2>Sorted By Anna offers a range of services to fit client needs to help make the most of your home. </h2>
+<div class="page-section">
+    <div class="service-statement">
+        <h2>Sorted By Anna offers a range of services to fit client needs to help make the most of your home. </h2>
+    </div>
 </div>
+
 
 
 <section class="page-section">
@@ -119,7 +131,7 @@ the_partial('nav');
 
 <section class="page-section">
     <?php if ( $press_query->have_posts() ) : ?>
-        <div class="press-grid">
+        <div class="press-grid backdrop">
 
             <?php the_partial('section-title', [
                 'title' => 'Featured Press'
@@ -143,6 +155,62 @@ the_partial('nav');
 
     <?php endif; ?>
 </section>
+
+<div class="page-section">
+    <div class="color-block">
+        <div class="color-block__image">
+            <img src="http://placehold.it/500x600" alt="">
+        </div>
+        <div class="color-block__inner">
+
+            <div class="color-block__content">
+                <h3 class="color-block__title">This is a title</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt, cumque dolor? Doloribus libero quasi voluptatem enim magni, ab ipsa qui sunt aliquam recusandae accusamus repellat, error dignissimos! Eius, temporibus.
+            </div>
+        </div>
+    </div>
+    <div class="color-block">
+        <div class="color-block__image">
+            <img src="http://placehold.it/500x600" alt="">
+        </div>
+        <div class="color-block__inner">
+
+            <div class="color-block__content">
+                <h3 class="color-block__title">This is a title</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt, cumque dolor? Doloribus libero quasi voluptatem enim magni, ab ipsa qui sunt aliquam recusandae accusamus repellat, error dignissimos! Eius, temporibus.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-section">
+    <div class="backdrop">
+        <?php the_partial( 'section-title', [
+            'title' => 'Fresh From The Blog'
+        ]); ?>
+        <div class="grid grid-3-up">
+            <?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
+                <div class="col">
+                    <?php the_partial('post-preview', [
+                        'url'    => get_the_permalink( $post->ID ),
+                        'title'  => $post->post_title,
+                        'img'    => 'http://placehold.it/400x300',
+                        'date'   => get_the_date( 'F j, Y' ),
+                        'excerpt' => false,
+                        'content' => $post->post_content,
+                        'read_more' => true
+                    ]); ?>
+                </div>
+
+            <?php wp_reset_postdata(); endwhile; ?>
+        </div>
+    </div>
+</div>
+
+<div class="page-section">
+    <?php the_partial('consultation-cta'); ?>
+</div>
 
 
 <?php
