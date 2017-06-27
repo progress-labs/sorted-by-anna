@@ -10,8 +10,8 @@
 
 
 @include font-face("Argent", '../font/argent/ArgentCF-Regular', normal);
-@include font-face("Argent", '../font/argent/ArgentCF-Light', light);
-@include font-face("Argent", '../font/argent/ArgentCF-LightItalic', light, italic);
+@include font-face("Argent", '../font/argent/ArgentCF-Light', 300);
+@include font-face("Argent", '../font/argent/ArgentCF-LightItalic', 300, italic);
 
 
 
@@ -42,4 +42,9 @@ $argent: 'Argent', serif;
 @mixin argent() {
     font-family: $argent;
     font-weight: 400;
+}
+
+@mixin argent-light() {
+    font-family: $argent;
+    font-weight: 300;
 }

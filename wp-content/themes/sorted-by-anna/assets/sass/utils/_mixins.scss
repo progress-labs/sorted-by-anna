@@ -203,3 +203,37 @@
 		src: $src;
 	}
 }
+
+
+@mixin text-link-arrow($color: color(link)) {
+    &:after {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        height: 5px;
+        width: 5px;
+        transform: rotate(45deg);
+        border-top: 2px solid $color;
+        border-right: 2px solid $color;
+        margin-left: 5px;
+    }
+}
+
+@mixin line-height( $font-size: 16, $leading: 24) {
+    line-height: ( $leading / $font-size );
+}
+
+@mixin remove-last-row-margin( $col-count, $el:'col' ) {
+
+    @if ( type_of($col-count) != 'number' ) {
+        @error "The value entered for $col-count is not a number.";
+    } @else {
+
+        $increment: $col-count + 1;
+
+        .#{$el}:nth-child(#{$col-count}n):nth-last-child(-n+#{$increment}) ~ .#{$el} {
+            margin-bottom: 0;
+        }
+    }
+
+}

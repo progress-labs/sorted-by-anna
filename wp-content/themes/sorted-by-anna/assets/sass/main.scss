@@ -17,7 +17,6 @@
 @import 'vendor/breakpoint/breakpoint';
 @import 'node_modules/slick-carousel/slick/slick.scss';
 @import 'node_modules/slick-carousel/slick/slick-theme.scss';
-
 @import 'node_modules/featherlight/release/featherlight.min';
 
 
@@ -38,10 +37,8 @@
 @import 'base/colors';
 @import 'base/settings';
 @import 'base/breakpoints';
-
 @import 'base/reset';
 @import 'base/base';
-
 @import 'utils/helpers';
 
 /*-------------------------------------------- */
@@ -52,13 +49,13 @@
 @import 'layouts/__layouts';
 
 /*-------------------------------------------- */
-/** Modules */
-/*-------------------------------------------- */
-
-@import 'modules/__modules';
-
-/*-------------------------------------------- */
 /** Pages */
 /*-------------------------------------------- */
 
 @import 'pages/__pages';
+
+/*-------------------------------------------- */
+/** Modules */
+/*-------------------------------------------- */
+
+@import 'modules/__modules';

@@ -1,0 +1,136 @@
+/**
+ * Block: featured-project
+ * Element: featured-project__element
+ * Modifier: featured-project--modifier
+ */
+
+
+$block: 'featured-project';
+$content-offset: 7%;
+
+.#{$block} {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 1400px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:nth-child(odd) {
+        justify-content: flex-end;
+
+        .#{$block}__content {
+            left: $content-offset;
+            right: auto;
+        }
+
+        .#{$block}__cat-cta {
+            left: auto;
+            right: 0;
+        }
+
+    }
+
+    &__primary {
+        position: relative;
+    }
+
+    &__content {
+        @include argent-light;
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: rem(16);
+        background-color: color(offwhite);
+        transition: background-color .250s ease-out;
+        text-decoration: none;
+        box-sizing: border-box;
+
+        &:hover {
+            background-color: darken(color(offwhite), 1.5%);
+        }
+    }
+
+    &__image {
+        display: block;
+    }
+
+    &__cta,
+    &__cat-cta {
+        color: color(coral);
+        text-decoration: none;
+
+        &:hover {
+            color: color(coral);
+        }
+    }
+
+    &__cta {
+        display: table;
+        margin-top: 5%;
+
+        &--mobile {
+            margin-top: 50px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__cat-cta {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 0;
+        padding-top: 10px;
+        padding-bottom: 8px;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: rem(18);
+        background-color: rgba(color(white), .95);
+        transition: background-color .250s ease-out;
+    }
+
+
+
+    @include respond-to('small and up') {
+        & {
+            flex-direction: row;
+        }
+
+        &:nth-child(odd) &__content {
+            left: 0;
+            right: auto;
+        }
+
+        &__content {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            font-size: rem(18);
+            max-width: 475px;
+            opacity: .95;
+        }
+    }
+
+    @include respond-to('medium and up') {
+
+        &__content {
+            font-size: rem(22);
+            right: $content-offset;
+        }
+
+        &:nth-child(odd) &__content {
+            left: $content-offset;
+        }
+
+
+        &__cta {
+            margin-top: 18%;
+        }
+    }
+}
