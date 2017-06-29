@@ -73,11 +73,13 @@ the_partial('nav');
 </div>
 
 
+<?php if ( $featured_projects ) : ?>
 <?php foreach ($featured_projects as $project) {
     the_partial('featured-project', [
         'project' => $project
     ]);
 } ?>
+<?php endif; ?>
 
 
 
