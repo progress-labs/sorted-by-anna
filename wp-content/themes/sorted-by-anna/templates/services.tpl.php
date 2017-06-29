@@ -60,7 +60,7 @@ the_partial('nav');
     <section class="page-section">
         <?php the_partial('how-to-list', [
           'title' => 'How It Works',
-          'list'  => get_field('how_to_steps')
+          'list'  => get_field('how_it_works')
         ]) ?>
     </section>
 

@@ -6,15 +6,17 @@
 
 
 <?php  if( !empty( $list ) ) : ?>
-  <div class="how-it-works">
-    <h3 class="section-title"><?php echo $title; ?></h3>
+    <div class="page-container">
+        <div class="how-it-works">
+            <?php the_partial( 'section-title', [
+               'title' => $title
+            ]); ?>
 
-    <ol class="how-it-works__list">
-      <?php foreach ( $list as $item ): ?>
-
-        <li class="how-it-works__list-item"><?php echo $list[0]['step']; ?></li>
-
-      <?php endforeach ?>
-    </ol>
-  </div>
+          <ol class="how-it-works__list">
+            <?php foreach ( $list as $item ): ?>
+              <li class="how-it-works__list-item"><?php echo $item['text']; ?></li>
+            <?php endforeach ?>
+          </ol>
+        </div>
+    </div>
 <?php endif;?>

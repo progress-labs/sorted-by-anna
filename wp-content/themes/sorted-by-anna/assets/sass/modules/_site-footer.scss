@@ -5,47 +5,83 @@
  */
 
 .site-footer {
-    margin-top: 50px;
-    padding-top: 50px;
-    padding-bottom: 25px;
-    background-color: color(black);
-    color: color(white);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border-bottom: 8px solid color(coral);
+    padding-top: 75px;
+    padding-bottom: 50px;
+    background-color: color(offwhite);
+    margin-top: 100px;
 
-    .social-links__item {
-        color: color(white);
+    &__col-title {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 8px;
+        font-size: rem(18);
+        line-height: 1;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 25px;
+            height: 1px;
+            background-color: color(coral);
+            margin-top: 8px;
+            margin-bottom: 0;
+
+        }
+
     }
 
-    /*-------------------------------------------- */
-    /** Variables */
-    /*-------------------------------------------- */
+    .social-links {
+        margin-top: 6px;
+    }
 
+    @include respond-to('up to medium') {
+        .col {
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
 
+        .page-col {
+            order: 1;
+        }
 
-    /*-------------------------------------------- */
-    /** Block Styles */
-    /*-------------------------------------------- */
+        .project-col {
+            order: 2;
+        }
 
+        .social-col {
+            order: 3;
+        }
 
+        .book-col {
+            order: 4;
+        }
+    }
 
-    /*-------------------------------------------- */
-    /** Block Modifiers */
-    /*-------------------------------------------- */
+    @include respond-to('between small and medium') {
+        .grid {
+            flex-wrap: wrap;
+        }
 
+        .col {
+            width: 50%;
+        }
+    }
+}
 
+.footer-links {
+    @include ul-reset;
 
-    /*-------------------------------------------- */
-    /** Block Elements */
-    /*-------------------------------------------- */
+    &__item {
+        display: block;
 
+        & + & {
+            margin-top: 5px;
+        }
+    }
 
-
-    /*-------------------------------------------- */
-    /** Block Media Queries */
-    /*-------------------------------------------- */
-
-
+    &__link {
+        display: inline-block;
+        text-decoration: none;
+    }
 }

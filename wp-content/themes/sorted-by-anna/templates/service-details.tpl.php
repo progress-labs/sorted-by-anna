@@ -9,8 +9,7 @@ include_once( get_template_directory() . '/functions/view-models/class-service-v
 
 $featured_projects = get_field( 'featured_projects' );
 $testimonials = get_field( 'testimonials_slider' );
-
-var_dump($testimonials);
+$how_it_works = get_field( 'how_it_works' );
 
 get_header();
 
@@ -37,9 +36,19 @@ get_header();
     </div>
 </div>
 
-<?php if( get_field('display_calendar') ) : ?>
+<?php if ( $how_it_works ) : ?>
+    <section class="page-section">
+        <?php the_partial('how-to-list', [
+          'title' => 'How It Works',
+          'list'  => $how_it_works
+        ]) ?>
+    </section>
+<?php endif; ?>
 
-  <?php the_partial('calendly-embed'); ?>
+
+<?php if ( get_field( 'display_calendar' ) ) : ?>
+
+  <?php the_partial( 'calendly-embed' ); ?>
 
 <?php endif; ?>
 
