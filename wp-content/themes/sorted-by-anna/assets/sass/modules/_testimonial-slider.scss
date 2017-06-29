@@ -8,17 +8,18 @@
     overflow: hidden;
 
     &__slide {
-        @include freight;
+        @include argent;
         position: relative;
-        background-color: color(robin);
-        color: color(white);
-        font-size: rem(18);
-        text-align: center;
-        min-height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        height: auto;
+        min-height: 300px;
+        font-size: rem(18);
+        text-align: center;
+        background-color: color(robin);
+        color: color(white);
     }
 
     &__content {

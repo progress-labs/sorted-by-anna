@@ -819,14 +819,15 @@ textarea {
  *----------------------------------------------------------------------------- */
 html,
 body {
-  font-family: "freight-text-pro", "Georgia", serif;
-  font-weight: 400;
+  font-family: "Argent", serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 16px; }
 
 body {
   background: #fff;
   color: #181818;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5; }
 
 h1,
@@ -1974,14 +1975,9 @@ blockquote {
 .testimonial-slider {
   overflow: hidden; }
   .testimonial-slider__slide {
-    font-family: "freight-text-pro", "Georgia", serif;
+    font-family: "Argent", serif;
     font-weight: 400;
     position: relative;
-    background-color: #3EB5C6;
-    color: #fff;
-    font-size: 1.125rem;
-    text-align: center;
-    min-height: 300px;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-align: center;
@@ -1989,7 +1985,13 @@ blockquote {
     -ms-flex-pack: center;
         justify-content: center;
     -ms-flex-direction: column;
-        flex-direction: column; }
+        flex-direction: column;
+    height: auto;
+    min-height: 300px;
+    font-size: 1.125rem;
+    text-align: center;
+    background-color: #3EB5C6;
+    color: #fff; }
   .testimonial-slider__content {
     position: absolute;
     top: 50%;
@@ -2824,8 +2826,6 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: calendly-embed--modifier
  */
 .calendly {
-  margin-top: 100px;
-  margin-bottom: 100px;
   /*-------------------------------------------- */
   /** Variables */
   /*-------------------------------------------- */
@@ -3067,8 +3067,9 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     font-size: 1.125rem;
     margin-bottom: 40px; }
     .how-it-works__list-item:before {
-      font-family: "freight-text-pro", "Georgia", serif;
-      font-weight: 400;
+      font-family: "Argent", serif;
+      font-style: normal;
+      font-weight: 300;
       content: counter(counter);
       display: inline-block;
       -ms-flex-negative: 0;
@@ -3076,7 +3077,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
       height: 70px;
       width: 70px;
       text-align: center;
-      line-height: 50px;
+      line-height: 66px;
       background-color: skyblue;
       color: #fff;
       border-radius: 50%;
@@ -3118,6 +3119,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     padding-bottom: 20px; }
   .post-preview__body-inner {
     font-family: "Argent", serif;
+    font-style: normal;
     font-weight: 300;
     position: relative;
     margin-left: auto;
@@ -3211,6 +3213,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     color: #fff; }
   .color-block__content {
     font-family: "Argent", serif;
+    font-style: normal;
     font-weight: 300;
     width: 64.2857142857%;
     margin-left: auto;
@@ -3563,6 +3566,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     position: relative; }
   .featured-project__content {
     font-family: "Argent", serif;
+    font-style: normal;
     font-weight: 300;
     width: 100%;
     padding-top: 30px;

@@ -1,6 +1,6 @@
 {
     "key": "group_586dcf5bf05ea",
-    "title": "Featured Testimonials",
+    "title": "Featured Testimonials - Services Details",
     "fields": [
         {
             "key": "field_586dcf6186fdd",
@@ -44,5 +44,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1498523739
+    "modified": 1498700792
 }

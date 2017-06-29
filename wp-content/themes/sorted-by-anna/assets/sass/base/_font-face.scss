@@ -46,6 +46,7 @@ $argent: 'Argent', serif;
 
 @mixin argent-light() {
     font-family: $argent;
+    font-style: normal;
     font-weight: 300;
 }
 

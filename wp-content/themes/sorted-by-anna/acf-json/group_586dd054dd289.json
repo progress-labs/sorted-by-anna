@@ -1,11 +1,11 @@
 {
     "key": "group_586dd054dd289",
-    "title": "Featured Services",
+    "title": "Featured Projects - Services Details",
     "fields": [
         {
             "key": "field_586dd061419ab",
-            "label": "Featured Services",
-            "name": "services",
+            "label": "Featured Projects",
+            "name": "featured_projects",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -16,7 +16,7 @@
                 "id": ""
             },
             "post_type": [
-                "service"
+                "portfolio"
             ],
             "taxonomy": [],
             "allow_null": 0,
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1498523755
+    "modified": 1498699927
 }

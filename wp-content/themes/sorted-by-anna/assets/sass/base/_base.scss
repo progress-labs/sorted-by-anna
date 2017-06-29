@@ -10,7 +10,7 @@
 
 html,
 body {
-    @include freight;
+    @include argent-light;
     font-size: $base-font-size;
 
 }
@@ -18,7 +18,7 @@ body {
 body {
     background: $body-bg-color;
     color: $body-font-color;
-    font-weight: $base-font-weight;
+    font-weight: $light-font-weight;
     line-height: $base-line-height;
 }
 

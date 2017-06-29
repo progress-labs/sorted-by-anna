@@ -27,14 +27,14 @@ $circle-size: 70px;
         margin-bottom: 40px;
 
         &:before {
-            @include freight;
+            @include argent-light;
             content: counter(counter);
             display: inline-block;
             flex-shrink: 0;
             height: $circle-size;
             width: $circle-size;
             text-align: center;
-            line-height: 50px;
+            line-height: 66px;
             background-color: skyblue;
             color: color(white);
             border-radius: 50%;
