@@ -25,20 +25,27 @@ $blog_args = array(
 );
 $blog_query = new WP_Query( $blog_args );
 
-$featured_projects = array_map(function( $project ) {
 
-    $term = get_the_terms($project->ID, 'services')[0];
+$featured_projects = array_map(function( $project ) {
+    $term = false;
+
+    if ( !empty(get_the_terms($project->ID, 'services') ) ) {
+        $term = [
+            'id' => get_the_terms($project->ID, 'services')[0]->term_id,
+            'slug' => get_the_terms($project->ID, 'services')[0]->slug,
+            'name' =>  get_the_terms($project->ID, 'services')[0]->name
+        ];
+    } else {
+        $term = false;
+    }
+
     $content = get_field( 'project_testimonial', $project->ID ) ? get_field( 'project_testimonial', $project->ID )[0]->post_content : $project->post_title;
 
     return [
         'id' => $project->ID,
         'title' => $project->post_title,
         'content' => $content,
-        'term' => [
-            'id' => $term->term_id,
-            'slug' => $term->slug,
-            'name' =>  $term->name
-        ]
+        'term' => $term
     ];
 
 }, get_field( 'featured_projects' ) );
