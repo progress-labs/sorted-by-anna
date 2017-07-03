@@ -34,4 +34,21 @@ $horizontal-padding: 35px;
     margin-left: auto;
     margin-right: auto;
   }
+
+  &--ghost {
+    border: 2px solid color(dark-aqua);
+    background-color: transparent;
+  }
+
+  &--sm {
+    $vertical-padding: 6px;
+    $horizontal-padding: 15px;
+
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+
+    font-size: rem(14);
+  }
 }

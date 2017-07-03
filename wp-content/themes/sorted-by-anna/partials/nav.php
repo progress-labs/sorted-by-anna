@@ -6,7 +6,7 @@
 
 ?>
 
-<div class="nav <?php echo is_front_page() ? 'has-bg' : ''; ?>" data-js-component="nav">
+<div class="nav" data-js-component="nav">
     <div class="nav-header">
         <div class="nav-menu">
             <span class="nav-menu__bar"></span>
@@ -18,8 +18,10 @@
             <?php echo get_bloginfo('name'); ?>
         </a>
     </div>
-    <div class="show-at-small">
-        Logo
+    <div class="show-at-small nav-utility">
+        <div class="logo">
+            Logo
+        </div>
     </div>
     <div class="nav-wrap">
         <?php
@@ -31,8 +33,8 @@
         ?>
     </div>
 
-    <div class="show-at-small">
-        Book Now
+    <div class="show-at-small nav-utility">
+        <a class="btn btn--ghost btn--sm" href="#">Book Now</a>
     </div>
 
 </div>

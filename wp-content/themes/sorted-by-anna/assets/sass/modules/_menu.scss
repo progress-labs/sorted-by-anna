@@ -1,59 +1,101 @@
-.menu-primary-menu-container {
-    height: 100%;
-}
+$block: 'menu';
 
-.menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 25px;
-    height: 100%;
+.#{$block} {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
 
     &-item {
-        position: relative;
+        display: inline-block;
         margin-left: 15px;
         margin-right: 15px;
-        width: 100%;
         text-align: center;
-
-        & + & {
-            margin-top: 15px;
-        }
     }
 
     &-item a {
+        @include europa;
         position: relative;
         display: inline-block;
         color: black;
-        font-size: rem(24);
+        font-size: rem(18);
         text-decoration: none;
     }
-
-    &-item:hover {
-        .sub-menu {
-            left: 0;
-        }
-    }
-
-    @include respond-to('small and up') {
-
-        & {
-            flex-direction: row;
-            padding-top: 0;
-        }
-
-        &-item + &-item {
-            margin-top: 0;
-        }
-
-        &-item a {
-            position: relative;
-            color: color(black);
-        }
-
-
-    }
 }
+
+.current-menu-item a {
+    color: color(coral);
+}
+
+// .menu-primary-menu-container {
+//     height: 100%;
+// }
+
+// .menu {
+//     // position: relative;
+//     // display: flex;
+//     // flex-direction: column;
+//     // align-items: center;
+//     padding-top: 25px;
+//     height: 100%;
+
+//     &-item {
+//         position: relative;
+//         margin-left: 15px;
+//         margin-right: 15px;
+//         width: 100%;
+//         text-align: center;
+
+//         & + & {
+//             margin-top: 15px;
+//         }
+//     }
+
+//     &-item a {
+//         @include europa;
+//         position: relative;
+//         display: inline-block;
+//         color: black;
+//         font-size: rem(18);
+//         text-decoration: none;
+//     }
+
+//     &-item:hover {
+//         .sub-menu {
+//             left: 0;
+//         }
+//     }
+
+//     @include respond-to('small and up') {
+
+//         &-primary-menu-container {
+//             position: absolute;
+//             left: 0;
+//             right: 0;
+//         }
+
+//         & {
+//             flex-direction: row;
+//             justify-content: center;
+//             padding-top: 0;
+//         }
+
+//         &-item + &-item {
+//             margin-top: 0;
+//         }
+
+//         &-item {
+//             width: auto;
+//         }
+
+//         &-item a {
+//             position: relative;
+//             color: color(black);
+//         }
+
+
+//     }
+// }
 
 
 .sub-menu {
@@ -87,31 +129,32 @@
 
 
 
-@include respond-to('small and up') {
-    .menu-item-has-children > a {
-        display: flex;
-        align-items: center;
+// @include respond-to('small and up') {
 
-        &:after {
-            content: "";
-            position: relative;
-            display: inline-block;
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid color(black);
-            margin-top: 7px;
-            margin-left: 10px;
-            transition: transform .150s ease-out;
-            transform-origin: center;
-        }
+//     .menu-item-has-children > a {
+//         display: flex;
+//         align-items: center;
 
-        &:hover {
-            &:after {
-                transform: rotate(180deg);
-                margin-top: 4px;
-            }
-        }
-    }
-}
+//         &:after {
+//             content: "";
+//             position: relative;
+//             display: inline-block;
+//             width: 0;
+//             height: 0;
+//             border-left: 8px solid transparent;
+//             border-right: 8px solid transparent;
+//             border-top: 8px solid color(black);
+//             margin-top: 7px;
+//             margin-left: 10px;
+//             transition: transform .150s ease-out;
+//             transform-origin: center;
+//         }
+
+//         &:hover {
+//             &:after {
+//                 transform: rotate(180deg);
+//                 margin-top: 4px;
+//             }
+//         }
+//     }
+// }

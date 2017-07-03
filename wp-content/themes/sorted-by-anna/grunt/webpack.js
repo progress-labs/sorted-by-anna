@@ -29,14 +29,14 @@ module.exports = {
              */
 
             // to the below array.
-            vendor: ['slick', 'featherlight', 'featherlight-gallery', 'detect-swipe']
+            vendor: ['slick', 'featherlight', 'featherlight-gallery', 'detect-swipe', 'waypoints', 'waypointsSticky']
         },
         resolve : {
             alias: {
               slick: path.join(__dirname, '../node_modules/slick-carousel/slick/slick.min.js'),
               featherlight: path.join(__dirname, '../node_modules/featherlight/release/featherlight.min.js'),
               'featherlight-gallery': path.join(__dirname, '../node_modules/featherlight/release/featherlight.gallery.min.js'),
-              'detect-swipe': path.join(__dirname, '../assets/js/lib/detect-swipe.min.js'),
+              'detect-swipe': path.join(__dirname, '../assets/js/lib/detect-swipe.min.js')
             }
         },
         module: {
