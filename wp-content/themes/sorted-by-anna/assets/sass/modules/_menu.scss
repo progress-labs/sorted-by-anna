@@ -1,35 +1,88 @@
 $block: 'menu';
 
 .#{$block} {
-    display: table;
+    display: block;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     list-style: none;
 
     &-item {
-        display: inline-block;
+        display: block;
         margin-left: 15px;
         margin-right: 15px;
         text-align: center;
+
+        & + & {
+            margin-top: 15px;
+        }
     }
+
 
     &-item a {
         @include europa;
         position: relative;
-        display: inline-block;
-        color: black;
-        font-size: rem(18);
+        display: block;
+        color: color(black);
+        font-size: rem(20);
         text-decoration: none;
+        transition: color .250s ease-out;
+
+        &:hover {
+            color: color(coral);
+        }
+    }
+
+    @include respond-to('small and up') {
+        & {
+            display: table;
+            width: auto;
+        }
+
+        &-item {
+            display: inline-block;
+
+            & + & {
+                margin-top: 0;
+            }
+        }
+
+        &-item a {
+            color: color(white);
+        }
     }
 }
 
-.current-menu-item a {
-    color: color(coral);
+.is-opaque {
+    .menu-item a {
+        color: color(black);
+
+        &:hover {
+            color: color(coral);
+        }
+    }
+
+    .current-menu-item a {
+        color: color(coral);
+    }
+
+
 }
 
-// .menu-primary-menu-container {
-//     height: 100%;
-// }
+
+@include respond-to('small and up') {
+    .current-menu-item a {
+        color: color(coral);
+    }
+}
+
+.menu-primary-menu-container {
+    @include vertically-centered(absolute);
+    left: 0;
+    right: 0;
+}
+
+
 
 // .menu {
 //     // position: relative;

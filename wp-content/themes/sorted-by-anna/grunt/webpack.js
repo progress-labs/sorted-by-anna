@@ -29,7 +29,7 @@ module.exports = {
              */
 
             // to the below array.
-            vendor: ['slick', 'featherlight', 'featherlight-gallery', 'detect-swipe', 'waypoints', 'waypointsSticky']
+            vendor: ['slick', 'featherlight', 'featherlight-gallery', 'detect-swipe']
         },
         resolve : {
             alias: {

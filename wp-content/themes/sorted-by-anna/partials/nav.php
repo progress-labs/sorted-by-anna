@@ -7,17 +7,17 @@
 ?>
 
 <div class="nav" data-js-component="nav">
-    <div class="nav-header">
-        <div class="nav-menu">
-            <span class="nav-menu__bar"></span>
-            <span class="nav-menu__bar"></span>
-            <span class="nav-menu__bar"></span>
+    <div class="hide-at-small">
+        <div class="nav-menu__trigger">
+            <div class="nav-menu">
+                <span class="nav-menu__bar"></span>
+                <span class="nav-menu__bar"></span>
+                <span class="nav-menu__bar"></span>
+            </div>
         </div>
-
-        <a class="nav-logo" href="<?php echo get_home_url(); ?>">
-            <?php echo get_bloginfo('name'); ?>
-        </a>
     </div>
+
+    
     <div class="show-at-small nav-utility">
         <div class="logo">
             Logo

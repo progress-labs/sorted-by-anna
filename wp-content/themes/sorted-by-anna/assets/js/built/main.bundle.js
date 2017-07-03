@@ -3122,12 +3122,9 @@ webpackJsonp([0],[
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
 	
-	var _lodash = __webpack_require__(14);
+	var _lodash = __webpack_require__(8);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	__webpack_require__(8);
-	__webpack_require__(9);
 	
 	module.exports = function (el) {
 	
@@ -3146,25 +3143,35 @@ webpackJsonp([0],[
 	        state.isOpen = !state.isOpen;
 	
 	        if (state.isOpen) {
-	            $el.addClass(openClass);
+	            openMenu();
 	        } else {
-	            $el.removeClass(openClass);
+	            closeMenu();
 	        }
+	    }
+	
+	    function openMenu() {
+	        $el.addClass(openClass);
+	        $navTrigger.addClass('is-open');
+	    }
+	
+	    function closeMenu() {
+	        $el.removeClass(openClass);
+	        $navTrigger.removeClass('is-open');
 	    }
 	
 	    var heroHeight = (0, _jquery2.default)('.hero, .page-hero').height() - NAV_HEIGHT;
 	
-	    (0, _jquery2.default)(window).on("scroll", (0, _lodash.throttle)(updateScrollState, 200));
+	    // $(window).on("scroll", throttle(updateScrollState, 200));
 	
-	    function updateScrollState() {
-	        if ((0, _jquery2.default)(document).scrollTop() > heroHeight) {
-	            $el.addClass(opaqueClass);
-	            $el.find('.btn').removeClass('btn--ghost');
-	        } else {
-	            $el.removeClass(opaqueClass);
-	            $el.find('.btn').addClass('btn--ghost');
-	        }
-	    }
+	    // function updateScrollState() {
+	    //     if (  $(document).scrollTop() > heroHeight ) {
+	    //         $el.addClass(opaqueClass);
+	    //         $el.find('.btn').removeClass('btn--ghost');
+	    //     } else {
+	    //         $el.removeClass(opaqueClass);
+	    //         $el.find('.btn').addClass('btn--ghost');
+	    //     }
+	    // }
 	};
 	
 	// module.exports = function(el) {
@@ -3190,13 +3197,7 @@ webpackJsonp([0],[
 	// };
 
 /***/ },
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global, module) {/**
@@ -20284,10 +20285,10 @@ webpackJsonp([0],[
 	  }
 	}.call(this));
 	
-	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(15)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(9)(module)))
 
 /***/ },
-/* 15 */
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {

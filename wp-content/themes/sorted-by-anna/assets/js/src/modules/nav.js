@@ -1,9 +1,6 @@
 import $ from 'jquery';
 import { throttle } from 'lodash';
 
-require('waypoints');
-require('waypointsSticky');
-
 module.exports = function(el) {
 
     
@@ -23,27 +20,37 @@ module.exports = function(el) {
         state.isOpen = !state.isOpen;
 
         if (state.isOpen) {
-            $el.addClass(openClass);
-            
+            openMenu();
         } else {
-            $el.removeClass(openClass);
+            closeMenu();
             
         }
+    }
+
+    function openMenu() {
+        $el.addClass(openClass);
+        $navTrigger.addClass('is-open');
+    }
+
+
+    function closeMenu() {
+        $el.removeClass(openClass);
+        $navTrigger.removeClass('is-open');
     }
 
     const heroHeight = $('.hero, .page-hero').height() - NAV_HEIGHT;
 
-    $(window).on("scroll", throttle(updateScrollState, 200));
+    // $(window).on("scroll", throttle(updateScrollState, 200));
 
-    function updateScrollState() {
-        if (  $(document).scrollTop() > heroHeight ) {
-            $el.addClass(opaqueClass);
-            $el.find('.btn').removeClass('btn--ghost');
-        } else {
-            $el.removeClass(opaqueClass);
-            $el.find('.btn').addClass('btn--ghost');
-        }
-    }
+    // function updateScrollState() {
+    //     if (  $(document).scrollTop() > heroHeight ) {
+    //         $el.addClass(opaqueClass);
+    //         $el.find('.btn').removeClass('btn--ghost');
+    //     } else {
+    //         $el.removeClass(opaqueClass);
+    //         $el.find('.btn').addClass('btn--ghost');
+    //     }
+    // }
 
 }
 
