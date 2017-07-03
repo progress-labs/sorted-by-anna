@@ -14,7 +14,7 @@ $block: 'service-card';
     text-decoration: none;
 
     &__name {
-        @include omnes-med;
+        @include europa-bold;
         margin-top: 5px;
         margin-bottom: 0;
         font-size: rem(20);

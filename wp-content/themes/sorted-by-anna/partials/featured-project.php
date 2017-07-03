@@ -10,7 +10,7 @@
         </div>
         <?php if ( $project['term'] ) : ?>
         <div class="show-at-small">
-            <a class="featured-project__cat-cta" href="<?php echo get_term_link( $project['term']['id'] ); ?>">View All <?php echo $project['term']['name']; ?> ⟶</a>
+            <a class="featured-project__cat-cta" href="<?php echo get_term_link( $project['term']['id'] ); ?>">More <?php echo $project['term']['name']; ?> Projects ⟶</a>
         </div>
         <?php endif; ?>
     </div>
@@ -22,7 +22,7 @@
 
     <?php if ( $project['term'] ) : ?>
     <div class="hide-at-small">
-        <a class="featured-project__cta featured-project__cta--mobile" href="<?php echo get_term_link( $project['term']['id'] ); ?>">View All <?php echo $project['term']['name']; ?> ⟶</a>
+        <a class="featured-project__cta featured-project__cta--mobile" href="<?php echo get_term_link( $project['term']['id'] ); ?>">More <?php echo $project['term']['name']; ?> Projects ⟶</a>
     </div>
     <?php endif; ?>
 </div>

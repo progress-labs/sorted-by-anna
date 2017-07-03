@@ -17,6 +17,8 @@
 
 $freight: 'freight-text-pro', 'Georgia', serif;
 $omnes: 'omnes-pro', sans-serif;
+
+$europa: 'europa', 'helvetica', 'sans-serif';
 $argent: 'Argent', serif;
 
 @mixin freight() {
@@ -54,4 +56,14 @@ $argent: 'Argent', serif;
     font-family: $argent;
     font-style: italic;
     font-weight: 300;
+}
+
+@mixin europa() {
+    font-family: $europa;
+    font-weight: 400;
+}
+
+@mixin europa-bold() {
+    font-family: $europa;
+    font-weight: 700;
 }

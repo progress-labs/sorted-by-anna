@@ -2,13 +2,15 @@ $vertical-padding: 15px;
 $horizontal-padding: 35px;
 
 .btn {
+  @include europa;
+  letter-spacing: 0.04em;
   background: transparent;
   display: inline-block;
   font-size: rem(16);
   font-weight: 400;
   outline: none;
   text-decoration: none;
-  background-color: color(aqua);
+  background-color: color(dark-aqua);
   color: color(white);
   border: 0;
   border-radius: 4px;
@@ -24,7 +26,7 @@ $horizontal-padding: 35px;
 
   &:hover {
     color: color(white);
-    background-color: darken(color(aqua), 8%);
+    background-color: darken(color(dark-aqua), 5%);
   }
 
   &--centered {

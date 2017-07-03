@@ -836,8 +836,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 600; }
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700; }
 
 h1,
 .h1 {
@@ -1163,13 +1163,16 @@ ul {
       color: #181818; }
 
 .btn, .gform_button {
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 400;
+  letter-spacing: 0.04em;
   background: transparent;
   display: inline-block;
   font-size: 1rem;
   font-weight: 400;
   outline: none;
   text-decoration: none;
-  background-color: #A3DBCE;
+  background-color: #86d0be;
   color: #fff;
   border: 0;
   border-radius: 4px;
@@ -1184,7 +1187,7 @@ ul {
   transition: background-color .300s ease-out, color .300s ease-out; }
   .btn:hover, .gform_button:hover {
     color: #fff;
-    background-color: #86d0be; }
+    background-color: #74c9b4; }
   .btn--centered {
     display: table;
     margin-left: auto;
@@ -1413,12 +1416,15 @@ ul {
       max-width: calc(100% - 300px); } }
 
 .consultation-cta {
-  line-height: 1.2708333333;
   margin-top: 60px;
   margin-bottom: 60px;
   text-align: center;
   font-size: 3rem; }
   .consultation-cta__title {
+    font-family: "Argent", serif;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.2708333333;
     margin-top: 0;
     margin-bottom: 25px; }
 
@@ -1829,8 +1835,8 @@ blockquote {
  * Modifier: single-project--modifier
  */
 .project-title {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 600;
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700;
   margin-bottom: 0;
   text-align: center; }
 
@@ -2052,8 +2058,8 @@ blockquote {
     margin-left: auto;
     margin-right: auto; }
   .testimonial-slider__client {
-    font-family: "omnes-pro", sans-serif;
-    font-weight: 400;
+    font-family: "europa", "helvetica", "sans-serif";
+    font-weight: 700;
     display: inline-block;
     margin-top: 30px;
     font-size: 1.125rem; }
@@ -2064,8 +2070,6 @@ blockquote {
       width: 100%;
       max-width: 75%; }
     .testimonial-slider__client {
-      font-family: "omnes-pro", sans-serif;
-      font-weight: 400;
       margin-top: 50px; } }
   @media (min-width: 992px) {
     .testimonial-slider__slide {
@@ -2673,8 +2677,8 @@ blockquote {
 .gform_wrapper .gform_title,
 .gform_wrapper .gform_title,
 .gform_wrapper .gform_title {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 400;
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700;
   font-size: 1.75rem !important; }
   @media (min-width: 992px) {
     .gform_wrapper .gform_title,
@@ -2728,8 +2732,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
   border-color: #e7040f !important; }
 
 .gform_wrapper .gfield .gfield_label {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 400; }
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700; }
 
 .gform_wrapper .gfield.affectiva-form-type-checkbox .gfield_label,
 .gform_wrapper .gfield.affectiva-form-type-radio .gfield_label {
@@ -2755,8 +2759,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: section-title--modifier
  */
 .section-title {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 600;
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700;
   font-size: 1.625rem;
   text-align: center;
   margin-left: auto;
@@ -2768,8 +2772,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: callout--modifier
  */
 .callout {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 600;
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700;
   padding-top: 25px;
   padding-bottom: 60px;
   padding-left: 30px;
@@ -2923,8 +2927,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
   margin-right: auto;
   text-decoration: none; }
   .service-card__name {
-    font-family: "omnes-pro", sans-serif;
-    font-weight: 500;
+    font-family: "europa", "helvetica", "sans-serif";
+    font-weight: 700;
     margin-top: 5px;
     margin-bottom: 0;
     font-size: 1.25rem; }
@@ -3060,8 +3064,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: section-title--modifier
  */
 .section-title {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 600;
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700;
   font-size: 1.625rem;
   text-align: center;
   margin-left: auto;
@@ -3331,8 +3335,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     padding-top: 50px;
     padding-bottom: 50px; }
   .single-testimonial__client {
-    font-family: "omnes-pro", sans-serif;
-    font-weight: 400;
+    font-family: "europa", "helvetica", "sans-serif";
+    font-weight: 700;
     display: inline-block;
     margin-top: 30px;
     font-size: 1.125rem; }
@@ -3343,8 +3347,6 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
       width: 100%;
       max-width: 75%; }
     .single-testimonial__client {
-      font-family: "omnes-pro", sans-serif;
-      font-weight: 400;
       margin-top: 50px; } }
   @media (min-width: 992px) {
     .single-testimonial__client {
@@ -3409,8 +3411,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: tax-title--modifier
  */
 .tax-title {
-  font-family: "omnes-pro", sans-serif;
-  font-weight: 500;
+  font-family: "europa", "helvetica", "sans-serif";
+  font-weight: 700;
   margin-top: 5px;
   margin-bottom: 30px;
   font-size: 1.25rem;
@@ -3643,7 +3645,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
   .featured-project__cat-cta {
     position: absolute;
     display: block;
-    bottom: 0;
+    bottom: -50px;
     left: 0;
     padding-top: 10px;
     padding-bottom: 8px;
@@ -3655,7 +3657,9 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
   @media (min-width: 768px) {
     .featured-project {
       -ms-flex-direction: row;
-          flex-direction: row; }
+          flex-direction: row;
+      margin-top: 150px;
+      margin-bottom: 150px; }
     .featured-project:nth-child(odd) .featured-project__content {
       left: 0;
       right: auto; }

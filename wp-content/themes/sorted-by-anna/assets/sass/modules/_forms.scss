@@ -224,7 +224,7 @@
 .gform_wrapper .gform_title,
 .gform_wrapper .gform_title,
 .gform_wrapper .gform_title {
-    @include omnes;
+    @include europa-bold;
     font-size: rem(28) !important;
 
     @include respond-to('medium and up') {
@@ -297,7 +297,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 .gform_wrapper {
 
     .gfield .gfield_label {
-        @include omnes;
+        @include europa-bold
     }
 
     // Specifically show labels for Checkboxes and Radio buttons

@@ -90,7 +90,7 @@ $content-offset: 7%;
     &__cat-cta {
         position: absolute;
         display: block;
-        bottom: 0;
+        bottom: -50px;
         left: 0;
         padding-top: 10px;
         padding-bottom: 8px;
@@ -106,6 +106,8 @@ $content-offset: 7%;
     @include respond-to('small and up') {
         & {
             flex-direction: row;
+            margin-top: 150px;
+            margin-bottom: 150px;
         }
 
         &:nth-child(odd) &__content {
