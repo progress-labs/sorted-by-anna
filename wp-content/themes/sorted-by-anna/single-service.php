@@ -4,7 +4,6 @@ include_once( get_template_directory() . '/functions/view-models/class-portfolio
 
 get_header();
 
-
 $services = array(
     'post_type' => 'service',
     'posts_per_page' => -1,
@@ -23,7 +22,10 @@ $related_services = new WP_Query( $serivce_args );
 
 the_partial('nav');
 
-the_partial('page-hero');
+the_partial('hero', [
+  'image' => 'http://placehold.it/1200x400',
+  'title' => get_the_title(get_queried_object_id())
+]);
 
 ?>
 

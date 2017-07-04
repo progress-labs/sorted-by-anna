@@ -13,14 +13,13 @@ $how_it_works = get_field( 'how_it_works' );
 
 get_header();
 
-?>
+the_partial('nav');
 
+the_partial( 'hero', [
+    'image' => 'http://placehold.it/1200x400',
+    'title' => get_the_title()
+]);
 
-<?php
-    the_partial('nav');
-    the_partial( 'page-hero', array(
-      'title' => get_the_title()
-    ));
 ?>
 <div class="page-container">
 

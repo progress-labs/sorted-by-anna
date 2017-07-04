@@ -6,24 +6,32 @@
   $video        = $media['video']['src']['url'];
   $fallback_img = $media['video']['fallback'];
 
-  $hasVideo     = !empty($video);
+  $hasVideo     = !empty( $video );
 
 ?>
 
 <div class="hero <?php echo $hasVideo ? 'hero--overlay': ''; ?>">
 
-  <div class="hero__media responsive-embed">
+  <div class="hero__media <?php echo $hasVideo ? 'responsive-embed' : ''; ?>">
 
     <?php if ( $hasVideo ) : ?>
 
-        <video id="movie" poster="<?php echo $fallback_img; ?>" preload="auto" autoplay="autoplay" loop="on" muted="">
-            <source src="<?php echo $video; ?>" type="video/mp4">
-        </video>
+        <div class="responsive-embed">
+          <video class="hero__video" id="movie" poster="<?php echo $fallback_img; ?>" preload="auto" autoplay="autoplay" loop="on" muted="">
+              <source src="<?php echo $video; ?>" type="video/mp4">
+          </video>
+        </div>
 
     <?php else : ?>
 
-        <img src="<?php echo $hero_img; ?>" alt="">
+        <div class="hero__image-wrap">
+          <img class="hero__image" src="<?php echo $image; ?>" alt="">
+        </div>
 
+    <?php endif; ?>
+
+    <?php if ( $title ) : ?>
+      <h1 class="hero__title"><?php echo $title; ?></h1>
     <?php endif; ?>
 
   </div>

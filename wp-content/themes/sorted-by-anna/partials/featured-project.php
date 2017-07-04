@@ -1,12 +1,12 @@
 <?php
 
- ?>
+
+?>
 
 <div class="featured-project">
     <div class="featured-project__primary">
         <div class="featured-project__media-wrap">
-            <img class="featured-project__image" src="<?php echo get_the_post_thumbnail_url( $project['id'] );?>" alt="">
-
+            <img class="featured-project__image" src="<?php echo get_the_post_thumbnail_url( $project['id'] );?>" alt="<?php echo get_the_title( $project['id'] );?>">
         </div>
         <?php if ( $project['term'] ) : ?>
         <div class="show-at-small">

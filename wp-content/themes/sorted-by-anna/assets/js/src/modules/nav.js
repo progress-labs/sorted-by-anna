@@ -15,6 +15,8 @@ module.exports = function(el) {
 
     let heroHeight = $('.hero').height() - NAV_HEIGHT;
 
+    console.log(heroHeight);
+
     function toggleMenuState() {
         state.isOpen = !state.isOpen;
 

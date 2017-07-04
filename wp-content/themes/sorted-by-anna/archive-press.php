@@ -7,7 +7,8 @@ $page_content = get_field( 'press_content', 'option');
 
 the_partial('nav');
 
-the_partial('page-hero', [
+the_partial('hero', [
+    'image' => 'http://placehold.it/1200x400',
     'title' => $title
 ]); ?>
 

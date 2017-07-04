@@ -3140,6 +3140,8 @@ webpackJsonp([0],[
 	
 	    var heroHeight = (0, _jquery2.default)('.hero').height() - NAV_HEIGHT;
 	
+	    console.log(heroHeight);
+	
 	    function toggleMenuState() {
 	        state.isOpen = !state.isOpen;
 	

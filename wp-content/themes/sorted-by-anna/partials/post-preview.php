@@ -39,8 +39,9 @@
             <?php endif; ?>
 
             <?php if ( $read_more ) : ?>
-                <span class="post-preview__cta">Read More &rarr;</span>
+                <span class="post-preview__cta">Read More ⟶</span>
             <?php endif; ?>
+
         </div>
 
 

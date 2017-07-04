@@ -26,7 +26,7 @@ $blog_args = array(
 $blog_query = new WP_Query( $blog_args );
 
 
-$featured_projects = array_map(function( $project ) {
+$featured_projects = array_map( function( $project ) {
     $term = false;
 
     if ( !empty(get_the_terms($project->ID, 'services') ) ) {
@@ -43,7 +43,6 @@ $featured_projects = array_map(function( $project ) {
 
     return [
         'id' => $project->ID,
-        'title' => $project->post_title,
         'content' => $content,
         'term' => $term
     ];
@@ -81,7 +80,7 @@ the_partial('nav');
 
 
 <?php if ( $featured_projects ) : ?>
-<?php foreach ($featured_projects as $project) {
+<?php foreach ( $featured_projects as $project ) {
     the_partial('featured-project', [
         'project' => $project
     ]);

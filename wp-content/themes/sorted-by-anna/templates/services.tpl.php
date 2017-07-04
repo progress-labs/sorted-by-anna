@@ -22,9 +22,13 @@ the_partial('nav');
 ?>
 
 <main>
-    <?php the_partial( 'page-hero', array(
+    <?php 
+    
+    the_partial( 'hero', [
+        'image' => 'http://placehold.it/1200x400',
         'title' => get_the_title()
-    ));
+    ]);
+    
     if ( have_posts() ) : ?>
         <section class="page-section">
             <? while ( have_posts() ) : the_post(); ?>

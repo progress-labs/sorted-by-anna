@@ -11,7 +11,8 @@ the_partial('nav');
 <div id="page-container">
 	<main role="main">
 
-        <?php the_partial( 'page-hero', [
+        <?php the_partial( 'hero', [
+            'image' => 'http://placehold.it/1200x400',
             'title' => get_the_title(get_queried_object_id())
         ]); ?>
 
