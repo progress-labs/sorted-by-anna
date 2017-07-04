@@ -3133,11 +3133,12 @@ webpackJsonp([0],[
 	        openClass = 'is-open',
 	        opaqueClass = 'is-opaque',
 	        NAV_HEIGHT = 70,
+	        mql = window.matchMedia('(min-width: 768px)'),
 	        state = {
 	        isOpen: false
 	    };
 	
-	    $navTrigger.on('click', toggleMenuState);
+	    var heroHeight = (0, _jquery2.default)('.hero').height() - NAV_HEIGHT;
 	
 	    function toggleMenuState() {
 	        state.isOpen = !state.isOpen;
@@ -3150,51 +3151,65 @@ webpackJsonp([0],[
 	    }
 	
 	    function openMenu() {
+	        state.isOpen = true;
 	        $el.addClass(openClass);
 	        $navTrigger.addClass('is-open');
 	    }
 	
 	    function closeMenu() {
+	        state.isOpen = false;
 	        $el.removeClass(openClass);
 	        $navTrigger.removeClass('is-open');
 	    }
 	
-	    var heroHeight = (0, _jquery2.default)('.hero, .page-hero').height() - NAV_HEIGHT;
+	    var scrollListener = function scrollListener() {
+	        // must invoke!
+	        // In order to run throttle
+	        (0, _lodash.throttle)(updateScrollState, 200)();
+	    };
 	
-	    // $(window).on("scroll", throttle(updateScrollState, 200));
+	    var removeDesktopEventListeners = function removeDesktopEventListeners() {
+	        (0, _jquery2.default)(window).off('scroll', scrollListener);
+	        (0, _jquery2.default)(window).off('resize', setHeroHeight);
+	    };
 	
-	    // function updateScrollState() {
-	    //     if (  $(document).scrollTop() > heroHeight ) {
-	    //         $el.addClass(opaqueClass);
-	    //         $el.find('.btn').removeClass('btn--ghost');
-	    //     } else {
-	    //         $el.removeClass(opaqueClass);
-	    //         $el.find('.btn').addClass('btn--ghost');
-	    //     }
-	    // }
+	    var addDesktopEventListeners = function addDesktopEventListeners() {
+	        (0, _jquery2.default)(window).on('scroll', scrollListener);
+	        (0, _jquery2.default)(window).on('resize', setHeroHeight);
+	    };
+	
+	    var updateScrollState = function updateScrollState() {
+	
+	        if ((0, _jquery2.default)(document).scrollTop() > heroHeight) {
+	            $el.addClass(opaqueClass);
+	            $el.find('.btn').removeClass('btn--ghost');
+	        } else {
+	            $el.removeClass(opaqueClass);
+	            $el.find('.btn').addClass('btn--ghost');
+	        }
+	    };
+	
+	    var setHeroHeight = function setHeroHeight() {
+	        heroHeight = (0, _jquery2.default)('.hero').height() - NAV_HEIGHT;
+	    };
+	
+	    if (mql.matches) {
+	        addDesktopEventListeners();
+	    } else {
+	        closeMenu();
+	    }
+	
+	    mql.addListener(function (data) {
+	        if (data.matches) {
+	            addDesktopEventListeners();
+	        } else {
+	            removeDesktopEventListeners();
+	            closeMenu();
+	        }
+	    });
+	
+	    $navTrigger.on('click', toggleMenuState);
 	};
-	
-	// module.exports = function(el) {
-	//     var $el = $(el),
-	//         stuckClass = 'is-stuck',
-	//         stickOffset = 0;
-	
-	//     // $(window).on('load', function() {
-	
-	//     //     if ( window.matchMedia("(min-width: 700px)").matches ) {
-	//     //         stickOffset = 0;
-	//     //     } else {
-	//     //         stickOffset = 158;
-	//     //     };
-	
-	//     //     var sticky = new Waypoint.Sticky({
-	//     //       element: el,
-	//     //       stuckClass: stuckClass,
-	//     //       offset: stickOffset
-	//     //     });
-	//     // });
-	
-	// };
 
 /***/ },
 /* 8 */

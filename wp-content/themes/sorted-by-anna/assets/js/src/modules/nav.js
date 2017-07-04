@@ -3,18 +3,17 @@ import { throttle } from 'lodash';
 
 module.exports = function(el) {
 
-    
     const $el = $(el),
             $navTrigger = $('.nav-menu'),
             openClass = 'is-open',
             opaqueClass = 'is-opaque',
             NAV_HEIGHT = 70,
+            mql = window.matchMedia('(min-width: 768px)'),
             state = {
                 isOpen: false
             };
 
-
-    $navTrigger.on('click', toggleMenuState);
+    let heroHeight = $('.hero').height() - NAV_HEIGHT;
 
     function toggleMenuState() {
         state.isOpen = !state.isOpen;
@@ -28,53 +27,65 @@ module.exports = function(el) {
     }
 
     function openMenu() {
+        state.isOpen = true;
         $el.addClass(openClass);
         $navTrigger.addClass('is-open');
+        
     }
 
-
     function closeMenu() {
+        state.isOpen = false;
         $el.removeClass(openClass);
         $navTrigger.removeClass('is-open');
     }
 
-    const heroHeight = $('.hero, .page-hero').height() - NAV_HEIGHT;
+    const scrollListener = () => {
+        // must invoke!
+        // In order to run throttle
+        throttle(updateScrollState, 200)();
+    }
 
-    // $(window).on("scroll", throttle(updateScrollState, 200));
+    const removeDesktopEventListeners = () => {
+        $(window).off('scroll', scrollListener);
+        $(window).off('resize', setHeroHeight);
+    }
 
-    // function updateScrollState() {
-    //     if (  $(document).scrollTop() > heroHeight ) {
-    //         $el.addClass(opaqueClass);
-    //         $el.find('.btn').removeClass('btn--ghost');
-    //     } else {
-    //         $el.removeClass(opaqueClass);
-    //         $el.find('.btn').addClass('btn--ghost');
-    //     }
-    // }
+    const addDesktopEventListeners = () => {
+        $(window).on('scroll', scrollListener);
+        $(window).on('resize', setHeroHeight);
+    }
 
+    const updateScrollState = () => {
+        
+        if (  $(document).scrollTop() > heroHeight ) {
+            $el.addClass(opaqueClass);
+            $el.find('.btn').removeClass('btn--ghost');
+        } else {
+            $el.removeClass(opaqueClass);
+            $el.find('.btn').addClass('btn--ghost');
+        }
+    }
+
+    const setHeroHeight = () => {
+        heroHeight = $('.hero').height() - NAV_HEIGHT;
+    }
+
+    if (mql.matches) {
+        addDesktopEventListeners();
+    } else {
+        closeMenu();
+    }
+
+    mql.addListener(function(data){
+        if (data.matches) {
+            addDesktopEventListeners();
+        } else {
+            removeDesktopEventListeners();
+            closeMenu();
+        }
+    });
+
+
+
+    $navTrigger.on('click', toggleMenuState);
 }
-
-
-
-
-// module.exports = function(el) {
-//     var $el = $(el),
-//         stuckClass = 'is-stuck',
-//         stickOffset = 0;
-
-//     // $(window).on('load', function() {
-
-//     //     if ( window.matchMedia("(min-width: 700px)").matches ) {
-//     //         stickOffset = 0;
-//     //     } else {
-//     //         stickOffset = 158;
-//     //     };
-
-//     //     var sticky = new Waypoint.Sticky({
-//     //       element: el,
-//     //       stuckClass: stuckClass,
-//     //       offset: stickOffset
-//     //     });
-//     // });
-
-// };

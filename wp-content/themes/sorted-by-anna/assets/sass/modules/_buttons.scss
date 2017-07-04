@@ -19,6 +19,7 @@ $horizontal-padding: 35px;
   padding-left: $horizontal-padding;
   padding-right: $horizontal-padding;
   appearance: none;
+  border: 2px solid transparent;
   cursor: pointer;
   transition: background-color .300s ease-out,
               color .300s ease-out;
@@ -41,7 +42,7 @@ $horizontal-padding: 35px;
   }
 
   &--sm {
-    $vertical-padding: 6px;
+    $vertical-padding: 5px;
     $horizontal-padding: 15px;
 
     padding-top: $vertical-padding;
