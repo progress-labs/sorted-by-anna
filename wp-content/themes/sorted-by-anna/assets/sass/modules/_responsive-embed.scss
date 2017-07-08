@@ -1,3 +1,9 @@
 .responsive-embed {
   @include intrinsic-ratio('video, img');
 }
+
+.responsive-embed, 
+.wp-video {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

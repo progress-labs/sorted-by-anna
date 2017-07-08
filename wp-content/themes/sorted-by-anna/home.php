@@ -17,7 +17,8 @@ the_partial('nav');
         ]); ?>
 
         <?php if ( have_posts() ) : ?>
-            <div class="grid grid-3-up">
+        <section class="page-section">
+                    <div class="grid grid-3-up">
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="col">
                         <?php the_partial('post-preview', [
@@ -27,14 +28,16 @@ the_partial('nav');
                             'category' => false,
                             'img' => 'http://placehold.it/400x300',
                             'excerpt' => false,
-                            'content' => false,
-                            'read_more' => false
+                            'content' => $post->post_content,
+                            'read_more' => true
                         ]); ?>
                     </div>
 
                 <?php wp_reset_postdata(); endwhile; ?>
 
             </div>
+        </section>
+
         <?php endif; ?>
 
     </main><!-- #content -->

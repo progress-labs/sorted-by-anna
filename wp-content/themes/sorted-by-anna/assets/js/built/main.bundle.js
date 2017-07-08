@@ -3155,7 +3155,9 @@ webpackJsonp([0],[
 	        if (!heroHeight) {
 	            $el.addClass(opaqueClass);
 	            $el.find('.btn').removeClass('btn--ghost');
+	            (0, _jquery2.default)('body').addClass('nav-spacer');
 	        }
+	
 	        return false;
 	    };
 	

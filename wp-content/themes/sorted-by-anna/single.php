@@ -67,8 +67,8 @@ the_partial('nav', [
                       'category' => false,
                       'img' => 'http://placehold.it/400x300',
                       'excerpt' => false,
-                      'content' => false,
-                      'read_more' => false
+                      'content' => $post->post_content,
+                      'read_more' => true
                   ]); ?>
 
               </div>

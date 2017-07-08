@@ -8,4 +8,4 @@
     <script src="https://use.typekit.net/zka5iam.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); echo is_front_page() ? '': 'foo'; ?>>

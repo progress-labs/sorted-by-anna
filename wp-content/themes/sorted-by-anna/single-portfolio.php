@@ -17,8 +17,9 @@ $related_portfolios = new WP_Query( $portfolio_args );
 
 $categories = wp_get_post_terms($post->ID, 'services');
 
-the_partial('nav');
+$testimonial = get_field( 'project_testimonial' );
 
+the_partial('nav');
 ?>
 
 <main class="single-project">
@@ -79,12 +80,10 @@ the_partial('nav');
 
     </div>
 
-
-
-    <?php if ( get_field( 'project_testimonial' ) ) : ?>
+    <?php if ( $testimonial ) : ?>
         <section class="page-section">
             <?php the_partial( 'single-testimonial', [
-                'testimonial' => get_field( 'project_testimonial' ) ? get_field( 'project_testimonial' ) : false
+                'testimonial' => $testimonial[0]
             ]); ?>
         </section>
     <?php endif; ?>

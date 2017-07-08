@@ -95,7 +95,10 @@ $block: 'menu';
     @include vertically-centered(absolute);
     left: 0;
     right: 0;
-    height: 100%;
+
+    @include respond-to('small and up') {
+        height: 100%;
+    }
 }
 
 .sub-menu {

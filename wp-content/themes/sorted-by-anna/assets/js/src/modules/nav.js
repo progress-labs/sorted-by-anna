@@ -31,8 +31,11 @@ module.exports = function(el) {
         if ( !heroHeight ) {
             $el.addClass(opaqueClass);
             $el.find('.btn').removeClass('btn--ghost');
+            $('body').addClass('nav-spacer');
         }
+        
         return false;
+
     }
 
     function openMenu() {

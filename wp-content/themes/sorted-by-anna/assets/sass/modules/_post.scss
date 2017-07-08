@@ -6,7 +6,6 @@
 
 .post {
 
-
     &__header {
         text-align: center;
     }
@@ -19,7 +18,7 @@
 
     &__author,
     &__date {
-        @include freight;
+        @include argent-light;
         display: inline-block;
         font-size: rem(14);
         margin-top: 0;
@@ -119,4 +118,16 @@
     /*-------------------------------------------- */
 
 
+}
+
+
+.featured-image {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
