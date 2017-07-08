@@ -12,10 +12,11 @@ $post_args = array(
 
 $related_posts = new WP_Query( $post_args );
 
-the_partial('nav');
+the_partial('nav', [
+    'is_solid' => true
+]);
 ?>
 <div class="page-container">
-
 
 <?php if ( have_posts() ) : ?>
 

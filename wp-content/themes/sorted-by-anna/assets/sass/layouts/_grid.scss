@@ -6,6 +6,8 @@
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: $page-container-padding;
+    padding-right: $page-container-padding;
 
     &--small {
         max-width: 600px;

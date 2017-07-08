@@ -3,7 +3,6 @@
 /**
  * Nav Component
  */
-
 ?>
 
 <div class="nav" data-js-component="nav">

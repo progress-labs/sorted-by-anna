@@ -3133,14 +3133,13 @@ webpackJsonp([0],[
 	        openClass = 'is-open',
 	        opaqueClass = 'is-opaque',
 	        NAV_HEIGHT = 70,
+	        HERO_HEIGHT = (0, _jquery2.default)('.hero').height() - NAV_HEIGHT || false,
 	        mql = window.matchMedia('(min-width: 768px)'),
 	        state = {
 	        isOpen: false
 	    };
 	
-	    var heroHeight = (0, _jquery2.default)('.hero').height() - NAV_HEIGHT;
-	
-	    console.log(heroHeight);
+	    var heroHeight = HERO_HEIGHT;
 	
 	    function toggleMenuState() {
 	        state.isOpen = !state.isOpen;
@@ -3151,6 +3150,14 @@ webpackJsonp([0],[
 	            closeMenu();
 	        }
 	    }
+	
+	    var checkIfHeroExists = function checkIfHeroExists() {
+	        if (!heroHeight) {
+	            $el.addClass(opaqueClass);
+	            $el.find('.btn').removeClass('btn--ghost');
+	        }
+	        return false;
+	    };
 	
 	    function openMenu() {
 	        state.isOpen = true;
@@ -3176,6 +3183,7 @@ webpackJsonp([0],[
 	    };
 	
 	    var addDesktopEventListeners = function addDesktopEventListeners() {
+	        if (!heroHeight) return;
 	        (0, _jquery2.default)(window).on('scroll', scrollListener);
 	        (0, _jquery2.default)(window).on('resize', setHeroHeight);
 	    };
@@ -3192,7 +3200,7 @@ webpackJsonp([0],[
 	    };
 	
 	    var setHeroHeight = function setHeroHeight() {
-	        heroHeight = (0, _jquery2.default)('.hero').height() - NAV_HEIGHT;
+	        heroHeight = (0, _jquery2.default)('.hero').height() - NAV_HEIGHT || 0;
 	    };
 	
 	    if (mql.matches) {
@@ -3210,6 +3218,7 @@ webpackJsonp([0],[
 	        }
 	    });
 	
+	    checkIfHeroExists();
 	    $navTrigger.on('click', toggleMenuState);
 	};
 

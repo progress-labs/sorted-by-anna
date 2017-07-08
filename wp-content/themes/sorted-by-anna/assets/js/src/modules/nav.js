@@ -8,14 +8,13 @@ module.exports = function(el) {
             openClass = 'is-open',
             opaqueClass = 'is-opaque',
             NAV_HEIGHT = 70,
+            HERO_HEIGHT = $('.hero').height() - NAV_HEIGHT || false,
             mql = window.matchMedia('(min-width: 768px)'),
             state = {
                 isOpen: false
             };
 
-    let heroHeight = $('.hero').height() - NAV_HEIGHT;
-
-    console.log(heroHeight);
+    let heroHeight = HERO_HEIGHT;
 
     function toggleMenuState() {
         state.isOpen = !state.isOpen;
@@ -28,11 +27,18 @@ module.exports = function(el) {
         }
     }
 
+    const checkIfHeroExists = () => {
+        if ( !heroHeight ) {
+            $el.addClass(opaqueClass);
+            $el.find('.btn').removeClass('btn--ghost');
+        }
+        return false;
+    }
+
     function openMenu() {
         state.isOpen = true;
         $el.addClass(openClass);
         $navTrigger.addClass('is-open');
-        
     }
 
     function closeMenu() {
@@ -53,13 +59,14 @@ module.exports = function(el) {
     }
 
     const addDesktopEventListeners = () => {
+        if ( !heroHeight ) return;
         $(window).on('scroll', scrollListener);
         $(window).on('resize', setHeroHeight);
     }
 
     const updateScrollState = () => {
         
-        if (  $(document).scrollTop() > heroHeight ) {
+        if ( $(document).scrollTop() > heroHeight ) {
             $el.addClass(opaqueClass);
             $el.find('.btn').removeClass('btn--ghost');
         } else {
@@ -69,7 +76,7 @@ module.exports = function(el) {
     }
 
     const setHeroHeight = () => {
-        heroHeight = $('.hero').height() - NAV_HEIGHT;
+        heroHeight = $('.hero').height() - NAV_HEIGHT || 0;
     }
 
     if (mql.matches) {
@@ -88,6 +95,6 @@ module.exports = function(el) {
     });
 
 
-
+    checkIfHeroExists();
     $navTrigger.on('click', toggleMenuState);
 }
