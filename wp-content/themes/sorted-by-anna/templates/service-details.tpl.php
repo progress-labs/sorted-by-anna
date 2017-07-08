@@ -21,19 +21,21 @@ the_partial( 'hero', [
 ]);
 
 ?>
-<div class="page-container">
 
+<?php if ( the_content() ) : ?>
+<div class="page-container page-section">
+    
     <div class="page-content">
-      <?php if ( have_posts() ) {
+      <?php 
               while ( have_posts() ) {
                 the_post();
 
                 the_content();
               }
-          }
         ?>
     </div>
 </div>
+<?php endif; ?>
 
 <?php if ( $how_it_works ) : ?>
     <section class="page-section">

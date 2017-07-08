@@ -38,12 +38,6 @@ the_partial('nav');
             <span class="project-date">
                 <?php echo $project->post_date(); ?>
             </span>
-        </div>
-
-
-        <div class="page-content">
-
-            <?php the_content(); ?>
 
             <?php if ( !empty( $categories ) ): ?>
             <div class="post-categories">
@@ -55,6 +49,14 @@ the_partial('nav');
                 </ul>
             </div>
             <?php endif; ?>
+        </div>
+
+
+        <div class="page-content">
+
+            <?php the_content(); ?>
+
+            
 
         </div>
 
