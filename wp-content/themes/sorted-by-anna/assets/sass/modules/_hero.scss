@@ -55,6 +55,10 @@
       }
   }
 
+  .responsive-embed {
+    margin-top: 0;
+  }
+
   @include respond-to('small and up') {
 
     &__image-wrap {

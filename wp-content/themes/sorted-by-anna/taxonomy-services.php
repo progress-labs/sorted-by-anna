@@ -34,18 +34,11 @@ $featured_post = [
     <?php if ( have_posts() ) : ?>
 
         <section class="page-section">
-            <?php 
-                the_partial('featured-project', [
-                    'project' => $featured_post
-                ]);
-            ?>
-        </section>
 
-        <section class="page-section">
-
-            <div class="grid grid-3-up jb">
+            <div class="grid grid-3-up jb masonry" data-js-component="masonryGrid">
+                <div class="sizer"></div>
+                <div class="gutter"></div>
                 <?php while( have_posts() ) : the_post(); ?>
-                    <?php if ( $wp_query->current_post !== 0 ) : ?> 
 
                         <div class="col">
                             <?php the_partial('post-preview', [
@@ -58,11 +51,7 @@ $featured_post = [
                                 'content' => false,
                                 'read_more' => true
                             ]); ?>
-                        </div>
-
-                    <?php endif; ?>
-                    
-
+                        </div>                    
 
                 <?php endwhile; wp_reset_postdata();?>
 
