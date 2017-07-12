@@ -37,6 +37,7 @@ $container: 1200;
             .col {
                 width: 32%;
             }
+        }
 
         &-4-up {
             @include remove-last-row-margin(4, 'col');
@@ -50,6 +51,7 @@ $container: 1200;
     @include respond-to('medium and up') {
         &-4-up {
             flex-wrap: wrap;
+
             .sizer,
             .col {
                 width: percentage(1/4);
@@ -72,18 +74,70 @@ $container: 1200;
 
     @include respond-to('small and up') {
         & {
-            // padding-left: 1%;
-            // padding-right: 1%;
+            padding-left: 1%;
+            padding-right: 1%;
             box-sizing: border-box;
         }
 
         & + & {
-            margin-top: 0;;
+            margin-top: 0;
         }
     }
 }
 
-
 .gutter {
-    width: 1%;
+    width: 2%;
+
+    @include respond-to('small and up') {
+        width: 4%;
+    }
+
+    @include respond-to('medium and up') {
+        width: 3%;
+    }
+}
+
+
+.masonry-grid {
+    max-width: 675px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .col {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    @include respond-to('small and up') {
+
+        & {
+            max-width: 800px;
+        }
+
+        .col {
+            width: 48%;
+            transition: box-shadow .250s ease-out;
+            border: 1px solid color(barely-white);
+            margin-bottom: 35px;
+
+            &:hover {
+                box-shadow: 0px 4px 6px 0px rgba(color(hover-border), .5);
+            }
+        }
+    }
+
+    @include respond-to('medium and up') {
+
+        & {
+            max-width: 1200px;
+        }
+
+        .col {
+            width: 31.33%;
+        }
+    }
 }

@@ -3,14 +3,14 @@ import imagesLoaded from 'imagesloaded';
 import Masonry from 'masonry-layout';
 
 module.exports = function(el) {
-    const col = document.querySelectorAll('.col');
+    const col = document.querySelectorAll('.col'),
+          mql = window.matchMedia("(min-width: 768px)");
 
-    console.log(col.length);
-    // if (col.length !> 3) return;
-
+    // Ensure container is tall enough
+    // For at least one element. 
     el.style.minHeight = '700px';
 
-    var msnry = new Masonry( el, {
+    var masonry = new Masonry( el, {
         percentPosition: true,
         itemSelector: '.col',
         initLayout: false,
@@ -19,9 +19,7 @@ module.exports = function(el) {
     });
 
     imagesLoaded(el, function() {
-        msnry.layout();
+        masonry.layout();
     });
-
-
 
 }

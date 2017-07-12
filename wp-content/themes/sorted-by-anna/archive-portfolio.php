@@ -29,7 +29,7 @@ the_partial('hero', [
 
             $args = array(
                 'post_type' => 'portfolio',
-                'posts_per_page' => 4,
+                'posts_per_page' => 6,
                 'tax_query' => array(
                     array(
                     'taxonomy' => 'services',
@@ -45,24 +45,28 @@ the_partial('hero', [
 
                 <h2 class="tax-title"> <?php echo $term['name']; ?></h2>
 
-                <div class="grid grid-4-up">
+                <div class="masonry-grid" data-js-component="masonryGrid">
+                    <div class="sizer"></div>
+                    <div class="gutter"></div>
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="col">
                             <?php the_partial('post-preview', [
                                 'url' => get_the_permalink($post->ID),
                                 'title' => $post->post_title,
-                                'category' => get_the_terms($post->ID, 'services')[0]->name,
-                                'img' => 'http://placehold.it/400x300',
-                                'excerpt' => false,
+                                'category' => false,
+                                'date' => get_the_date( 'F j, Y'),
+                                'img' => get_the_post_thumbnail_url( $post->ID ),
+                                'excerpt' => get_the_excerpt( $post->ID ) ? get_the_excerpt( $post->ID ) : false,
                                 'content' => false,
-                                'read_more' => false
+                                'read_more' => true
                             ]); ?>
                         </div>
 
                     <?php wp_reset_postdata(); endwhile; ?>
                 </div>
-
-                <a class="btn btn--centered" href="<?php echo get_term_link( get_the_terms($post->ID, 'services')[0]->term_id ); ?>">View All</a>
+                <?php if ( $query->found_posts > 6 ) : ?>
+                    <a class="text-link btn--centered" href="<?php echo get_term_link( $term['id'] ); ?>">View All <?php echo $term['name']; ?> Projects ⟶</a>
+                <?php endif; ?>
             </section>
 
         <?php endif; ?>

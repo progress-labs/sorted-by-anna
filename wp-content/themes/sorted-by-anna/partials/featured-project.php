@@ -17,12 +17,12 @@
 
     <a href="<?php echo get_the_permalink( $project['id'] );?>" class="featured-project__content">
         <?php echo $project['content']; ?>
-        <span  class="featured-project__cta">View Project ⟶</span>
+        <span  class="text-link featured-project__cta">View Project ⟶</span>
     </a>
 
     <?php if ( $project['term'] ) : ?>
     <div class="hide-at-small">
-        <a class="featured-project__cta featured-project__cta--mobile" href="<?php echo get_term_link( $project['term']['id'] ); ?>">More <?php echo $project['term']['name']; ?> Projects ⟶</a>
+        <a class="btn--centered text-link featured-project__cta--mobile" href="<?php echo get_term_link( $project['term']['id'] ); ?>">More <?php echo $project['term']['name']; ?> Projects ⟶</a>
     </div>
     <?php endif; ?>
 </div>
