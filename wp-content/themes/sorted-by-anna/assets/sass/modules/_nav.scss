@@ -110,8 +110,11 @@ $nav-size: 45px;
     }
 
     .logo {
-        // width: 40px;
-        // height: 40px;
+        color: color(white);
+
+        &:hover {
+            color: color(aqua);
+        }
 
         svg {
             display: block;

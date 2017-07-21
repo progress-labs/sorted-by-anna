@@ -1243,7 +1243,8 @@ ul {
         display: none; }
     .hero__image-wrap,
     .hero .responsive-embed {
-      display: block; } }
+      display: block;
+      margin-bottom: 0; } }
 
 .btn, .gform_button {
   font-family: "europa", "helvetica", "sans-serif";
@@ -1379,8 +1380,12 @@ ul {
   opacity: 0;
   z-index: -1; }
 
-.nav .logo svg {
-  display: block; }
+.nav .logo {
+  color: #fff; }
+  .nav .logo:hover {
+    color: #A3DBCE; }
+  .nav .logo svg {
+    display: block; }
 
 @media (min-width: 768px) {
   .nav {
