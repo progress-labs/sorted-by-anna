@@ -1380,6 +1380,9 @@ ul {
   opacity: 0;
   z-index: -1; }
 
+.nav .logo svg {
+  display: block; }
+
 @media (min-width: 768px) {
   .nav {
     position: fixed;
