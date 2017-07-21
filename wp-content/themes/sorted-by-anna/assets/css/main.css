@@ -1159,8 +1159,7 @@ ul {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
 
 .responsive-embed,
 .wp-video {
@@ -1168,7 +1167,8 @@ ul {
   margin-bottom: 50px; }
 
 .hero {
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
   .hero--overlay:after {
     content: "";
     position: absolute;
@@ -1225,8 +1225,7 @@ ul {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%; }
+        width: 100%; }
     .hero__title {
       position: absolute;
       top: 50%;
@@ -1551,6 +1550,10 @@ ul {
   margin-bottom: 60px;
   text-align: center;
   font-size: 3rem; }
+  .consultation-cta--bg {
+    background-color: #FBFBFB;
+    padding-top: 100px;
+    padding-bottom: 100px; }
   .consultation-cta__title {
     font-family: "Argent", serif;
     font-style: italic;
@@ -2869,8 +2872,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
 
 /**
  * Block: image-cluster
@@ -3460,8 +3462,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%; }
+    width: 100%; }
 
 /**
  * Block: tax-title
@@ -3764,13 +3765,14 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: service-statement--modifier
  */
 .service-statement {
-  max-width: 1025px;
+  max-width: 800px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin-top: 60px;
   margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: 3rem;
   line-height: 1.25;
   /*-------------------------------------------- */
   /** Variables */
@@ -3787,6 +3789,11 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
   /*-------------------------------------------- */
   /** Block Media Queries */
   /*-------------------------------------------- */ }
+  .service-statement h2 {
+    font-size: 1.75rem; }
+  @media (min-width: 768px) {
+    .service-statement h2 {
+      font-size: 2.625rem; } }
 
 /**
  * Block: backdrop

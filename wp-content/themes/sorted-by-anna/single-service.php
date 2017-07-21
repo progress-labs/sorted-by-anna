@@ -27,28 +27,4 @@ the_partial('hero', [
   'title' => get_the_title(get_queried_object_id())
 ]);
 
-?>
-
-<?php while (have_posts()): the_post(); ?>
-  <h1><?php the_title(); ?></h1>
-  <?php the_content(); ?>
-
-    <?php
-
-      /**
-       *
-       * Iteratve over each Service type
-       * Display the :
-       *   1. Title
-       *   2. Content
-       *   3. Service Types
-       *
-       * At the bottom have a CTA for book a consultation
-       */
-
-
-     ?>
-  <?php endwhile; ?>
-
-
-<?php get_footer();?>
+get_footer();?>

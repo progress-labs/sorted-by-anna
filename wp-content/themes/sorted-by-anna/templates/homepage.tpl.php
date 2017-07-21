@@ -56,7 +56,7 @@ the_partial('nav');
 ?>
 
 <?php the_partial('hero', [
-  'title' => 'How can I help you do stuff?',
+  'title' => 'Let\'s get sorted!',
   'media' => [
     'img' => get_field('hero', $post->ID)['sizes']['large'],
     'video' => [

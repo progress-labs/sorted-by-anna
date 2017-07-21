@@ -24,7 +24,7 @@ the_partial('nav');
 <main>
 
     <?php the_partial( 'hero', [
-        'image' => 'http://placehold.it/1200x400',
+        'image' => get_the_post_thumbnail_url( $post->ID ),
         'title' => get_the_title()
     ]); ?>
 

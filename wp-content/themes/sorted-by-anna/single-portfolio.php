@@ -91,12 +91,8 @@ the_partial('nav');
     <?php endif; ?>
 
     <section class="page-section">
-        <?php the_partial('callout', [
-            'text' => 'Find out which service sorts you best',
-            'btn' => [
-                'url' => '#',
-                'text' => 'Book A Consultation Now'
-            ]
+        <?php the_partial('consultation-cta', [
+            'has_bg' => true
         ]); ?>
     </section>
 

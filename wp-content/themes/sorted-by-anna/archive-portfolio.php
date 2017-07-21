@@ -75,6 +75,8 @@ the_partial('hero', [
             </section>
         <?php endforeach; ?>
 
+        <?php the_partial('consultation-cta'); ?>
+
 
     <?php endif; ?>
 </div>

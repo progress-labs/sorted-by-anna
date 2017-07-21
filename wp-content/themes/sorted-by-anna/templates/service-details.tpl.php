@@ -16,11 +16,9 @@ get_header();
 the_partial('nav');
 
 the_partial( 'hero', [
-    'image' => 'http://placehold.it/1200x400',
-    'title' => get_the_title()
-]);
-
-?>
+        'image' => get_the_post_thumbnail_url( $post->ID ),
+        'title' => get_the_title()
+]); ?>
 
 <?php if ( the_content() ) : ?>
 <div class="page-container page-section">
@@ -110,7 +108,12 @@ the_partial( 'hero', [
 
 </div>
 
+
+
 <?php
+
+the_partial('consultation-cta');
+
 
 get_footer();
 

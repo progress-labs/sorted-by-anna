@@ -2,18 +2,19 @@
 
 get_header();
 
-var_dump();
-
-
 the_partial('nav');
+
+$blog_page_id = get_option( 'page_for_posts' );
+
+$image = get_template_directory_uri() . '/assets/img/blog-bg.jpg';
 ?>
 
 <div id="page-container">
 	<main role="main">
 
         <?php the_partial( 'hero', [
-            'image' => 'http://placehold.it/1200x400',
-            'title' => get_the_title(get_queried_object_id())
+            'image' => $image,
+            'title' => get_the_title( $blog_page_id )
         ]); ?>
 
         <?php if ( have_posts() ) : ?>
