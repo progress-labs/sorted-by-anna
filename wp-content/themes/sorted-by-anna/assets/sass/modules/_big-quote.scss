@@ -5,6 +5,8 @@
  */
 
 .big-quote {
+    padding-left: 30px;
+    padding-right: 30px;
     margin-top: 65px;
     margin-bottom: 65px;
     max-width: 1200px;
@@ -23,8 +25,20 @@
     }
 
     @include respond-to('medium and up') {
+        & {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
         blockquote {
             font-size: rem(60);
+        }
+    }
+
+    @include respond-to('large and up') {
+        & {
+            padding-left: 100px;
+            padding-right: 100px;
         }
     }
 

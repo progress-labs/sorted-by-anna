@@ -133,11 +133,17 @@ $container: 1200;
     @include respond-to('medium and up') {
 
         & {
-            max-width: 1200px;
+            max-width: 1000px;
         }
 
         .col {
             width: 31.33%;
+        }
+    }
+
+    @include respond-to('xlarge and up') {
+        & {
+            max-width: 1200px;
         }
     }
 }

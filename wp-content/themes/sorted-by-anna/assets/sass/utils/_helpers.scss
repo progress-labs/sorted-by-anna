@@ -41,3 +41,7 @@
 .clearfix {
     @include clearfix;
 }
+
+.text-center {
+    text-align: center;
+}

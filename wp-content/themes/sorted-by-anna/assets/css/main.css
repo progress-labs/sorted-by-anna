@@ -950,6 +950,9 @@ ul {
   content: "";
   display: table; }
 
+.text-center {
+  text-align: center; }
+
 /*-------------------------------------------- */
 /** Layout */
 /*-------------------------------------------- */
@@ -1111,9 +1114,12 @@ ul {
         box-shadow: 0px 4px 6px 0px rgba(230, 230, 230, 0.5); } }
   @media (min-width: 992px) {
     .masonry-grid {
-      max-width: 1200px; }
+      max-width: 1000px; }
     .masonry-grid .col {
       width: 31.33%; } }
+  @media (min-width: 1200px) {
+    .masonry-grid {
+      max-width: 1200px; } }
 
 /*-------------------------------------------- */
 /** Pages */
@@ -1127,6 +1133,12 @@ ul {
  *
  *-----------------------------------------------------------------------------
  *----------------------------------------------------------------------------- */
+.error404 .page-link {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #FF7676;
+  text-decoration: none; }
+
 /*-------------------------------------------- */
 /** Modules */
 /*-------------------------------------------- */
@@ -1217,14 +1229,19 @@ ul {
         height: 100%; }
     .hero__title {
       position: absolute;
-      bottom: 25px;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
       left: 0;
       right: 0;
       margin-top: 0;
       font-size: 3.375rem;
-      color: #fff; }
+      color: #fff;
+      padding-top: 0;
+      max-width: 50%;
+      line-height: 1.2; }
       .hero__title:after {
-        background-color: #fff; }
+        display: none; }
     .hero__image-wrap,
     .hero .responsive-embed {
       display: block; } }
@@ -3594,6 +3611,8 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: big-quote--modifier
  */
 .big-quote {
+  padding-left: 30px;
+  padding-right: 30px;
   margin-top: 65px;
   margin-bottom: 65px;
   max-width: 1200px;
@@ -3625,8 +3644,15 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     text-align: left;
     line-height: 1.1; }
   @media (min-width: 992px) {
+    .big-quote {
+      padding-left: 60px;
+      padding-right: 60px; }
     .big-quote blockquote {
       font-size: 3.75rem; } }
+  @media (min-width: 1024px) {
+    .big-quote {
+      padding-left: 100px;
+      padding-right: 100px; } }
 
 /**
  * Block: featured-project
@@ -3724,7 +3750,10 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     .featured-project:nth-child(odd) .featured-project__content {
       left: 7%; }
     .featured-project__cta {
-      margin-top: 18%; } }
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 18%;
+      margin-bottom: 0; } }
 
 /**
  * Block: service-statement

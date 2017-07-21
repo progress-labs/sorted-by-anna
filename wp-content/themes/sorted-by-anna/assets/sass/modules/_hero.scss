@@ -55,35 +55,36 @@
       }
   }
 
-  .responsive-embed {
-    margin-top: 0;
-  }
-
-  @include respond-to('small and up') {
-
-    &__image-wrap {
-      @include intrinsic-ratio('.hero__image' , 1200, 400);
-    }
-
-    &__title {
-      $color: color(white);
-
-      position: absolute;
-      bottom: 25px;
-      left: 0;
-      right: 0;
-      margin-top: 0;
-      font-size: rem(54);
-      color: $color;
-
-      &:after {
-          background-color: $color;
-      }
-    }
-    
-    &__image-wrap, 
     .responsive-embed {
-      display: block;
+        margin-top: 0;
     }
+
+    @include respond-to('small and up') {
+
+        &__image-wrap {
+            @include intrinsic-ratio('.hero__image' , 1200, 400);
+        }
+
+        &__title {
+            @include vertically-centered(absolute);
+            $color: color(white);
+            left: 0;
+            right: 0;
+            margin-top: 0;
+            font-size: rem(54);
+            color: $color;
+            padding-top: 0;
+            max-width: 50%;
+            line-height: 1.2;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &__image-wrap, 
+        .responsive-embed {
+            display: block;
+        }
   }
 }

@@ -6,7 +6,8 @@ $page_args = [
 	'hierarchical' => 1,
 	'parent' => 0,
 	'post_type' => 'page',
-	'post_status' => 'publish'
+	'post_status' => 'publish',
+    'exclude' => get_option( 'page_on_front' )
 ];
 $pages = get_pages( $page_args );
 
@@ -44,7 +45,7 @@ $terms = get_terms( [
                 <ul class="footer-links">
                     <?php foreach ($pages as $page) : ?>
                         <li class="footer-links__item">
-                            <a class="footer-links__link" href="<?php echo get_permalink($page->ID); ?>"><?php echo $page->post_title; ?></a>
+                            <a class="footer-links__link" href="<?php echo get_post_type_archive_link( 'services' ); ?>"><?php echo $page->post_title; ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
@@ -57,6 +58,9 @@ $terms = get_terms( [
                             <a class="footer-links__link" href="<?php echo get_term_link( $term->term_id ); ?>"><?php echo $term->name; ?> Projects</a>
                         </li>
                     <?php endforeach; ?>
+                        <li class="footer-links__item">
+                            <a class="footer-links__link" href="<?php echo get_term_link( $term->term_id ); ?>">See All Projects</a>
+                        </li>
                 </ul>
             </div>
             <div class="col book-col">

@@ -18,7 +18,9 @@ the_partial('nav');
 
         <?php if ( have_posts() ) : ?>
         <section class="page-section">
-                    <div class="grid grid-3-up">
+            <div class="masonry-grid" data-js-component="masonryGrid">
+                <div class="sizer"></div>
+                <div class="gutter"></div>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="col">
                         <?php the_partial('post-preview', [
