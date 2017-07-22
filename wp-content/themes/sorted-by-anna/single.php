@@ -52,7 +52,7 @@ the_partial('nav', [
 </div>
 
 <?php if ( $related_posts->have_posts() ) : ?>
-<div class="related-posts">
+<div class="related-posts backdrop">
     <?php the_partial('section-title', [
         'title' => 'Related Posts'
     ]); ?>

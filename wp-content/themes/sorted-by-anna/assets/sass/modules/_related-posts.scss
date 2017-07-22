@@ -5,7 +5,7 @@
  */
 
 .related-posts {
-    background-color: color(robin);
+    background-color: color(offwhite);
 
     .grid {
         padding-top: 35px;
@@ -16,7 +16,7 @@
         margin-top: 0;
         margin-bottom: 0;
         padding-top: 25px;
-        color: white;
+        color: color(black);
     }
 
     @include respond-to('small and up') {

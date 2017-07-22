@@ -27,8 +27,8 @@ $terms = get_terms( [
             <div class="col social-col">
                 <h4 class="site-footer__col-title">Social</h4>
                 <div class="social-links">
-                    <a href="<?php echo get_field( 'facebook', 'option' ); ?>" class="social-links__item">
-                        <?php svg_icon( 'facebook', 24, 24); ?>
+                    <a href="<?php echo get_field( 'email', 'option' ); ?>" class="social-links__item">
+                        <?php svg_icon( 'email', 24, 24); ?>
                         <span class="social-links__text">anna[at]sortedbyanna[dot]com</span>
                     </a>
                     <a href="<?php echo get_field( 'instagram', 'option' ); ?>" class="social-links__item">

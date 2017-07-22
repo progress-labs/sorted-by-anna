@@ -1556,7 +1556,7 @@ ul {
   text-align: center;
   font-size: 3rem; }
   .consultation-cta--bg {
-    background-color: #FBFBFB;
+    background-color: #F4F4F4;
     padding-top: 100px;
     padding-bottom: 100px; }
   .consultation-cta__title {
@@ -1781,7 +1781,7 @@ blockquote {
   border-bottom: 8px solid #FF7676;
   padding-top: 75px;
   padding-bottom: 50px;
-  background-color: #FBFBFB;
+  background-color: #F4F4F4;
   margin-top: 100px; }
   .site-footer__col-title {
     display: inline-block;
@@ -2352,19 +2352,18 @@ blockquote {
   position: relative;
   display: inline-block;
   width: 100% !important;
-  height: 38px;
+  height: 50px;
   border: 0;
   outline: 0;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
   box-sizing: border-box;
-  background-color: #fff;
-  border-radius: 3px;
+  background-color: #F4F4F4;
+  border-radius: 0;
   line-height: 1;
-  font-size: 0.875rem !important;
-  border: 1px solid #85e0ff; }
+  font-size: 1.125rem !important; }
   .sba-form-type-text input[type="text"]:focus, .sba-form-type-text input[type="text"]:active,
   .sba-form-type-email input[type="text"]:focus,
   .sba-form-type-email input[type="text"]:active,
@@ -2443,50 +2442,6 @@ blockquote {
       /* Firefox 18- */
       color: black;
       transition: color .250s ease-out; }
-  .sba-form-type-text input[type="text"]::-webkit-input-placeholder,
-  .sba-form-type-email input[type="text"]::-webkit-input-placeholder,
-  .sba-form-type-number input[type="text"]::-webkit-input-placeholder,
-  .sba-form-type-phone input[type="text"]::-webkit-input-placeholder,
-  .sba-form-type-name input[type="text"]::-webkit-input-placeholder,
-  .sba-form-type-textarea textarea::-webkit-input-placeholder,
-  .sba-form-type-select select::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-text input[type="text"]::-moz-placeholder,
-  .sba-form-type-email input[type="text"]::-moz-placeholder,
-  .sba-form-type-number input[type="text"]::-moz-placeholder,
-  .sba-form-type-phone input[type="text"]::-moz-placeholder,
-  .sba-form-type-name input[type="text"]::-moz-placeholder,
-  .sba-form-type-textarea textarea::-moz-placeholder,
-  .sba-form-type-select select::-moz-placeholder {
-    /* Firefox 19+ */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-text input[type="text"]:-ms-input-placeholder,
-  .sba-form-type-email input[type="text"]:-ms-input-placeholder,
-  .sba-form-type-number input[type="text"]:-ms-input-placeholder,
-  .sba-form-type-phone input[type="text"]:-ms-input-placeholder,
-  .sba-form-type-name input[type="text"]:-ms-input-placeholder,
-  .sba-form-type-textarea textarea:-ms-input-placeholder,
-  .sba-form-type-select select:-ms-input-placeholder {
-    /* IE 10+ */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-text input[type="text"]:-moz-placeholder,
-  .sba-form-type-email input[type="text"]:-moz-placeholder,
-  .sba-form-type-number input[type="text"]:-moz-placeholder,
-  .sba-form-type-phone input[type="text"]:-moz-placeholder,
-  .sba-form-type-name input[type="text"]:-moz-placeholder,
-  .sba-form-type-textarea textarea:-moz-placeholder,
-  .sba-form-type-select select:-moz-placeholder {
-    /* Firefox 18- */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
 
 .sba-form-type-textarea textarea {
   padding-left: 15px;
@@ -2533,19 +2488,18 @@ blockquote {
   position: relative;
   display: inline-block;
   width: 100% !important;
-  height: 38px;
+  height: 50px;
   border: 0;
   outline: 0;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
   box-sizing: border-box;
-  background-color: #fff;
-  border-radius: 3px;
+  background-color: #F4F4F4;
+  border-radius: 0;
   line-height: 1;
-  font-size: 0.875rem !important;
-  border: 1px solid #85e0ff;
+  font-size: 1.125rem !important;
   padding-left: 0 !important;
   padding-right: 0 !important; }
   .sba-form-type-multiselect select[multiple='multiple']:focus, .sba-form-type-multiselect select[multiple='multiple']:active {
@@ -2566,26 +2520,6 @@ blockquote {
       /* Firefox 18- */
       color: black;
       transition: color .250s ease-out; }
-  .sba-form-type-multiselect select[multiple='multiple']::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-multiselect select[multiple='multiple']::-moz-placeholder {
-    /* Firefox 19+ */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-multiselect select[multiple='multiple']:-ms-input-placeholder {
-    /* IE 10+ */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-multiselect select[multiple='multiple']:-moz-placeholder {
-    /* Firefox 18- */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
   .sba-form-type-multiselect select[multiple='multiple'] option {
     padding-top: 5px !important;
     padding-bottom: 8px !important;
@@ -2672,19 +2606,18 @@ blockquote {
   position: relative;
   display: inline-block;
   width: 100% !important;
-  height: 38px;
+  height: 50px;
   border: 0;
   outline: 0;
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
   box-sizing: border-box;
-  background-color: #fff;
-  border-radius: 3px;
+  background-color: #F4F4F4;
+  border-radius: 0;
   line-height: 1;
-  font-size: 0.875rem !important;
-  border: 1px solid #85e0ff;
+  font-size: 1.125rem !important;
   margin-left: 0 !important;
   width: auto !important; }
   .sba-form-type-radio li input[type="text"]:focus, .sba-form-type-radio li input[type="text"]:active {
@@ -2705,26 +2638,6 @@ blockquote {
       /* Firefox 18- */
       color: black;
       transition: color .250s ease-out; }
-  .sba-form-type-radio li input[type="text"]::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-radio li input[type="text"]::-moz-placeholder {
-    /* Firefox 19+ */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-radio li input[type="text"]:-ms-input-placeholder {
-    /* IE 10+ */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
-  .sba-form-type-radio li input[type="text"]:-moz-placeholder {
-    /* Firefox 18- */
-    font-size: 0.8125rem;
-    color: red;
-    text-transform: uppercase; }
 
 .sba-form-type-honeypot {
   opacity: 0;
@@ -2758,7 +2671,11 @@ body .gform_wrapper .top_label div.ginput_container {
   margin-top: 0 !important; }
 
 .gform_wrapper div.validation_error {
-  margin-bottom: 15px !important; }
+  font-family: "Argent", serif;
+  font-style: normal;
+  font-weight: 300;
+  margin-bottom: 15px !important;
+  font-weight: 300 !important; }
 
 body .gform_wrapper li.gfield.gfield_error,
 body .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
@@ -2798,11 +2715,19 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 
 .gform_wrapper .gfield .gfield_label {
   font-family: "europa", "helvetica", "sans-serif";
-  font-weight: 700; }
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 8px; }
 
 .gform_wrapper .gfield.affectiva-form-type-checkbox .gfield_label,
 .gform_wrapper .gfield.affectiva-form-type-radio .gfield_label {
   display: block !important; }
+
+.gform_wrapper .validation_message {
+  font-family: "Argent", serif;
+  font-style: italic;
+  font-weight: 300;
+  font-weight: 300 !important; }
 
 .gform_wrapper .gfield_error .gfield_required,
 .gform_wrapper .gfield_error .gfield_label,
@@ -2817,6 +2742,17 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 .gform_wrapper li.gfield_error textarea,
 .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
   border-color: #e7040f !important; }
+
+body .gform_wrapper ul li.gfield:first-child {
+  margin-top: 0 !important; }
+
+.gform_wrapper .field_sublabel_above .gfield_description {
+  margin-top: 0 !important; }
+
+.gform_title,
+.name_first label,
+.name_last label {
+  display: none !important; }
 
 /**
  * Block: section-title
@@ -3577,7 +3513,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  * Modifier: related-posts--modifier
  */
 .related-posts {
-  background-color: #85e0ff;
+  background-color: #F4F4F4;
   /*-------------------------------------------- */
   /** Variables */
   /*-------------------------------------------- */
@@ -3600,7 +3536,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     margin-top: 0;
     margin-bottom: 0;
     padding-top: 25px;
-    color: white; }
+    color: #181818; }
   @media (min-width: 768px) {
     .related-posts .grid {
       -ms-flex-direction: row;
@@ -3700,12 +3636,12 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     padding-left: 30px;
     padding-right: 30px;
     font-size: 1rem;
-    background-color: #FBFBFB;
+    background-color: #F4F4F4;
     transition: background-color .250s ease-out, opacity .250s ease-out;
     text-decoration: none;
     box-sizing: border-box; }
     .featured-project__content:hover {
-      background-color: #f7f7f7;
+      background-color: #f0f0f0;
       opacity: 1; }
   .featured-project__media-wrap {
     max-width: 905px; }
@@ -3807,7 +3743,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
  */
 .backdrop {
   padding-top: 65px;
-  background-color: #FBFBFB;
+  background-color: #F4F4F4;
   padding-bottom: 75px;
   padding-left: 20px;
   padding-right: 20px;

@@ -246,7 +246,9 @@ body .gform_wrapper .top_label div.ginput_container {
 // PS - Their styles are UGH
 
 .gform_wrapper div.validation_error {
+    @include argent-light;
     margin-bottom: 15px !important;
+    font-weight: 300 !important;
 }
 
 body .gform_wrapper li.gfield.gfield_error,
@@ -297,13 +299,20 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 .gform_wrapper {
 
     .gfield .gfield_label {
-        @include europa-bold
+        @include europa-bold;
+        font-size: rem(16);
+        margin-bottom: 8px;
     }
 
     // Specifically show labels for Checkboxes and Radio buttons
     .gfield.affectiva-form-type-checkbox .gfield_label,
     .gfield.affectiva-form-type-radio .gfield_label {
         display: block !important;;
+    }
+
+    .validation_message {
+        @include argent-light-italic;
+        font-weight: 300 !important;
     }
 
     .gfield_error .gfield_required,
@@ -324,4 +333,18 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
         border-color: color(warning) !important;
     }
 
+}
+
+body .gform_wrapper ul li.gfield:first-child {
+    margin-top: 0 !important;
+}
+
+.gform_wrapper .field_sublabel_above .gfield_description {
+    margin-top: 0 !important;
+}
+
+.gform_title, 
+.name_first label,
+.name_last label {
+    display: none !important; 
 }

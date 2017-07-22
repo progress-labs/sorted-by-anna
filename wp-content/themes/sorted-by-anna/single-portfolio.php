@@ -8,7 +8,7 @@ get_header();
 
 $portfolio_args = array(
     'post_type' => 'portfolio',
-    'posts_per_page' => 2,
+    'posts_per_page' => 3,
     'orderby' => 'rand',
     'post__not_in' => array( get_the_ID() )
 );
@@ -56,8 +56,6 @@ the_partial('nav');
 
             <?php the_content(); ?>
 
-            
-
         </div>
 
         <?php if ( $project->gallery() ) : ?>
@@ -90,21 +88,6 @@ the_partial('nav');
         </section>
     <?php endif; ?>
 
-    <section class="page-section">
-        <?php the_partial('consultation-cta', [
-            'has_bg' => true
-        ]); ?>
-    </section>
-
-    <div class="related-projects">
-        <?php while ( $related_portfolios->have_posts() ) : $related_portfolios->the_post(); $related_project = new Portfolio_View_Model( $post );?>
-
-            <?php the_partial( 'related-project', array(
-                'project' => $related_project
-            )); ?>
-
-        <?php endwhile; wp_reset_postdata(); ?>
-    </div>
 </main>
 
 

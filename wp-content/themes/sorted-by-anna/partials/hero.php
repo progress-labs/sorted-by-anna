@@ -18,7 +18,7 @@
 
         <div class="responsive-embed">
           <video class="hero__video" id="movie" poster="<?php echo $fallback_img; ?>" preload="auto" autoplay="autoplay" loop="on" muted="">
-              <source src="<?php echo $video; ?>" type="video/mp4">
+              <source src="<?php echo get_template_directory_uri() . '/assets/video/intro.mp4'; ?>" type="video/mp4">
           </video>
         </div>
 
