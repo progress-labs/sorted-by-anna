@@ -1,13 +1,25 @@
 <?php
+include_once( get_template_directory() . '/functions/random-image.php' );
+$placeholder = new Placeholder_Image();
 /**
 * Post Preview
 * @url string
 */
+
 ?>
 
 <a href="<?php echo $url; ?>" class="post-preview">
     <div class="post-preview__media-wrap">
-        <img class="post-preview__media" src="<?php echo $img; ?>" alt="<?php echo $title; ?>">
+        <?php var_dump();?>
+
+        <?php if ( has_post_thumbnail( $id ) ) : ?>
+
+            <?php echo get_the_post_thumbnail( $id ); ?>
+            
+        <?php else : ?>
+            <img class="post-preview__media" src="<?php echo $placeholder->get_image(); ?>" alt="<?php echo $title; ?>">
+        <?php endif; ?>
+        
     </div>
     <div class="post-preview__body">
         <div class="post-preview__body-inner">

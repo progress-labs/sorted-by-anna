@@ -1,10 +1,4 @@
 <?php
-
-include_once( get_template_directory() . '/functions/random-image.php' );
-
-$foo = new Placeholder_Image();
-
-
 get_header();
 
 the_partial('nav');
@@ -15,8 +9,7 @@ $image = get_template_directory_uri() . '/assets/img/blog-bg.jpg';
 ?>
 
 <div id="page-container">
-
-    <img class="test-image" src="<?php echo $foo->get_image(); ?>" alt="">
+    
 	<main role="main">
 
         <?php the_partial( 'hero', [
@@ -32,11 +25,12 @@ $image = get_template_directory_uri() . '/assets/img/blog-bg.jpg';
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="col">
                         <?php the_partial('post-preview', [
+                            'id' => $post->ID,
                             'url' => get_the_permalink($post->ID),
                             'title' => $post->post_title,
                             'date' => get_the_date( 'F j, Y' ),
                             'category' => false,
-                            'img' => 'http://placehold.it/400x300',
+                            'img' => false,
                             'excerpt' => false,
                             'content' => $post->post_content,
                             'read_more' => true
