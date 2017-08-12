@@ -81,10 +81,9 @@ the_partial('nav');
             <?php endif; ?>
 
         </div>
-    <?php endif; ?>
-
-
-    <?php the_partial( 'consultation-cta' ); ?>
+    <?php endif;
+    
+    the_partial( 'consultation-cta' ); ?>
 
     </div>
   </div>

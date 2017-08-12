@@ -7,10 +7,10 @@
 include_once( get_template_directory() . '/functions/lib/data/class-post-view-model.php' );
 include_once( get_template_directory() . '/functions/view-models/class-service-view-model.php' );
 
-$services_args = array(
-    'post_type' => 'service'
-);
-$services_query = new WP_Query( $services_args );
+$terms = get_terms( array(
+    'taxonomy' => 'services',
+    'hide_empty' => false,
+) );
 
 $press_args = array(
     'post_type' => 'press',
@@ -58,15 +58,8 @@ the_partial('nav');
 <?php the_partial('hero', [
   'title' => 'Let\'s get sorted!',
   'media' => [
-    'img' => get_field('hero', $post->ID)['sizes']['large'],
-    'video' => [
-      'src' => get_field('video_file', $post->ID),
-      'fallback' => get_field('video_fallback_image', $post->ID)['sizes']['large']
-    ]
-  ],
-  'btn' => [
-    'text' => 'Book A Thing',
-    'url' => '#'
+    'img' => '#',
+    'video' => true
   ]
 ]); ?>
 
@@ -100,18 +93,19 @@ the_partial('nav');
 
 
 <section class="page-section">
-    <?php if ( $services_query->have_posts() ) : ?>
+    <?php if ( !empty( $terms ) ) : ?>
         <div class="grid grid-3-up">
 
-            <?php while ( $services_query->have_posts() ) : $services_query->the_post(); ?>
+            <?php foreach ( $terms as $term ) : ?>
 
             <div class="col">
                 <?php the_partial( 'services-card', [
-                    'service' => $post,
+                    'title' => $term->name,
+                    'description' => $term->description,
                     'image' => false
                 ]); ?>
                 </div>
-            <?php endwhile; wp_reset_postdata();?>
+            <?php endforeach; ?>
 
         </div>
     <?php endif; ?>

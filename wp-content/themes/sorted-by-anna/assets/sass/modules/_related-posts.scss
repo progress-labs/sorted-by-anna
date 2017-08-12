@@ -7,6 +7,10 @@
 .related-posts {
     background-color: color(offwhite);
 
+    &--white {
+        background-color: color(white);
+    }
+
     .grid {
         padding-top: 35px;
         padding-bottom: 30px;

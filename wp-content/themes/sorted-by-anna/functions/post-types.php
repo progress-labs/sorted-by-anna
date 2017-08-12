@@ -12,7 +12,6 @@
 
 
 include( __DIR__ . '/post-types/portfolio.php' );
-include( __DIR__ . '/post-types/service.php' );
 include( __DIR__ . '/post-types/testimonial.php' );
 include( __DIR__ . '/post-types/press.php' );
 include( __DIR__ . '/post-types/affiliation.php' );

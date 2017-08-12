@@ -59,7 +59,7 @@ the_partial('nav', [
     <div class="grid grid-3-up">
 
         <?php while ( $related_posts->have_posts() ) : $related_posts->the_post(); ?>
-                <div class="col">
+            <div class="col">
                   <?php the_partial('post-preview', [
                       'url' => get_the_permalink($post->ID),
                       'title' => $post->post_title,
@@ -71,7 +71,7 @@ the_partial('nav', [
                       'read_more' => true
                   ]); ?>
 
-              </div>
+            </div>
         <?php endwhile; wp_reset_postdata(); ?>
 
     </div>

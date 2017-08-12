@@ -11,6 +11,10 @@
     padding-left: $page-container-padding;
     padding-right: $page-container-padding;
 
+    &--white {
+        background-color: color(white);
+    }
+
     .section-title {
         margin-top: 0;
         margin-bottom: 50px;

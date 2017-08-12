@@ -4,6 +4,10 @@ $easing: .250s ease-out;
 $nav-size: 45px;
 
 .#{$block} {
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
 
     &.is-open {
 
@@ -111,6 +115,7 @@ $nav-size: 45px;
 
     .logo {
         color: color(white);
+        transition: color .250s ease-out;
 
         &:hover {
             color: color(aqua);

@@ -1,15 +1,16 @@
 <?php
+$post;
 
 get_header();
 
-$post;
+$current_term_id = 'services_' . get_the_terms( get_the_ID(), 'services')[0]->term_id;
 
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 
 the_partial('nav');
 
 the_partial('hero', [
-    'image' => 'http://placehold.it/1200x400',
+    'image' => get_field('featured_image', $current_term_id)['url'],
     'title' => $term->name
 ]);
 

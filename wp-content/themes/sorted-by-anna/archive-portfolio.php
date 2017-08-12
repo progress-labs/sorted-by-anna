@@ -2,8 +2,6 @@
 
 get_header();
 
-
-
 $services_taxonomy = 'services';
 
 $terms = array_map( function($term){

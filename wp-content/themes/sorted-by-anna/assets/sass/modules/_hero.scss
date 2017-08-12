@@ -1,6 +1,9 @@
 .hero {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
 
   &--overlay:after {
     content: "";
@@ -18,7 +21,6 @@
   }
 
   &__content {
-    @include vertically-centered(absolute);
     left: 0;
     right: 0;
     max-width: 800px;
@@ -26,7 +28,6 @@
     margin-right: auto;
     text-align: center;
     z-index: 1;
-    -webkit-backface-visibility: hidden;
   }
 
   &__title {
@@ -63,7 +64,7 @@
     @include respond-to('small and up') {
 
         &__image-wrap {
-            @include intrinsic-ratio('.hero__image' , 1200, 400);
+            @include intrinsic-ratio(false, 1200, 400);
         }
 
         &__title {
@@ -81,6 +82,10 @@
             &:after {
                 display: none;
             }
+        }
+
+        &__image {
+            @include center-pinned;
         }
 
         &__image-wrap, 

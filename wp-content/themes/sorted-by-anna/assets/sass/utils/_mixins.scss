@@ -37,6 +37,18 @@
  * $position: variable to set position value, Defaults to relative.
  *
  */
+@mixin center-pinned() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+/**
+ * Vertical Centering
+ * $position: variable to set position value, Defaults to relative.
+ *
+ */
 @mixin centered($position: relative) {
     position: $position;
     top: 50%;
@@ -58,11 +70,13 @@
     height: 0;
     padding-bottom: percentage($height / $width);
 
-    #{$child-selector} {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+    @if ( $child-selector ) {
+        #{$child-selector} {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
     }
 }
 
@@ -133,7 +147,6 @@
     }
 }
 
-
 //
 // String Replace
 //
@@ -146,7 +159,6 @@
 
 	@return $string;
 }
-
 
 //
 // Font Face
@@ -177,7 +189,6 @@
 		src: $src;
 	}
 }
-
 
 @mixin text-link-arrow($color: color(coral)) {
     &:after {

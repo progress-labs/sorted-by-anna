@@ -7,6 +7,7 @@
 
 ?>
 
+<div class="page-container">
 <div class="collage">
 
       <div class="collage__row collage__row--small-images">
@@ -26,3 +27,5 @@
       </div>
 
   </div>
+</div>
+

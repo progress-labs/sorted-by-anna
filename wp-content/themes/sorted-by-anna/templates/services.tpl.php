@@ -15,6 +15,14 @@ $args = array(
 
 $the_query = new WP_Query( $args );
 
+$project_args = array(
+    'post_type' => 'portfolio',
+    'posts_per_page' => 3,
+    'orderby' => 'rand'
+);
+
+$related_projects = new WP_Query( $project_args );
+
 
 get_header();
 
@@ -30,7 +38,7 @@ the_partial('nav');
     ]); 
     
     if ( have_posts() ) : ?>
-        <section class="page-section">
+        <section class="page-container page-section">
             <? while ( have_posts() ) : the_post(); ?>
 
             <div class="page-content">
@@ -58,7 +66,7 @@ the_partial('nav');
                 <?php endwhile; wp_reset_postdata();?>
 
             </div>
-        <?php endif; ?>
+        <?php endif; wp_reset_postdata(); ?>
     </section>
 
     <section class="page-section">
@@ -67,6 +75,38 @@ the_partial('nav');
           'list'  => get_field('how_it_works')
         ]) ?>
     </section>
+
+    <div class="page-section">
+        <div class="service-statement">
+            <h2>We offer in-home and virtual organization. Take a look!</h2>
+        </div>
+        <div class="backdrop backdrop--white">
+            <div class="grid grid-3-up">
+
+                <?php while ( $related_projects->have_posts() ) : $related_projects->the_post(); ?>
+                    <div class="col">
+                        <?php the_partial('post-preview', [
+                            'url' => get_the_permalink( $post->ID ),
+                            'title' => $post->post_title,
+                            'category' => wp_get_post_terms($post->ID, 'services')[0]->name,
+                            'img' => get_the_post_thumbnail_url( $post->ID ),
+                            'content' => false,
+                            'excerpt' => get_the_excerpt( $post->ID ) ? get_the_excerpt( $post->ID ) : false,
+                            'read_more' => true
+                        ]); ?>
+
+                    </div>
+                <?php endwhile; wp_reset_postdata(); ?>
+
+            </div>
+        </div>
+
+        <a href="<?php echo get_post_type_archive_link( 'portfolio' ); ?>" class="btn btn--centered">See All Projects</a>
+    </div>
+
+    <?php the_partial('consultation-cta', [
+        'has_bg' => true
+    ]); ?>
 
     <section class="page-section">
         <?php the_partial('image-collage', [
