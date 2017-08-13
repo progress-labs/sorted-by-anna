@@ -104,6 +104,7 @@ $block: 'menu';
 .sub-menu {
     width: 100%;
     opacity: 0;
+    display: none;
 
     transition: left 0s linear .251s,
                 opacity .250s ease-out;
@@ -138,6 +139,7 @@ $block: 'menu';
         transform: translateX(-50%);
         left: -9999px;
         top: 71px;
+        display: block;
 
         .is-opaque & {
 

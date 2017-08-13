@@ -1506,6 +1506,7 @@ ul {
 .sub-menu {
   width: 100%;
   opacity: 0;
+  display: none;
   transition: left 0s linear .251s, opacity .250s ease-out; }
   .sub-menu .menu-item {
     display: block;
@@ -1529,7 +1530,8 @@ ul {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
       left: -9999px;
-      top: 71px; }
+      top: 71px;
+      display: block; }
       .is-opaque .sub-menu:before {
         border-width: 2px;
         border-color: #FF7676;

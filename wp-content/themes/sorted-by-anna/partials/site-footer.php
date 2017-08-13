@@ -46,7 +46,7 @@ $terms = get_terms( [
                 <ul class="footer-links">
                     <?php foreach ($pages as $page) : ?>
                         <li class="footer-links__item">
-                            <a class="footer-links__link" href="<?php echo get_post_type_archive_link( 'services' ); ?>"><?php echo $page->post_title; ?></a>
+                            <a class="footer-links__link" href="<?php echo get_permalink( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
                         </li>
                     <?php endforeach; ?>
                 </ul>
