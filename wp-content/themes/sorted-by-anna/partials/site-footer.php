@@ -72,4 +72,10 @@ $terms = get_terms( [
 
 
   <div class="copyright">Sorted By Anna &copy; <?php echo date('Y'); ?></div>
+
+  <?php
+    the_partial('analytics');
+
+    wp_footer();
+  ?>
 </footer>
