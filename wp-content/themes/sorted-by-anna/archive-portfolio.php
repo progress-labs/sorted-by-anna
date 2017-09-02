@@ -12,12 +12,13 @@ $terms = array_map( function($term){
     ];
 },  get_terms(['taxonomy' => $services_taxonomy ]));
 
+$image = get_template_directory_uri() . '/assets/img/blog-bg.jpg';
 
 the_partial('nav');
 
 the_partial('hero', [
-    'image' => 'http://placehold.it/1200x400',
-    'title' => 'Portfolio'
+    'image' => $image,
+    'title' => 'Projects'
 ]); ?>
 
 <div class="page-container">

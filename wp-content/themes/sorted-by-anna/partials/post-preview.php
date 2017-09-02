@@ -10,16 +10,14 @@ $placeholder = new Placeholder_Image();
 
 <a href="<?php echo $url; ?>" class="post-preview">
     <div class="post-preview__media-wrap">
-        <?php var_dump();?>
-
-        <?php if ( has_post_thumbnail( $id ) ) : ?>
+        <?php if ( get_the_post_thumbnail( $id ) ) : ?>
 
             <?php echo get_the_post_thumbnail( $id ); ?>
-            
+
         <?php else : ?>
             <img class="post-preview__media" src="<?php echo $placeholder->get_image(); ?>" alt="<?php echo $title; ?>">
         <?php endif; ?>
-        
+
     </div>
     <div class="post-preview__body">
         <div class="post-preview__body-inner">
