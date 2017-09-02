@@ -1,6 +1,4 @@
 <?php
-
-  $hero_img     = $media['img'];
   $btn_text     = $btn['text'];
   $url          = $btn['url'];
   $video        = $media['video'];

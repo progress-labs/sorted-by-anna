@@ -60,7 +60,7 @@ $terms = get_terms( [
                         </li>
                     <?php endforeach; ?>
                         <li class="footer-links__item">
-                            <a class="footer-links__link" href="<?php echo get_post_type_archive_link( 'portfolio' ); ?>">See All Projects</a>
+                            <a class="footer-links__link" href="<?php echo get_post_type_archive_link( 'project' ); ?>">See All Projects</a>
                         </li>
                 </ul>
             </div>

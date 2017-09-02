@@ -14,10 +14,10 @@ the_partial('hero', [
     'title' => $term->name
 ]);
 
-$featured_post = [
-    'id' => $wp_query->posts[0]->ID,
-    'content' => $wp_query->posts[0]->post_title
-];
+// $featured_post = [
+//     'id' => $wp_query->posts[0]->ID,
+//     'content' => $wp_query->posts[0]->post_title
+// ];
 
 ?>
 
@@ -52,7 +52,7 @@ $featured_post = [
                                 'content' => false,
                                 'read_more' => true
                             ]); ?>
-                        </div>                    
+                        </div>
 
                 <?php endwhile; wp_reset_postdata();?>
 

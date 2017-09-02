@@ -27,7 +27,7 @@ the_partial('hero', [
         <?php foreach ( $terms as $term ) :
 
             $args = array(
-                'post_type' => 'portfolio',
+                'post_type' => 'project',
                 'posts_per_page' => 6,
                 'tax_query' => array(
                     array(

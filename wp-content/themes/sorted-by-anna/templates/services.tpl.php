@@ -16,7 +16,7 @@ $args = array(
 $the_query = new WP_Query( $args );
 
 $project_args = array(
-    'post_type' => 'portfolio',
+    'post_type' => 'project',
     'posts_per_page' => 3,
     'orderby' => 'rand'
 );
@@ -30,13 +30,13 @@ the_partial('nav');
 ?>
 
 <main>
-    <?php 
-    
+    <?php
+
     the_partial( 'hero', [
         'image' => get_the_post_thumbnail_url( $post->ID ),
         'title' => get_the_title()
-    ]); 
-    
+    ]);
+
     if ( have_posts() ) : ?>
         <section class="page-container page-section">
             <? while ( have_posts() ) : the_post(); ?>
@@ -101,7 +101,7 @@ the_partial('nav');
             </div>
         </div>
 
-        <a href="<?php echo get_post_type_archive_link( 'portfolio' ); ?>" class="btn btn--centered">See All Projects</a>
+        <a href="<?php echo get_post_type_archive_link( 'project' ); ?>" class="btn btn--centered">See All Projects</a>
     </div>
 
     <?php the_partial('consultation-cta', [

@@ -7,7 +7,7 @@ global $post;
 get_header();
 
 $portfolio_args = array(
-    'post_type' => 'portfolio',
+    'post_type' => 'project',
     'posts_per_page' => 3,
     'orderby' => 'rand',
     'post__not_in' => array( get_the_ID() )
