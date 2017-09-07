@@ -22,9 +22,9 @@ the_partial( 'hero', [
 
 <?php if ( the_content() ) : ?>
 <div class="page-container page-section">
-    
+
     <div class="page-content">
-      <?php 
+      <?php
               while ( have_posts() ) {
                 the_post();
 
@@ -93,6 +93,7 @@ the_partial( 'hero', [
         <?php foreach ( $featured_projects as $project ) : ?>
             <div class="col">
                 <?php the_partial('post-preview', [
+                    'id' => $project->ID,
                     'url'    => get_the_permalink( $project->ID ),
                     'title'  => get_the_title( $project->ID ),
                     'img'    => 'http://placehold.it/400x300',
