@@ -23,7 +23,6 @@ module.exports = function(el) {
             openMenu();
         } else {
             closeMenu();
-            
         }
     }
 
@@ -33,7 +32,7 @@ module.exports = function(el) {
             $el.find('.btn').removeClass('btn--ghost');
             $('body').addClass('nav-spacer');
         }
-        
+
         return false;
 
     }
@@ -68,7 +67,7 @@ module.exports = function(el) {
     }
 
     const updateScrollState = () => {
-        
+
         if ( $(document).scrollTop() > heroHeight ) {
             $el.addClass(opaqueClass);
             $el.find('.btn').removeClass('btn--ghost');

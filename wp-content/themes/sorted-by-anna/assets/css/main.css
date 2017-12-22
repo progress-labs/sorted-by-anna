@@ -1313,15 +1313,17 @@ ul {
     -ms-transform: scale(1);
         transform: scale(1);
     opacity: 1;
-    z-index: 90;
-    background: rgba(255, 255, 255, 0.9); }
+    pointer-events: all;
+    transition: transform .250s ease-out, opacity .250s ease-out; }
   .nav.is-open .nav-menu__trigger {
     background-color: transparent; }
   .nav.is-opaque {
     background-color: #fff;
     border-bottom-color: #FF7676; }
     .nav.is-opaque .logo {
-      color: #86d0be; }
+      color: #FF7676; }
+    .nav.is-opaque .btn--sm {
+      background-color: #FF7676; }
   .nav-menu__trigger {
     position: fixed;
     display: -ms-flexbox;
@@ -1376,18 +1378,19 @@ ul {
     right: 0;
     top: 0;
     bottom: 0;
-    background-color: transparent;
     height: calc(100vh);
-    transition: transform .250s ease-out, opacity .250s ease-out;
     -ms-transform: scale(0.95);
         transform: scale(0.95);
     opacity: 0;
-    z-index: -1; }
+    z-index: 90;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.7);
+    transition: transform .250s ease-out, opacity .250s ease-out; }
   .nav .logo {
     color: #fff;
     transition: color .250s ease-out; }
     .nav .logo:hover {
-      color: #A3DBCE; }
+      color: #FF7676; }
     .nav .logo svg {
       display: block; }
   @media (min-width: 768px) {
@@ -1422,6 +1425,7 @@ ul {
       z-index: auto;
       left: 0;
       right: 0;
+      pointer-events: all;
       background-color: transparent !important; }
     .nav-utility {
       z-index: 10; } }

@@ -16,7 +16,7 @@ class Portfolio_View_Model extends Post_View_Model {
             $gallery[$index] = [
               'image' => $image_url['large'],
               'image_lg' => $image_url['large'],
-              'alt' => $image_url['title']
+              'alt' => $image['title'] ? $image['title'] : $image['filename']
             ];
         }
 

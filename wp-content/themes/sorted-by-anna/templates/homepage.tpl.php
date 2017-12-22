@@ -73,24 +73,18 @@ the_partial('nav');
 
 
 <?php if ( $featured_projects ) : ?>
-<?php foreach ( $featured_projects as $project ) {
-    the_partial('featured-project', [
-        'project' => $project
-    ]);
-} ?>
+    <?php foreach ( $featured_projects as $project ) {
+        the_partial('featured-project', [
+            'project' => $project
+        ]);
+    } ?>
 <?php endif; ?>
-
-
-
-
 
 <div class="page-section">
     <div class="service-statement">
         <h2>Sorted By Anna offers a range of services to fit client needs to help make the most of your home. </h2>
     </div>
 </div>
-
-
 
 <section class="page-section">
     <?php if ( !empty( $terms ) ) : ?>
@@ -178,6 +172,7 @@ the_partial('nav');
             <?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
                 <div class="col">
                     <?php the_partial('post-preview', [
+                        'id' => $post->ID,
                         'url'    => get_the_permalink( $post->ID ),
                         'title'  => $post->post_title,
                         'img'    => 'http://placehold.it/400x300',

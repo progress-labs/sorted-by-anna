@@ -13,6 +13,8 @@ $how_it_works = get_field( 'how_it_works' );
 
 get_header();
 
+$has_calendly = get_field( 'display_calendar' );
+
 the_partial('nav');
 
 the_partial( 'hero', [
@@ -44,18 +46,22 @@ the_partial( 'hero', [
     </section>
 <?php endif; ?>
 
-
-<?php if ( get_field( 'display_calendar' ) ) : ?>
-
-  <?php the_partial( 'calendly-embed' ); ?>
-
-<?php endif; ?>
-
-<?php if ( $testimonials ) : ?>
 <div class="page-section">
-      <?php the_partial( 'testimonials' ); ?>
+    <?php
+
+        if ( $testimonials || $has_calendly ) {
+            if ( $has_calendly ) {
+                the_partial( 'calendly-embed' );
+            }
+
+            if ( $testimonials ) {
+                the_partial( 'testimonials' );
+            }
+        }
+    ?>
 </div>
-<?php endif; ?>
+
+
 
 <div class="page-section">
     <div class="color-block">

@@ -9,11 +9,11 @@ include_once( get_template_directory() . '/functions/view-models/class-service-v
 
 global $post;
 
-$args = array(
-    'post_type' => 'service'
-);
 
-$the_query = new WP_Query( $args );
+$terms = get_terms( array(
+    'taxonomy' => 'services',
+    'hide_empty' => false,
+));
 
 $project_args = array(
     'post_type' => 'project',
@@ -53,20 +53,22 @@ the_partial('nav');
     <?php endif; ?>
 
     <section class="page-section">
-        <?php if ( $the_query->have_posts() ) : ?>
+        <?php if ( !empty( $terms ) ) :?>
             <div class="grid grid-3-up">
 
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <?php foreach ( $terms as $term ) : ?>
 
                 <div class="col">
                     <?php the_partial( 'services-card', [
-                        'service' => $post
+                        'title' => $term->name,
+                        'description' => $term->description,
+                        'image' => false
                     ]); ?>
                     </div>
-                <?php endwhile; wp_reset_postdata();?>
+                <?php endforeach; ?>
 
             </div>
-        <?php endif; wp_reset_postdata(); ?>
+        <?php endif; ?>
     </section>
 
     <section class="page-section">
@@ -86,6 +88,8 @@ the_partial('nav');
                 <?php while ( $related_projects->have_posts() ) : $related_projects->the_post(); ?>
                     <div class="col">
                         <?php the_partial('post-preview', [
+                            'id' => $post->ID,
+                            'date' => false,
                             'url' => get_the_permalink( $post->ID ),
                             'title' => $post->post_title,
                             'category' => wp_get_post_terms($post->ID, 'services')[0]->name,
@@ -114,8 +118,6 @@ the_partial('nav');
             'large_images' => get_field('large_images')
         ]); ?>
     </section>
-
-
 
 </main>
 

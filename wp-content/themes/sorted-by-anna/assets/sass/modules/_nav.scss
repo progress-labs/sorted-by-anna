@@ -14,8 +14,9 @@ $nav-size: 45px;
         .nav-wrap {
             transform: scale(1);
             opacity: 1;
-            z-index: $z-9;
-            background: rgba(color(white), 0.9);
+            pointer-events: all;
+            transition: transform .250s ease-out,
+                        opacity .250s ease-out;
         }
 
         .nav-menu__trigger {
@@ -28,8 +29,14 @@ $nav-size: 45px;
         border-bottom-color: color(coral);
 
         .logo {
-            color: color(dark-aqua);
+            color: color(coral);
         }
+
+        .btn--sm {
+            background-color: color(coral);
+        }
+
+
     }
 
     &-menu__trigger {
@@ -54,13 +61,13 @@ $nav-size: 45px;
         height: 17px;
 
        &.is-open {
-                
+
             .nav-menu__bar:first-child {
                 transform: rotate(45deg);
             }
 
             .nav-menu__bar:last-child {
-                transform: rotate(-45deg);          
+                transform: rotate(-45deg);
             }
 
             .nav-menu__bar:not(:first-child):not(:last-child) {
@@ -91,7 +98,7 @@ $nav-size: 45px;
         }
 
         &:last-child {
-            top: 16px;          
+            top: 16px;
         }
 
     }
@@ -102,15 +109,14 @@ $nav-size: 45px;
         right: 0;
         top: 0;
         bottom: 0;
-        background-color: transparent;
-        
         height: calc(100vh);
-        transition: transform .250s ease-out,
-                    opacity .250s ease-out;
         transform: scale(0.95);
         opacity: 0;
-        z-index: -1;
-
+        z-index: 90;
+        pointer-events: none;
+        background: rgba(color(white), .7);
+        transition: transform .250s ease-out,
+                    opacity .250s ease-out;
     }
 
     .logo {
@@ -118,7 +124,7 @@ $nav-size: 45px;
         transition: color .250s ease-out;
 
         &:hover {
-            color: color(aqua);
+            color: color(coral);
         }
 
         svg {
@@ -161,7 +167,8 @@ $nav-size: 45px;
             z-index: auto;
             left: 0;
             right: 0;
-            // TODO: have open-nav CSS removed 
+            pointer-events: all;
+            // TODO: have open-nav CSS removed
             // on matchMedia checks
             background-color: transparent !important;
         }

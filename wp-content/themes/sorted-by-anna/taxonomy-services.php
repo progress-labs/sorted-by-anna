@@ -11,13 +11,9 @@ the_partial('nav');
 
 the_partial('hero', [
     'image' => get_field('featured_image', $current_term_id)['url'],
-    'title' => $term->name
+    'title' => $term->name,
+    'btn' => false
 ]);
-
-// $featured_post = [
-//     'id' => $wp_query->posts[0]->ID,
-//     'content' => $wp_query->posts[0]->post_title
-// ];
 
 ?>
 
@@ -43,6 +39,7 @@ the_partial('hero', [
 
                         <div class="col">
                             <?php the_partial('post-preview', [
+                                'id' => $post->ID,
                                 'url' => get_the_permalink( $post->ID ),
                                 'title' => get_the_title( $post->ID ),
                                 'category' => false,

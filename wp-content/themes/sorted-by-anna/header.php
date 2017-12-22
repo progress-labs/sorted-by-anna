@@ -20,7 +20,6 @@
     <link rel="mask-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/safari-pinned-tab.svg" color="#a3dbce">
     <meta name="theme-color" content="#ffffff">
 
-
     <?php
         $page_image = 'hello!';
     ?>

@@ -1,6 +1,6 @@
 <?php
-get_header();
 
+get_header();
 the_partial('nav');
 
 $blog_page_id = get_option( 'page_for_posts' );
@@ -9,7 +9,7 @@ $image = get_template_directory_uri() . '/assets/img/blog-bg.jpg';
 ?>
 
 <div id="page-container">
-    
+
 	<main role="main">
 
         <?php the_partial( 'hero', [

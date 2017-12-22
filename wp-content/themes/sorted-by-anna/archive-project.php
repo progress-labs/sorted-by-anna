@@ -50,6 +50,7 @@ the_partial('hero', [
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="col">
                             <?php the_partial('post-preview', [
+                                'id' => $post->ID,
                                 'url' => get_the_permalink($post->ID),
                                 'title' => $post->post_title,
                                 'category' => false,

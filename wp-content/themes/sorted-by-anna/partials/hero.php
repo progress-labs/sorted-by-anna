@@ -1,7 +1,11 @@
 <?php
-  $btn_text     = $btn['text'];
-  $url          = $btn['url'];
-  $video        = $media['video'];
+    $video = isset($media['video']) ? $media['video'] : false;
+
+    if ( isset( $btn ) ) {
+        $btn_text = $btn['text'];
+        $url = $btn['url'];
+    }
+
 ?>
 
 <div class="hero <?php echo $video ? 'hero--overlay': ''; ?>">
@@ -25,7 +29,7 @@
     <?php endif; ?>
 
     <?php if ( $title ) : ?>
-      <h1 class="hero__title"><?php echo $title; ?></h1>
+        <h1 class="hero__title"><?php echo $title; ?></h1>
     <?php endif; ?>
 
   </div>
