@@ -26,7 +26,7 @@
 
             $description = get_bloginfo('description');
         } else {
-            $description = $post->post_content ? wp_trim_words( wp_strip_all_tags( apply_filters('the_content', $post->post_content ) ), 100 )  : get_bloginfo('description');
+            $description = $post->post_content ? wp_trim_words( wp_strip_all_tags( apply_filters('the_content', $post->post_content ) ), 50 )  : get_bloginfo('description');
 
             if ( get_post_thumbnail_id( $post->ID ) ) {
                 $share_image = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' );
@@ -44,7 +44,6 @@
     <!-- Twitter Tags -->
     <meta name="twitter:site" content="@sortedbyanna" />
     <meta name="twitter:creator" content="@sortedbyanna" />
-
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="<?php echo $page_title; ?>">
     <meta name="twitter:description" content="<?php echo $description; ?>">
