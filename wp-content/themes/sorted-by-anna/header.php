@@ -21,7 +21,22 @@
     <meta name="theme-color" content="#ffffff">
 
     <?php
-        $page_image = 'hello!';
+        if ( is_page() || is_home() || is_post_type_archive() ) {
+            $share_image = get_stylesheet_directory_uri() . '/share-image.jpg';
+        } else {
+            if ( get_post_thumbnail_id($post->ID) ) {
+                $share_image = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' );
+            } else {
+                $share_image = get_stylesheet_directory_uri() . '/share-image.jpg';
+            }
+        }
+
+
+        // if a post
+            // get featured image if it exist
+            // else get generic Sorted by Anna image
+        // if a page
+            // get generic Sorted By Anna image
     ?>
     <!-- Twitter Tags -->
     <meta name="twitter:card" content="summary" />
@@ -30,14 +45,14 @@
     <meta property="og:url" content="<?php echo the_permalink(); ?>" />
     <meta property="og:title" content="<?php echo get_bloginfo('name'); ?>" />
     <meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
-    <meta property="og:image" content="<?php echo $page_image; ?>" />
+    <meta property="og:image" content="<?php echo $share_image; ?>" />
 
     <!-- Facebook -->
     <meta property="og:url" content="<?php echo the_permalink(); ?>" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="<?php echo get_bloginfo('name'); ?>" />
     <meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
-    <meta property="og:image" content="<?php echo $page_image; ?>" />
+    <meta property="og:image" content="<?php echo $share_image; ?>" />
 
     <?php wp_head(); ?>
 
