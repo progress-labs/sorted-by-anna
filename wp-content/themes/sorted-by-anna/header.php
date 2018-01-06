@@ -21,7 +21,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <?php
-        if ( is_page() || is_home() || is_post_type_archive() ) {
+        if ( is_page() || is_home() || is_post_type_archive() || is_front_page() ) {
             $share_image = get_stylesheet_directory_uri() . '/share-image.jpg';
 
             $description = get_bloginfo('description');
