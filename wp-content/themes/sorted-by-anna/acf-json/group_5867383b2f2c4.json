@@ -4,9 +4,9 @@
     "fields": [
         {
             "key": "field_586738405b3ec",
-            "label": "Email",
+            "label": "Contact Us",
             "name": "email",
-            "type": "email",
+            "type": "page_link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,10 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         },
         {
             "key": "field_586738705b3ee",
@@ -26,7 +29,23 @@
             "name": "twitter",
             "type": "url",
             "instructions": "",
-            "required": 0,
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5a5128775d7c9",
+            "label": "Instagram",
+            "name": "instagram",
+            "type": "url",
+            "instructions": "",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -54,5 +73,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1500682780
+    "modified": 1515268274
 }

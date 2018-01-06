@@ -22,6 +22,7 @@ $placeholder = new Placeholder_Image();
     <div class="post-preview__body">
         <div class="post-preview__body-inner">
             <h3 class="post-preview__title"><?php echo $title; ?></h3>
+
             <?php if ( $date || $category ) : ?>
                 <div class="post-preview__meta">
                     <?php if ( $date ) : ?>

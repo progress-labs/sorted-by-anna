@@ -23,7 +23,7 @@ function affiliation_init() {
 		'show_in_nav_menus' => true,
 		'supports'          => array( 'title', 'editor', 'thumbnail' ),
 		'has_archive'       => true,
-		'rewrite'           => true,
+		'rewrite'           => array( 'with_front' => false ),
 		'query_var'         => true,
 		'menu_icon'         => 'dashicons-admin-post',
 		'show_in_rest'      => true,

@@ -29,7 +29,7 @@ $terms = get_terms( [
                 <div class="social-links">
                     <a href="<?php echo get_field( 'email', 'option' ); ?>" class="social-links__item">
                         <?php svg_icon( 'email', 24, 24); ?>
-                        <span class="social-links__text">anna[at]sortedbyanna[dot]com</span>
+                        <span class="social-links__text">Contact Us</span>
                     </a>
                     <a href="<?php echo get_field( 'instagram', 'option' ); ?>" class="social-links__item">
                         <?php svg_icon( 'instagram', 24, 24); ?>

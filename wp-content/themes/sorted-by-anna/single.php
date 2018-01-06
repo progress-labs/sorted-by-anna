@@ -62,6 +62,7 @@ the_partial('nav', [
             <div class="col">
                   <?php the_partial('post-preview', [
                       'url' => get_the_permalink($post->ID),
+                      'id' => $post->ID,
                       'title' => $post->post_title,
                       'date' => get_the_date( 'F j, Y' ),
                       'category' => false,

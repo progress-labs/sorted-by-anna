@@ -92,7 +92,7 @@ the_partial('nav');
                             'date' => false,
                             'url' => get_the_permalink( $post->ID ),
                             'title' => $post->post_title,
-                            'category' => wp_get_post_terms($post->ID, 'services')[0]->name,
+                            'category' => wp_get_post_terms($post->ID, 'services') ? wp_get_post_terms($post->ID, 'services')[0]->name : false,
                             'img' => get_the_post_thumbnail_url( $post->ID ),
                             'content' => false,
                             'excerpt' => get_the_excerpt( $post->ID ) ? get_the_excerpt( $post->ID ) : false,
@@ -120,15 +120,6 @@ the_partial('nav');
     </section>
 
 </main>
-
-
-
-
-
-
-
-
-
 
 <?php
 

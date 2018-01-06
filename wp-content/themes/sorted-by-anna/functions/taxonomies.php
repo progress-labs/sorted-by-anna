@@ -8,7 +8,7 @@ function services_init() {
 		'show_ui'           => true,
 		'show_admin_column' => false,
 		'query_var'         => true,
-		'rewrite'           => true,
+		'rewrite'           => array( 'with_front' => false ),
 		'capabilities'      => array(
 			'manage_terms'  => 'edit_posts',
 			'edit_terms'    => 'edit_posts',

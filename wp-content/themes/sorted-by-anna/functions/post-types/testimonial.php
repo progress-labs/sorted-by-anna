@@ -23,7 +23,7 @@ function testimonial_init() {
 		'show_in_nav_menus' => true,
 		'supports'          => array( 'title', 'thumbnail', 'editor' ),
 		'has_archive'       => false,
-		'rewrite'           => true,
+		'rewrite'           => array( 'with_front' => false ),
 		'query_var'         => true,
 		'menu_icon'         => 'dashicons-thumbs-up',
 		'show_in_rest'      => true,
