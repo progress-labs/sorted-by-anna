@@ -26,13 +26,9 @@
 
             $description = get_bloginfo('description');
         } else {
-            $description = strip_tags( $post->post_content );
-            $description = strip_shortcodes( $post->post_content );
-            $description = str_replace( array("\n", "\r", "\t"), ' ', $description );
+            $description = $post->post_content ? wp_trim_words( wp_strip_all_tags( apply_filters('the_content', $post->post_content ) ), 100 )  : get_bloginfo('description');
 
-            $description = mb_strimwidth( $description, 0, 100, '...' );
-
-            if ( get_post_thumbnail_id($post->ID) ) {
+            if ( get_post_thumbnail_id( $post->ID ) ) {
                 $share_image = wp_get_attachment_image_url( get_post_thumbnail_id($post->ID), 'large' );
             } else {
                 $share_image = get_stylesheet_directory_uri() . '/share-image.jpg';
