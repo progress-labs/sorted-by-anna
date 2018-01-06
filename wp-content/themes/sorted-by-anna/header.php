@@ -42,18 +42,17 @@
         }
     ?>
     <!-- Twitter Tags -->
-    <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@sortedbyanna" />
     <meta name="twitter:creator" content="@sortedbyanna" />
-    <meta property="og:url" content="<?php echo the_permalink(); ?>" />
-    <meta property="og:title" content="<?php echo $page_title; ?>" />
-    <meta property="og:description" content="<?php echo $description; ?>" />
-    <meta property="og:image" content="<?php echo $share_image; ?>" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo $page_title; ?>">
+    <meta name="twitter:description" content="<?php echo $description; ?>">
+    <meta name="twitter:image" content="<?php $share_image; ?>">
 
     <!-- Facebook -->
     <meta property="og:url" content="<?php echo the_permalink(); ?>" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?php echo $page_title; ?>" />
     <meta property="og:description" content="<?php echo $description; ?>" />
     <meta property="og:image" content="<?php echo $share_image; ?>" />
 
