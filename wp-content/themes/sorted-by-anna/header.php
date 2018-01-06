@@ -38,7 +38,7 @@
         if ( is_front_page() ) {
             $page_title = get_bloginfo('name');
         } else {
-            $page_title = get_bloginfo('name') . ' - ' . get_the_title( $post->ID );
+            $page_title = get_the_title( $post->ID ) . ' - ' .  get_bloginfo('name');
         }
     ?>
     <!-- Twitter Tags -->
