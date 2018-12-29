@@ -28,9 +28,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "portfolio"
+                "value": "templates\/services.tpl.php"
             }
         ]
     ],
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1498532911
+    "modified": 1546049803
 }

@@ -25,7 +25,8 @@ the_partial('nav');
 
     <?php the_partial( 'hero', [
         'image' => get_the_post_thumbnail_url( $post->ID ),
-        'title' => get_the_title()
+        'title' => get_the_title(),
+        'media' => false
     ]); ?>
 
     <div class="page-container">

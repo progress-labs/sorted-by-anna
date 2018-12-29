@@ -35,6 +35,10 @@ $block: 'service-card';
     &__content {
         font-size: rem(18);
         line-height: 1.5;
+
+        li {
+            margin-bottom: 12px;
+        }
     }
 
     &--centered {

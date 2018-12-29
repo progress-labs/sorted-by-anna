@@ -114,7 +114,7 @@ the_partial('nav');
                 'title' => 'Featured Press'
             ]); ?>
 
-            <div class="grid grid-4-up">
+            <div class="grid grid-4-up jc">
                 <?php foreach ( $press as $p ) : ?>
                     <div class="col">
                         <a href="<?php echo get_field( 'article_link', $p->ID ); ?>" class="press" target="_blank">
@@ -151,12 +151,13 @@ the_partial('nav');
                 <?php while ( $blog_query->have_posts() ) : $blog_query->the_post(); ?>
                     <div class="col">
                         <?php the_partial('post-preview', [
+                            'id' => $post->ID,
                             'url'    => get_the_permalink( $post->ID ),
                             'title'  => $post->post_title,
                             'img'    => 'http://placehold.it/400x300',
                             'date'   => get_the_date( 'F j, Y' ),
-                            'excerpt' => false,
                             'content' => $post->post_content,
+                            'excerpt' => false,
                             'read_more' => true
                         ]); ?>
                     </div>

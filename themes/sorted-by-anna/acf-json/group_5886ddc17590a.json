@@ -16,7 +16,10 @@
                 "id": ""
             },
             "message": "Should the consultation calendar display on this page?",
-            "default_value": 0
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -24,7 +27,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "templates\/service-details.tpl.php"
+                "value": "templates\/services.tpl.php"
             }
         ]
     ],
@@ -36,5 +39,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1494100493
+    "modified": 1546049748
 }

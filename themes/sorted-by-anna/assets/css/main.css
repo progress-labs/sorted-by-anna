@@ -1098,6 +1098,10 @@ ul {
   -ms-flex-pack: justify;
       justify-content: space-between; }
 
+.jc {
+  -ms-flex-pack: center;
+      justify-content: center; }
+
 .col {
   width: 100%;
   margin-bottom: 50px; }
@@ -2130,7 +2134,7 @@ blockquote {
     min-height: 300px;
     font-size: 1.125rem;
     text-align: center;
-    background-color: #85e0ff;
+    background-color: #2874C7;
     color: #fff; }
   .testimonial-slider__content {
     position: absolute;
@@ -2982,6 +2986,8 @@ body .gform_wrapper ul li.gfield:first-child {
   .service-card__content {
     font-size: 1.125rem;
     line-height: 1.5; }
+    .service-card__content li {
+      margin-bottom: 12px; }
   .service-card--centered {
     text-align: center; }
     .service-card--centered .service-card__name:after {
@@ -3168,7 +3174,7 @@ body .gform_wrapper ul li.gfield:first-child {
       text-align: center;
       line-height: 66px;
       color: #fff;
-      background-color: skyblue; }
+      background-color: #2874C7; }
   @media (min-width: 768px) {
     .how-it-works__list {
       -ms-flex-direction: row;

@@ -9,11 +9,6 @@ include_once( get_template_directory() . '/functions/view-models/class-service-v
 
 global $post;
 
-$args = array(
-    'post_type' => 'service'
-);
-
-$the_query = new WP_Query( $args );
 
 $project_args = array(
     'post_type' => 'project',
@@ -23,6 +18,8 @@ $project_args = array(
 
 $related_projects = new WP_Query( $project_args );
 
+$services = get_field( 'featured_services', $post->ID );
+$testimonials = get_field( 'testimonials_slider', $post->ID );
 
 get_header();
 
@@ -34,7 +31,8 @@ the_partial('nav');
 
     the_partial( 'hero', [
         'image' => get_the_post_thumbnail_url( $post->ID ),
-        'title' => get_the_title()
+        'title' => get_the_title(),
+        'media' => false
     ]);
 
     if ( have_posts() ) : ?>
@@ -53,28 +51,43 @@ the_partial('nav');
     <?php endif; ?>
 
     <section class="page-section">
-        <?php if ( $the_query->have_posts() ) : ?>
-            <div class="grid grid-3-up">
+        <?php if ( $services  ) : ?>
+            <div class="grid grid-3-up jc">
 
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <?php foreach ( $services as $post ) : ?>
 
-                <div class="col">
-                    <?php the_partial( 'services-card', [
-                        'service' => $post
-                    ]); ?>
+                    <div class="col">
+                        <?php the_partial( 'services-card', [
+                            'title' => $post->post_title,
+                            'list' => get_field( 'service_types', $post->ID ) ? array_map( function( $item ) {
+                                return [
+                                    'name' => $item['name']
+                                ];
+                            }, get_field( 'service_types', $post->ID )) : false
+                        ]); ?>
                     </div>
-                <?php endwhile; wp_reset_postdata();?>
+                <?php endforeach;?>
 
             </div>
         <?php endif; wp_reset_postdata(); ?>
     </section>
 
+    <?php if ( $testimonials ) : ?>
+    <div class="page-section">
+          <?php the_partial( 'testimonials', [
+              'slides' => $testimonials
+          ] ); ?>
+    </div>
+    <?php endif; ?>
+
     <section class="page-section">
         <?php the_partial('how-to-list', [
           'title' => 'How It Works',
-          'list'  => get_field('how_it_works')
+          'list'  => get_field( 'how_it_works' )
         ]) ?>
     </section>
+
+
 
     <div class="page-section">
         <div class="service-statement">
@@ -86,12 +99,14 @@ the_partial('nav');
                 <?php while ( $related_projects->have_posts() ) : $related_projects->the_post(); ?>
                     <div class="col">
                         <?php the_partial('post-preview', [
+                            'id' => $post->ID,
                             'url' => get_the_permalink( $post->ID ),
                             'title' => $post->post_title,
-                            'category' => wp_get_post_terms($post->ID, 'services')[0]->name,
                             'img' => get_the_post_thumbnail_url( $post->ID ),
-                            'content' => false,
                             'excerpt' => get_the_excerpt( $post->ID ) ? get_the_excerpt( $post->ID ) : false,
+                            'date' => false,
+                            'category' => false,
+                            'content' => false,
                             'read_more' => true
                         ]); ?>
 
@@ -100,8 +115,6 @@ the_partial('nav');
 
             </div>
         </div>
-
-        <a href="<?php echo get_post_type_archive_link( 'project' ); ?>" class="btn btn--centered">See All Projects</a>
     </div>
 
     <?php the_partial('consultation-cta', [
