@@ -1,0 +1,30 @@
+/*-----------------------------------------------------------------------------
+ *-----------------------------------------------------------------------------
+ *
+ * COLORS
+ *
+ * Define any global color variables below. Ideally color variables should be
+ * referenced by the theme variables that follow.
+ *
+ *-----------------------------------------------------------------------------
+ *----------------------------------------------------------------------------- */
+
+$colors: (
+  black: #181818,
+  gray: #aaaaaa,
+  white: #fff,
+  barely-white: #f1f1f1,
+  offwhite: #F4F4F4,
+  hover-border: #e6e6e6,
+  warning: #e7040f,
+  coral: #FF7676,
+  aqua: #A3DBCE,
+  dark-aqua: #86d0be,
+  robin: #85e0ff,
+  peach: #FFC6B4,
+  marina: #2874C7,
+  blues: (
+      dark: darken(#0000ff, 20%),
+      turquoise: #40e0d0
+  )
+);

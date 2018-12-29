@@ -1,0 +1,15 @@
+.sba-image {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.responsive-embed {
+    @include intrinsic-ratio('iframe, object, embed, video', 16, 9);
+}

@@ -1,0 +1,18 @@
+/**
+ * Block: tax-title
+ * Element: tax-title__element
+ * Modifier: tax-title--modifier
+ */
+
+.tax-title {
+    @include europa-bold;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-size: rem(20);
+    text-align: center;
+
+    @include respond-to('small and up') {
+        font-size: rem(24);
+    }
+
+}

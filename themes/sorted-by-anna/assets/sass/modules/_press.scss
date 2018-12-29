@@ -1,0 +1,84 @@
+/**
+ * Block: press
+ * Element: press__element
+ * Modifier: press--modifier
+ */
+
+.press {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: skyblue;
+    text-align: center;
+
+    &:hover &__overlay {
+        opacity: 1;
+    }
+
+    img {
+        display: block;
+        width: auto;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    &__article-title {
+        font-size: rem(20);
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    &__overlay {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(color(blues, turquoise), 0.7);
+        color: white;
+        opacity: 0;
+        transition: opacity .250s ease-out;
+
+
+    }
+
+    @include respond-to('up to small') {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.press-grid {
+    .grid {
+        align-items: center;
+    }
+
+    .col + .col {
+        margin-top: 25px;
+    }
+
+    .press {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+
+    @include respond-to('medium and up') {
+        .col {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            & + .col {
+                margin-top: 0;
+            }
+        }
+    }
+}

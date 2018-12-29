@@ -1,0 +1,18 @@
+.slick-dots {
+    bottom: 10px;
+
+    li button:before {
+        content: "";
+        height: 10px;
+        width: 10px;
+        background-color: rgba(color(white), .5);
+        opacity: 1;
+        border-radius: 50%;
+        transition: background-color ease-out .125s;
+    }
+
+    li.slick-active button:before {
+        background-color: color(white);
+        opacity: 1;
+    }
+}

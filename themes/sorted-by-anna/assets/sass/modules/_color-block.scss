@@ -1,0 +1,105 @@
+/**
+ * Block: color-block
+ * Element: color-block__element
+ * Modifier: color-block--modifier
+ */
+
+$block: 'color-block';
+
+.color-block {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: color(aqua);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &__image {
+        position: relative;
+        flex-shrink: 0;
+        background-color: color(white);
+        height: 500px;
+        overflow: hidden;
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    &__title,
+    &__content {
+        color: color(white);
+    }
+
+    &__content {
+        @include argent-light;
+        width: percentage( 450 / 700 );
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.0125;
+        margin-bottom: 25px;
+    }
+
+    @include respond-to('small and up') {
+        & {
+            flex-direction: row;
+        }
+
+        & + & {
+            background-color: color(peach);
+
+            .#{$block}__image {
+                order: 2;
+            }
+        }
+
+        &__title {
+            font-size: rem(32);
+            margin-bottom: 20px;
+        }
+
+        &__content {
+            font-size: rem(20);
+            width: percentage(700/1200);
+            width: percentage( 550 / 700 );
+        }
+
+        &__image {
+            width: percentage(500/1200);
+        }
+    }
+
+    @include respond-to('medium and up') {
+        &__title {
+            font-size: rem(42);
+        }
+
+        &__content {
+            font-size: rem(24);
+            width: percentage( 500 / 700 );
+        }
+    }
+
+    @include respond-to('large and up') {
+
+        &__content {
+            width: percentage( 475 / 700 );
+        }
+    }
+}

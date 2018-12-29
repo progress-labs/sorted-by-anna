@@ -1,0 +1,74 @@
+/**
+ * Block: big-quote
+ * Element: big-quote__element
+ * Modifier: big-quote--modifier
+ */
+
+.big-quote {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 65px;
+    margin-bottom: 65px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    blockquote {
+        @include argent;
+        max-width: 740px;
+        margin-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-size: rem(40);
+        text-align: left;
+        line-height: 1.1;
+    }
+
+    @include respond-to('medium and up') {
+        & {
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+
+        blockquote {
+            font-size: rem(60);
+        }
+    }
+
+    @include respond-to('large and up') {
+        & {
+            padding-left: 100px;
+            padding-right: 100px;
+        }
+    }
+
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}

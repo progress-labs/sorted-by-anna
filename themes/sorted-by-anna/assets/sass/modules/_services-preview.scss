@@ -1,0 +1,65 @@
+/**
+ * Block: services-preview
+ * Element: services-preview__element
+ * Modifier: services-preview--modifier
+ */
+
+.services-preview {
+    display: flex;
+    flex-direction: column;
+
+    & + & {
+        margin-top: 25px;
+    }
+
+
+    &__media-wrap {
+        flex-shrink: 0;
+        text-align: center;
+    }
+
+    &__img {
+        display: inline-block;
+    }
+
+    &__content {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 30px;
+        padding-right: 20px;
+    }
+
+    &__title {
+        @include freight;
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+
+    &__list {
+        list-style: inherit;
+        padding-left: 30px;
+        margin-top: 10px;
+    }
+
+    &__list-item {
+        & + & {
+            margin-top: 5px;
+        }
+    }
+
+    @include respond-to('small and up') {
+        flex-direction: row;
+        align-items: flex-start;
+
+        &__content {
+            padding-top: 5px;
+        }
+    }
+
+    @include respond-to('medium and up') {
+        & + & {
+            margin-top: 50px;
+        }
+    }
+
+}

@@ -1,0 +1,71 @@
+$vertical-padding: 15px;
+$horizontal-padding: 35px;
+
+.btn {
+  @include europa;
+  letter-spacing: 0.04em;
+  background: transparent;
+  display: inline-block;
+  font-size: rem(16);
+  font-weight: 400;
+  outline: none;
+  text-decoration: none;
+  background-color: color(dark-aqua);
+  color: color(white);
+  border: 0;
+  border-radius: 4px;
+  padding-top: $vertical-padding;
+  padding-bottom: $vertical-padding;
+  padding-left: $horizontal-padding;
+  padding-right: $horizontal-padding;
+  appearance: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color .300s ease-out,
+              color .300s ease-out;
+
+
+  &:hover {
+    color: color(white);
+    background-color: darken(color(dark-aqua), 5%);
+  }
+
+  &--centered {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &--ghost {
+    border: 2px solid color(dark-aqua);
+    background-color: transparent;
+  }
+
+  &--sm {
+    $vertical-padding: 5px;
+    $horizontal-padding: 15px;
+
+    padding-top: $vertical-padding;
+    padding-bottom: $vertical-padding;
+    padding-left: $horizontal-padding;
+    padding-right: $horizontal-padding;
+
+    font-size: rem(14);
+  }
+}
+
+
+.text-link {
+  color: color(coral);
+  text-decoration: none;
+  text-decoration: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: rem(18);
+
+  &:hover {
+    color: color(coral);
+  }
+}

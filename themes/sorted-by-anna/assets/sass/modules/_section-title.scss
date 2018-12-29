@@ -1,0 +1,13 @@
+/**
+ * Block: section-title
+ * Element: section-title__element
+ * Modifier: section-title--modifier
+ */
+
+.section-title {
+    @include europa-bold;
+    font-size: rem(26);
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

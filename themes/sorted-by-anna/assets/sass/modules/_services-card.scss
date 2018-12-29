@@ -1,0 +1,59 @@
+/**
+ * Block: services-card
+ * Element: services-card__element
+ * Modifier: services-card--modifier
+ */
+
+$block: 'service-card';
+
+.service-card {
+    display: block;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+
+    &__name {
+        @include europa-bold;
+        margin-top: 5px;
+        margin-bottom: 0;
+        font-size: rem(20);
+
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            max-width: 70px;
+            height: 2px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            background-color: color(coral);
+
+        }
+    }
+
+    &__content {
+        font-size: rem(18);
+        line-height: 1.5;
+    }
+
+    &--centered {
+        text-align: center;
+
+        .#{$block}__name:after {
+            margin-left: auto;
+            margin-right: auto;
+            background-color: color(robin);
+        }
+
+        .#{$block}__content {
+            text-align: left;
+        }
+    }
+
+    @include respond-to('medium and up') {
+        &--small {
+            max-width: 250px;
+        }
+    }
+}

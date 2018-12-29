@@ -1,0 +1,347 @@
+// Any use of !important is to ensure
+// it overrides Gravity Forms default styles
+// which are grossly too generic and greedy
+
+// The namespace `affectiva-form` exists on the form element directly.
+// Any of the `type-*` elements are the wrapping divs around the form elements
+// Not the for elements directly (Thank GF for this).
+// So from there we write the actual form element selector
+// to apply styles directly.
+// Most of these styles are visual changes (background colors, fonts, etc).
+// Thus why we're styling the element directly. And because GF is a pain.
+.sba-form {
+    &-type-text input[type="text"],
+    &-type-email input[type="text"],
+    &-type-number input[type="text"],
+    &-type-phone input[type="text"],
+    &-type-name input[type="text"],
+    &-type-textarea textarea,
+    &-type-select select {
+         @include form-control;
+    }
+
+    &-type-textarea textarea {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    &-type-select {
+        .ginput_container {
+            position: relative;;
+        }
+
+        .ginput_container:after {
+            @include vertically-centered(absolute);
+            content: "";
+            top: 53%;
+            right: 15px;
+            width: 0;
+            height: 0;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 7px solid color(black);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        select {
+            width: 100% !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+            color: black;
+            background-color: color(offwhite);
+            appearance: none;
+            cursor: pointer;
+            height: 50px;
+            border-radius: 3px;
+        }
+    }
+
+    &-type-multiselect select[multiple='multiple'] {
+        @include form-control;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+
+        option {
+            padding-top: 5px !important;
+            padding-bottom: 8px !important;
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            cursor: pointer;
+        }
+    }
+
+    &-type-checkbox,
+    &-type-radio {
+        .ginput_container_radio {
+            position: relative;
+        }
+    }
+
+    &-type-checkbox {
+        li {
+            input[type=checkbox] {
+                position: absolute;
+                height: 0;
+                width: 0 !important;
+                opacity: 0;
+                z-index: -1;
+                margin: 0 !important;
+
+                &:checked + label:after {
+                    opacity: 1;
+                }
+            }
+
+            label {
+                position: relative;
+
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    height: 25px;
+                    width: 25px;
+                    border: 3px solid purple;
+                    background-color: white;
+                    border-radius: 2px;
+                    vertical-align: middle;
+                    margin-right: 15px;
+
+                }
+
+                &:after {
+                    // @extend %form-check;
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    display: inline-block;
+                    height: 25px;
+                    width: 25px;
+                    background-color: respond-to;
+                    opacity: 0;
+                    // background-image: url(#{$img-base-path}/svg-src/css-sprite/form-check.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-radius: 2px;
+                    transition: opacity .175s ease-out;
+                }
+            }
+        }
+    }
+
+    &-type-radio {
+        li {
+            input[type=radio] {
+                position: absolute;
+                height: 0;
+                width: 0 !important;
+                opacity: 0;
+                z-index: -1;
+                margin: 0 !important;
+
+                &:checked + label:after {
+                    background-color: lighten(red, 10%);
+                }
+            }
+
+            label {
+                position: relative;
+                margin: 0 !important;
+
+                &:before {
+                    content: "";
+                    display: inline-block;
+                    height: 25px;
+                    width: 25px;
+                    border: 3px solid purple;
+                    background-color: white;
+                    border-radius: 50%;
+                    vertical-align: middle;
+                    margin-right: 15px;
+
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    display: inline-block;
+                    height: 15px;
+                    width: 15px;
+                    background-color: color(white);
+                    border-radius: 50%;
+                    transition: background-color .175s ease-out;
+                }
+            }
+        }
+
+        // GF gives the option to have
+        // an "other" field for radio buttons
+        li input[type="text"] {
+            @include form-control;
+            margin-left: 0 !important;
+            width: auto !important;
+        }
+    }
+
+    &-type-honeypot {
+        opacity: 0;
+        visibility: hidden;
+        height: 1px;
+        width: 1px;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+
+}
+
+
+
+// General GF Overrides cause
+// GF likes to use greedy selectors.
+
+// Apply this global since in some instances the form namespace is
+// overwritten from the form element if a user adds their own
+// custom class name from the WYSIWYG
+.ginput_container {
+    position: relative;
+}
+
+.gform_button {
+    @extend .btn;
+}
+
+.gform_wrapper .gform_title,
+.gform_wrapper .gform_title,
+.gform_wrapper .gform_title {
+    @include europa-bold;
+    font-size: rem(28) !important;
+
+    @include respond-to('medium and up') {
+        font-size: rem(39) !important;
+    }
+}
+
+body .gform_wrapper ul li.gfield {
+    margin-top: 30px !important;
+}
+
+body .gform_wrapper .top_label div.ginput_container {
+    margin-top: 0 !important;
+}
+
+// Validation Error Overrides
+// Added `body` tag to ensure our styles
+// override any styles GF may have done
+// PS - Their styles are UGH
+
+.gform_wrapper div.validation_error {
+    @include argent-light;
+    margin-bottom: 15px !important;
+    font-weight: 300 !important;
+}
+
+body .gform_wrapper li.gfield.gfield_error,
+body .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    background-color: transparent !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    box-sizing: border-box;
+    margin-bottom: 0 !important;
+}
+
+body .gform_wrapper li.gfield.gfield_error {
+    margin-bottom: 0 !important;
+}
+
+body .gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label {
+    margin-top: 0 !important;
+}
+
+body .gform_wrapper li.gfield.field_error .ginput_container {
+    margin-top: 8px !important;
+}
+
+body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container {
+    margin-top: 8px !important;
+}
+
+body .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+.gform_wrapper li.gfield_error textarea {
+    margin-bottom: 0;
+}
+
+body .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+    max-height: 37px;
+}
+
+body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+    padding-top: 8px !important;
+}
+
+.validation_error {
+    color: color(warning) !important;
+    border-color: color(warning) !important;
+}
+
+.gform_wrapper {
+
+    .gfield .gfield_label {
+        @include europa-bold;
+        font-size: rem(16);
+        margin-bottom: 8px;
+    }
+
+    // Specifically show labels for Checkboxes and Radio buttons
+    .gfield.affectiva-form-type-checkbox .gfield_label,
+    .gfield.affectiva-form-type-radio .gfield_label {
+        display: block !important;;
+    }
+
+    .validation_message {
+        @include argent-light-italic;
+        font-weight: 300 !important;
+    }
+
+    .gfield_error .gfield_required,
+    .gfield_error .gfield_label,
+    .gfield_error label,
+    .validation_message {
+        color: color(warning) !important;
+    }
+
+    li.gfield_error ul.gfield_radio,
+    li.gfield_error ul.gfield_checkbox {
+        color: color(black) !important;
+    }
+
+
+    li.gfield_error textarea,
+    li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+        border-color: color(warning) !important;
+    }
+
+}
+
+body .gform_wrapper ul li.gfield:first-child {
+    margin-top: 0 !important;
+}
+
+.gform_wrapper .field_sublabel_above .gfield_description {
+    margin-top: 0 !important;
+}
+
+.gform_title, 
+.name_first label,
+.name_last label {
+    display: none !important; 
+}

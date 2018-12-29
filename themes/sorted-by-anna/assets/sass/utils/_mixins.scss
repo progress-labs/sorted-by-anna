@@ -1,0 +1,218 @@
+/*-----------------------------------------------------------------------------
+ *-----------------------------------------------------------------------------
+ *
+ * MIXINS
+ *
+ * Define any custom site-wide mixins below. These should only be
+ * mixins that are global in scope and that need to be referenced
+ * by multiple SASS files.
+ *
+ *-----------------------------------------------------------------------------
+ *----------------------------------------------------------------------------- */
+
+/**
+ * Basic Clearfix - pulled from Bourbon.io
+ */
+@mixin clearfix {
+    &:after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+}
+
+/**
+ * Vertical Centering
+ * $position: variable to set position value, Defaults to relative.
+ *
+ */
+@mixin vertically-centered($position: relative) {
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/**
+ * Vertical Centering
+ * $position: variable to set position value, Defaults to relative.
+ *
+ */
+@mixin center-pinned() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+/**
+ * Vertical Centering
+ * $position: variable to set position value, Defaults to relative.
+ *
+ */
+@mixin centered($position: relative) {
+    position: $position;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+/**
+ * Creates an intrinsic ratio container. Useful for videos and elements that
+ * you want to scale proportionately.
+ *
+ * @type {string} $child-selector A string selector targeting the child element that
+ *                                 you want to scale
+ * @type {int} $width The width component of the aspect ratio
+ * @type {int} $height The height component of the aspect ratio
+ */
+@mixin intrinsic-ratio($child-selector, $width: 16, $height: 9) {
+    position: relative;
+    height: 0;
+    padding-bottom: percentage($height / $width);
+
+    @if ( $child-selector ) {
+        #{$child-selector} {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+@mixin ul-reset() {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+@mixin page-container() {
+    @if $is-responsive {
+        max-width: $page-container-width;
+    } @else {
+        width: $page-container-width;
+    }
+
+    padding-right: $page-container-padding;
+    padding-left: $page-container-padding;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+// Any use of !important is to ensure
+// it overrides Gravity Forms default styles
+// which are grossly too generic and greedy
+@mixin form-control {
+    position: relative;
+    display: inline-block;
+    width: 100% !important;
+    height: 50px;
+    border: 0;
+    outline: 0;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    box-sizing: border-box;
+    background-color: color(offwhite);
+    border-radius: 0;
+    line-height: 1;
+    font-size: rem(18) !important;
+
+    &:focus,
+    &:active {
+      color: black;
+
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: black;
+        transition: color .250s ease-out;
+      }
+
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: black;
+        transition: color .250s ease-out;
+      }
+
+      &:-ms-input-placeholder { /* IE 10+ */
+        color: black;
+        transition: color .250s ease-out;
+      }
+
+      &:-moz-placeholder { /* Firefox 18- */
+        color: black;
+        transition: color .250s ease-out;
+      }
+    }
+}
+
+//
+// String Replace
+//
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+//
+// Font Face
+//
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+@mixin text-link-arrow($color: color(coral)) {
+    &:after {
+        content: "⟶";
+        display: inline-block;
+        margin-left: 5px;
+    }
+}
+
+@mixin line-height( $font-size: 16, $leading: 24) {
+    line-height: ( $leading / $font-size );
+}
+
+@mixin remove-last-row-margin( $col-count, $el:'col' ) {
+
+    @if ( type_of($col-count) != 'number' ) {
+        @error "The value entered for $col-count is not a number.";
+    } @else {
+
+        $increment: $col-count + 1;
+
+        .#{$el}:nth-child(#{$col-count}n):nth-last-child(-n+#{$increment}) ~ .#{$el} {
+            margin-bottom: 0;
+        }
+    }
+
+}

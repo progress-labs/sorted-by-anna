@@ -1,0 +1,149 @@
+$container: 1200;
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-items: flex-start;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $page-container-padding;
+    padding-right: $page-container-padding;
+
+    &--small {
+        max-width: 600px;
+    }
+
+    &--no-max {
+        max-width: none;
+    }
+
+    @include respond-to('small and up') {
+
+        & {
+            flex-direction: row;
+        }
+
+        &-3-up,
+        &-4-up {
+            flex-wrap: wrap;
+        }
+
+        &-3-up {
+            @include remove-last-row-margin(3, 'col');
+
+            .sizer,
+            .col {
+                width: 32%;
+            }
+        }
+
+        &-4-up {
+            @include remove-last-row-margin(4, 'col');
+
+            .col {
+                width: percentage(1/2);
+            }
+        }
+    }
+
+    @include respond-to('medium and up') {
+        &-4-up {
+            flex-wrap: wrap;
+
+            .sizer,
+            .col {
+                width: percentage(1/4);
+            }
+
+            .col {
+                width: percentage(1/4);
+            }
+        }
+    }
+}
+
+.jb {
+    justify-content: space-between;
+}
+
+.col {
+    width: 100%;
+    margin-bottom: 50px;
+
+    @include respond-to('small and up') {
+        & {
+            padding-left: 1%;
+            padding-right: 1%;
+            box-sizing: border-box;
+        }
+
+        & + & {
+            margin-top: 0;
+        }
+    }
+}
+
+.gutter {
+    width: 2%;
+
+    @include respond-to('small and up') {
+        width: 4%;
+    }
+
+    @include respond-to('medium and up') {
+        width: 3%;
+    }
+}
+
+
+.masonry-grid {
+    max-width: 675px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .col {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    @include respond-to('small and up') {
+
+        & {
+            max-width: 800px;
+        }
+
+        .col {
+            width: 48%;
+            transition: box-shadow .250s ease-out;
+            border: 1px solid color(barely-white);
+            margin-bottom: 35px;
+
+            &:hover {
+                box-shadow: 0px 4px 6px 0px rgba(color(hover-border), .65);
+            }
+        }
+    }
+
+    @include respond-to('medium and up') {
+
+        & {
+            max-width: 1000px;
+        }
+
+        .col {
+            width: 31.33%;
+        }
+    }
+
+    @include respond-to('xlarge and up') {
+        & {
+            max-width: 1200px;
+        }
+    }
+}

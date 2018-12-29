@@ -1,0 +1,61 @@
+/**
+ * Block: service-statement
+ * Element: service-statement__element
+ * Modifier: service-statement--modifier
+ */
+
+.service-statement {
+    max-width: 800px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    text-align: center;
+    line-height: 1.25;
+
+    h2 {
+        font-size: rem(28);
+    }
+
+
+    @include respond-to('small and up') {
+
+        h2 {
+            font-size: rem(42);
+        }
+        
+        
+    }
+    /*-------------------------------------------- */
+    /** Variables */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Styles */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Modifiers */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Elements */
+    /*-------------------------------------------- */
+
+
+
+    /*-------------------------------------------- */
+    /** Block Media Queries */
+    /*-------------------------------------------- */
+
+
+}

@@ -1,0 +1,180 @@
+$block: 'menu';
+
+.#{$block} {
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    list-style: none;
+
+    &-item {
+        position: relative;
+        display: block;
+        margin-left: 15px;
+        margin-right: 15px;
+        text-align: center;
+
+        & + & {
+            margin-top: 15px;
+        }
+    }
+
+
+    &-item a {
+        @include europa;
+        position: relative;
+        display: block;
+        color: color(black);
+        font-size: rem(20);
+        text-decoration: none;
+        transition: color .250s ease-out;
+
+        &:hover {
+            color: color(coral);
+        }
+    }
+
+    &-item:hover {
+        .sub-menu {
+            left: 50%;
+            opacity: 1;
+            transition: left 0s linear,
+                opacity .250s ease-out 0.1s;
+        }
+    }
+
+    @include respond-to('small and up') {
+        & {
+            display: table;
+            width: auto;
+            height: 100%;
+        }
+
+        &-item {
+            display: inline-flex;
+            height: 100%;
+
+            & + & {
+                margin-top: 0;
+            }
+        }
+
+        &-item a {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            color: color(white);
+        }
+    }
+}
+
+.is-opaque {
+    .menu-item a {
+        color: color(black);
+
+        &:hover {
+            color: color(coral);
+        }
+    }
+
+    .current-menu-item a {
+        color: color(coral);
+    }
+
+
+}
+
+
+@include respond-to('small and up') {
+    .current-menu-item a {
+        color: color(coral);
+    }
+}
+
+.menu-container {
+    @include vertically-centered(absolute);
+    left: 0;
+    right: 0;
+
+    @include respond-to('small and up') {
+        height: 100%;
+    }
+}
+
+.sub-menu {
+    width: 100%;
+    opacity: 0;
+    display: none;
+
+    transition: left 0s linear .251s,
+                opacity .250s ease-out;
+
+    .menu-item {
+        display: block;
+        padding-top: 14px;
+        padding-bottom: 12px;
+        margin-left: 0;
+        margin-right: 0;
+
+        &:last-child {
+            padding-bottom: 16px;
+        }
+    }
+
+    .menu-item a {
+        display: block;
+        font-size: rem(18);
+        color: color(black);
+
+        &:hover {
+            color: color(coral);
+        }
+        
+    }
+
+    @include respond-to('small and up') {
+        position: absolute;
+        min-width: 180px;
+        background-color: color(white);
+        transform: translateX(-50%);
+        left: -9999px;
+        top: 71px;
+        display: block;
+
+        .is-opaque & {
+
+            &:before {
+                border-width: 2px;
+                border-color: color(coral);
+                top: 1px;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: auto;
+                height: auto;
+
+            }
+        }
+
+        &:before {
+            $offset: -5px;
+            $width: 15px;
+            $height: 10px;
+
+            content: "";
+            position: absolute;
+            top: -($height - 1);
+            width: 0; 
+            left: 0;
+            right: 0;
+            margin-left: auto;
+            margin-right: auto;
+            height: 0; 
+            border-left: $width solid transparent;
+            border-right: $width solid transparent;
+            border-bottom: $height solid color(white); 
+        }
+
+    }
+
+}

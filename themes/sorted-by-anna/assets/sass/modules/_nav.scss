@@ -1,0 +1,181 @@
+$block: 'nav';
+
+$easing: .250s ease-out;
+$nav-size: 45px;
+
+.#{$block} {
+    max-width: 2000px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+
+    &.is-open {
+
+        .nav-wrap {
+            transform: scale(1);
+            opacity: 1;
+            z-index: $z-9;
+            background: rgba(color(white), 0.9);
+        }
+
+        .nav-menu__trigger {
+            background-color: transparent;
+        }
+    }
+
+    &.is-opaque {
+        background-color: color(white);
+        border-bottom-color: color(coral);
+
+        .logo {
+            color: color(dark-aqua);
+        }
+    }
+
+    &-menu__trigger {
+        position: fixed;
+        display: flex;
+        top: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: $nav-size;
+        height: $nav-size;
+        overflow: hidden;
+        cursor: pointer;
+        z-index: $z-zeus;
+        background-color: rgba(color(white), .8);
+        transition: background-color .250s ease-out;
+    }
+
+    &-menu {
+        position: relative;
+        width: 23px;
+        height: 17px;
+
+       &.is-open {
+                
+            .nav-menu__bar:first-child {
+                transform: rotate(45deg);
+            }
+
+            .nav-menu__bar:last-child {
+                transform: rotate(-45deg);          
+            }
+
+            .nav-menu__bar:not(:first-child):not(:last-child) {
+                opacity: 0;
+            }
+        }
+    }
+
+    &-menu__bar {
+        position: absolute;
+        display: block;
+        height: 2px;
+        width: 23px;
+        background: color(black);
+        transform: rotate(0deg);
+        transform-origin: left center;
+        transition: transform .250s ease-in-out,
+                    opacity .250s ease-in-out;
+
+        &:first-child {
+            top: 0;
+        }
+
+        // Middle Bar
+        &:not(:first-child):not(:last-child) {
+            top: 8px;
+            opacity: 1;
+        }
+
+        &:last-child {
+            top: 16px;          
+        }
+
+    }
+
+    &-wrap {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: transparent;
+        
+        height: calc(100vh);
+        transition: transform .250s ease-out,
+                    opacity .250s ease-out;
+        transform: scale(0.95);
+        opacity: 0;
+        z-index: -1;
+
+    }
+
+    .logo {
+        color: color(white);
+        transition: color .250s ease-out;
+
+        &:hover {
+            color: color(aqua);
+        }
+
+        svg {
+            display: block;
+        }
+    }
+
+    @include respond-to('small and up') {
+        & {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: $page-container-padding;
+            padding-right: $page-container-padding;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 70px;
+            z-index: $z-1;
+            background-color: transparent;
+            color: color(white);
+            border-bottom: 2px solid transparent;
+            z-index: $z-9;
+            transition: background-color $easing,
+                        border-color $easing,
+                        color $easing;
+        }
+
+        &-header {
+            display: none;
+        }
+
+        &-wrap {
+            position: absolute;
+            top: auto;
+            bottom: auto;
+            height: 72px;
+            opacity: 1;
+            z-index: auto;
+            left: 0;
+            right: 0;
+            // TODO: have open-nav CSS removed 
+            // on matchMedia checks
+            background-color: transparent !important;
+        }
+
+        &-utility {
+            z-index: $z-1;
+        }
+    }
+}
+
+.nav-spacer {
+    margin-top: 50px;
+
+    @include respond-to('small and up') {
+        margin-top: 125px;
+    }
+}

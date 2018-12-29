@@ -1,0 +1,15 @@
+
+*.log
+uploads/
+mu-plugins/
+wp-cache-config.php
+plugins/hello.php
+themes/twentyfifteen
+themes/twentyseventeen
+themes/twentysixteen
+
+/.htaccess
+/license.txt
+/readme.html
+/sitemap.xml
+/sitemap.xml.gz
