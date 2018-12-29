@@ -1839,6 +1839,9 @@ blockquote {
           flex-wrap: wrap; }
     .site-footer .col {
       width: 50%; } }
+  @media (min-width: 768px) {
+    .site-footer .book-col {
+      text-align: right; } }
 
 .footer-links {
   padding: 0;
@@ -2469,7 +2472,8 @@ blockquote {
 
 .sba-form-type-textarea textarea {
   padding-left: 15px;
-  padding-right: 15px; }
+  padding-right: 15px;
+  margin-bottom: 0 !important; }
 
 .sba-form-type-select .ginput_container {
   position: relative; }
@@ -2699,7 +2703,7 @@ body .gform_wrapper .top_label div.ginput_container {
   font-weight: 300 !important; }
 
 body .gform_wrapper li.gfield.gfield_error,
-body .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+body .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_coral {
   background-color: transparent !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
@@ -2725,14 +2729,27 @@ body .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox])
   margin-bottom: 0; }
 
 body .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-  max-height: 37px; }
+  height: 50px; }
 
 body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
+  padding-top: 8px !important;
+  font-size: 14px !important; }
+
+body .gform_wrapper .validation_message {
+  font-size: 14px !important; }
+
+body .gform_wrapper .field_description_below .gfield_description,
+body .gform_wrapper .instruction {
   padding-top: 8px !important; }
 
 .validation_error {
-  color: #e7040f !important;
-  border-color: #e7040f !important; }
+  border: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  color: #FF7676 !important;
+  border-color: #FF7676 !important;
+  text-align: left !important;
+  font-size: 14px !important; }
 
 .gform_wrapper .gfield .gfield_label {
   font-family: "europa", "helvetica", "sans-serif";
@@ -2754,7 +2771,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 .gform_wrapper .gfield_error .gfield_label,
 .gform_wrapper .gfield_error label,
 .gform_wrapper .validation_message {
-  color: #e7040f !important; }
+  color: #FF7676 !important; }
 
 .gform_wrapper li.gfield_error ul.gfield_radio,
 .gform_wrapper li.gfield_error ul.gfield_checkbox {
@@ -2762,7 +2779,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 
 .gform_wrapper li.gfield_error textarea,
 .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-  border-color: #e7040f !important; }
+  border-color: #FF7676 !important; }
 
 body .gform_wrapper ul li.gfield:first-child {
   margin-top: 0 !important; }
@@ -3021,6 +3038,7 @@ body .gform_wrapper ul li.gfield:first-child {
   @media (max-width: 767px) {
     .press {
       max-width: 400px;
+      max-height: 400px;
       margin-left: auto;
       margin-right: auto; } }
 

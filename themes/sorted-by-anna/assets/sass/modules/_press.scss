@@ -51,6 +51,7 @@
 
     @include respond-to('up to small') {
         max-width: 400px;
+        max-height: 400px;
         margin-left: auto;
         margin-right: auto;
     }

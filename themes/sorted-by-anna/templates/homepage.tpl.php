@@ -12,12 +12,6 @@ $services = new WP_Query([
     'posts_per_page' => 3
 ]);
 
-$press_args = array(
-    'post_type' => 'press',
-    'orderby'   => 'rand',
-    'posts_per_page' => '4'
-);
-$press_query = new WP_Query( $press_args );
 
 $blog_args = array(
     'post_type' => 'post',
@@ -48,6 +42,8 @@ $featured_projects = array_map( function( $project ) {
     ];
 
 }, get_field( 'featured_projects' ) );
+
+$press = get_field( 'featured_press', $post->ID );
 
 
 get_header();
@@ -110,32 +106,36 @@ the_partial('nav');
 
 <?php the_partial('consultation-cta'); ?>
 
+<?php if ( $press ) : ?>
 <section class="page-section">
-    <?php if ( $press_query->have_posts() ) : ?>
         <div class="press-grid backdrop">
 
             <?php the_partial('section-title', [
                 'title' => 'Featured Press'
             ]); ?>
 
-            <div class="grid grid-4-up ">
+            <div class="grid grid-4-up">
+                <?php foreach ( $press as $p ) : ?>
+                    <div class="col">
+                        <a href="<?php echo get_field( 'article_link', $p->ID ); ?>" class="press" target="_blank">
+                            <?php if ( has_post_thumbnail( $p->ID ) ) : ?>
+                                <?php echo get_the_post_thumbnail( $p->ID, 'press' ); ?>
+                            <?php endif; ?>
 
-                <?php while ( $press_query->have_posts() ) : $press_query->the_post(); ?>
+                            <div class="press__overlay">
+                                <h3 class="press__article-title">
+                                    <?php echo get_field( 'article_title', $p->ID ); ?>
+                                </h3>
+                            </div>
 
-                <div class="col">
-                    <a href="<?php echo get_field( 'article_link', $post->ID ); ?>" class="press">
-                        <?php the_post_thumbnail( $post->ID ); ?>
-                    </a>
-
-                </div>
-
-                <?php endwhile; wp_reset_postdata();?>
-
+                        </a>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
 
-    <?php endif; ?>
-</section>
+    </section>
+<?php endif; ?>
 
 <?php the_partial( 'color-blocks'); ?>
 

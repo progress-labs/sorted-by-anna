@@ -23,6 +23,7 @@
     &-type-textarea textarea {
         padding-left: 15px;
         padding-right: 15px;
+        margin-bottom: 0 !important;
     }
 
     &-type-select {
@@ -249,7 +250,7 @@ body .gform_wrapper .top_label div.ginput_container {
 }
 
 body .gform_wrapper li.gfield.gfield_error,
-body .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+body .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_coral {
     background-color: transparent !important;
     border-top: 0 !important;
     border-bottom: 0 !important;
@@ -281,16 +282,31 @@ body .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox])
 }
 
 body .gform_wrapper li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-    max-height: 37px;
+    height: 50px;
 }
 
 body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
     padding-top: 8px !important;
+    font-size: 14px !important;
+}
+
+body .gform_wrapper .validation_message {
+    font-size: 14px !important;
+}
+
+body .gform_wrapper .field_description_below .gfield_description,
+body .gform_wrapper .instruction {
+    padding-top: 8px !important;
 }
 
 .validation_error {
-    color: color(warning) !important;
-    border-color: color(warning) !important;
+    border: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    color: color(coral) !important;
+    border-color: color(coral) !important;
+    text-align: left !important;
+    font-size: 14px !important;
 }
 
 .gform_wrapper {
@@ -316,7 +332,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
     .gfield_error .gfield_label,
     .gfield_error label,
     .validation_message {
-        color: color(warning) !important;
+        color: color(coral) !important;
     }
 
     li.gfield_error ul.gfield_radio,
@@ -327,7 +343,7 @@ body .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_d
 
     li.gfield_error textarea,
     li.gfield_error input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-        border-color: color(warning) !important;
+        border-color: color(coral) !important;
     }
 
 }
@@ -340,8 +356,8 @@ body .gform_wrapper ul li.gfield:first-child {
     margin-top: 0 !important;
 }
 
-.gform_title, 
+.gform_title,
 .name_first label,
 .name_last label {
-    display: none !important; 
+    display: none !important;
 }

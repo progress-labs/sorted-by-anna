@@ -1,6 +1,6 @@
 {
     "key": "group_5c26c209e6a82",
-    "title": "Press Page",
+    "title": "Featured Press",
     "fields": [
         {
             "key": "field_5c26c20e5ab4f",
@@ -32,6 +32,13 @@
                 "operator": "==",
                 "value": "templates\/press.tpl.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/homepage.tpl.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -42,5 +49,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1546043959
+    "modified": 1546046274
 }
