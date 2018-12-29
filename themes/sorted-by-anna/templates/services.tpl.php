@@ -116,15 +116,6 @@ the_partial('nav');
 
 </main>
 
-
-
-
-
-
-
-
-
-
 <?php
 
 get_footer();

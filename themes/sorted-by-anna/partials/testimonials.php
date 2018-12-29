@@ -1,13 +1,8 @@
 <?php
 /**
  * Testimonials Slider
- * @var string
  */
-
-
 ?>
-
-
 
 <div class="testimonial-slider" data-js-component="postSlider">
     <?php foreach( $slides as $slide ) : ?>

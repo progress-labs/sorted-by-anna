@@ -1,5 +1,5 @@
 <?php
-  $video        = $media['video'] ? $media['video']: false ;
+  $video = $media['video'] ? $media['video']: false ;
 ?>
 
 <div class="hero <?php echo $video ? 'hero--overlay': ''; ?>">

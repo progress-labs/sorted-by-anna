@@ -30,7 +30,6 @@ module.exports = {
         getAssetPath('img/**/*'),
         '!' + getAssetPath('img/svg-src/**/*'),
         getAssetPath('js/built/*.js'),
-
         // watch theme files for changes
         '**/*.php'
     ]

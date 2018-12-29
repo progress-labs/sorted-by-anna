@@ -721,7 +721,7 @@
     "timelimit.cdn_container_create": 300,
     "timelimit.domain_rename": 120,
     "timelimit.minify_recommendations": 600,
-    "common.instance_id": 511798621,
+    "common.instance_id": 0,
     "common.force_master": true,
     "extensions.active": {
         "newrelic": "w3-total-cache\/Extension_NewRelic_Plugin.php",
