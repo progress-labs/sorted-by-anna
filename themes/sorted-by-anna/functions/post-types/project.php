@@ -21,7 +21,13 @@ function project_init() {
 		'hierarchical'      => false,
 		'show_ui'           => true,
 		'show_in_nav_menus' => true,
-		'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+		'taxonomies'        => array( 'services' ),
+		'supports'          => array( 
+														'title', 
+														'editor', 
+														'thumbnail', 
+														'excerpt' 
+													),
 		'has_archive'       => true,
 		'rewrite'           => array( 
 			'slug' => 'projects',

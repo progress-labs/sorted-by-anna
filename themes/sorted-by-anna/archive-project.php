@@ -18,6 +18,7 @@ the_partial('nav');
 
 the_partial('hero', [
     'image' => $image,
+    'media' => false,
     'title' => 'Projects'
 ]); ?>
 

@@ -1,7 +1,7 @@
 <?php
 
 function services_init() {
-	register_taxonomy( 'services', array( 'portfolio' ), array(
+	register_taxonomy( 'services', array( 'portfolio', 'project' ), array(
 		'hierarchical'      => true,
 		'public'            => true,
 		'show_in_nav_menus' => true,
