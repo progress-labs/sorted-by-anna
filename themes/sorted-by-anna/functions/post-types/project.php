@@ -23,7 +23,10 @@ function project_init() {
 		'show_in_nav_menus' => true,
 		'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
 		'has_archive'       => true,
-        'rewrite'           => array('slug' => 'projects'),
+		'rewrite'           => array( 
+			'slug' => 'projects',
+			'with_front' => false,
+		),
 		'query_var'         => true,
 		'menu_icon'         => 'dashicons-list-view',
 		'show_in_rest'      => true,
