@@ -34,7 +34,7 @@
     </div>
 
     <div class="show-at-small nav-utility">
-        <a class="btn btn--ghost btn--sm" href="#">Book Now</a>
+        <a class="btn btn--ghost btn--sm" href="<?php echo get_field('url', 'option'); ?>">Book Now</a>
     </div>
 
 </div>

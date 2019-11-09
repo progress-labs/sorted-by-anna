@@ -7,8 +7,6 @@
 
 $press = get_field( 'featured_press', $post->ID );
 
-var_dump($press);
-
 get_header();
 
 the_partial('nav');

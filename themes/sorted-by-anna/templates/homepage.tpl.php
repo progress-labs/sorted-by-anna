@@ -21,8 +21,6 @@ $blog_query = new WP_Query( $blog_args );
 
 $projects = [get_field('first_project', $post->ID ), get_field('second_project', $post->ID)];
 
-var_dump($projects);
-
 $press = get_field( 'featured_press', $post->ID );
 
 
@@ -32,7 +30,7 @@ the_partial('nav');
 ?>
 
 <?php the_partial('hero', [
-  'title' => 'Let\'s get sorted!',
+  'title' => 'Let’s Get Sorted Together!',
   'media' => [
     'img' => '#',
     'video' => true
@@ -99,16 +97,11 @@ the_partial('nav');
                 <?php foreach ( $press as $p ) : ?>
                     <div class="col">
                         <a href="<?php echo get_field( 'article_link', $p->ID ); ?>" class="press" target="_blank">
-                            <?php if ( has_post_thumbnail( $p->ID ) ) : ?>
-                                <?php echo get_the_post_thumbnail( $p->ID, 'press' ); ?>
+                            <?php if ( true ) : ?>
+                                <img src="<?php echo get_field( 'logo',  $p->ID ); ?>" alt="">
+                            <?php else : ?>
+                                <h2 class="press__article-title"><?php echo get_field('display_name', $p->ID); ?></h2>
                             <?php endif; ?>
-
-                            <div class="press__overlay">
-                                <h3 class="press__article-title">
-                                    <?php echo get_field( 'article_title', $p->ID ); ?>
-                                </h3>
-                            </div>
-
                         </a>
                     </div>
                 <?php endforeach; ?>

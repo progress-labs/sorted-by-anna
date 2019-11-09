@@ -39,7 +39,7 @@ $terms = get_terms( [
             </div>
 
             <div class="col book-col">
-                <a href="<?php echo get_field( 'calendly_url', 'option' ) ; ?>" class="btn btn--dark">Book a Free Consultation</a>
+                <a href="<?php echo get_field('url', 'option'); ?>" class="btn btn--dark">Book a Free Consultation</a>
             </div>
         </div>
     </div>
