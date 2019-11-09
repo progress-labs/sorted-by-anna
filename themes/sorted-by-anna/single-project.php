@@ -29,51 +29,57 @@ the_partial('nav');
 
     $project = new Portfolio_View_Model($post); ?>
 
-    <div class="content-wrap">
-        <div class="single-project__header">
-            <h1 class="project-title">
-                <?php echo $project->get_title(); ?>
-            </h1>
+        <div class="content-wrap">
+            <div class="single-project__header">
+                <h1 class="project-title">
+                    <?php echo $project->get_title(); ?>
+                </h1>
 
-            <span class="project-date">
-                <?php echo $project->post_date(); ?>
-            </span>
+                <span class="project-date">
+                    <?php echo $project->post_date(); ?>
+                </span>
 
-            <?php if ( !empty( $categories ) ): ?>
-            <div class="post-categories">
-                <span>Services:</span>
-                <ul class="post-categories__list">
-                    <?php foreach ($categories as $cat): ?>
-                        <li class="post-categories__item"><?php echo $cat->name; ?></li>
-                    <?php endforeach; ?>
-                </ul>
+                <?php if ( !empty( $categories ) ): ?>
+                <div class="post-categories">
+                    <span>Services:</span>
+                    <ul class="post-categories__list">
+                        <?php foreach ($categories as $cat): ?>
+                            <li class="post-categories__item"><?php echo $cat->name; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
             </div>
+
+
+            <div class="page-content">
+
+                <?php the_content(); ?>
+
+            </div>
+
+            <?php if ( $project->gallery() ) : ?>
+                <?php if ( $project->is_grid() === 'grid' ) : ?>
+                    <?php the_partial('image-collage', [
+                        'large_images' => $project->gallery()
+                    ]); ?>
+                <?php else : ?>
+                    <div class="gallery" data-js-component="gallery">
+                        <?php foreach ($project->gallery() as $gallery) : ?>
+    
+                            <div class="gallery__slide">
+                                <div class="gallery__slide-inner">
+                                    <div class="gallery__img-wrap">
+                                        <img class="gallery__img" src="<?php echo $gallery['image']; ?>" alt="">
+                                    </div>
+                                </div>
+                            </div>
+    
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif;?>
             <?php endif; ?>
         </div>
-
-
-        <div class="page-content">
-
-            <?php the_content(); ?>
-
-        </div>
-
-        <?php if ( $project->gallery() ) : ?>
-            <div class="gallery" data-js-component="gallery">
-                <?php foreach ($project->gallery() as $gallery) : ?>
-
-                    <div class="gallery__slide">
-                        <div class="gallery__slide-inner">
-                            <div class="gallery__img-wrap">
-                                <img class="gallery__img" src="<?php echo $gallery['image']; ?>" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
-    </div>
 
 
     <?php endwhile; wp_reset_postdata();?>

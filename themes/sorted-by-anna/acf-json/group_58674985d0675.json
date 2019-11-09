@@ -3,6 +3,28 @@
     "title": "Gallery",
     "fields": [
         {
+            "key": "field_5dc713cde2e7a",
+            "label": "Image Grid",
+            "name": "image_grid",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "grid": "Image Grid",
+                "gallery": "Image Gallery"
+            },
+            "allow_null": 0,
+            "default_value": "",
+            "layout": "horizontal",
+            "return_format": "value"
+        },
+        {
             "key": "field_586748e264f6e",
             "label": "Gallery Images",
             "name": "gallery_images",
@@ -45,5 +67,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1542341524
+    "modified": 1573328773
 }

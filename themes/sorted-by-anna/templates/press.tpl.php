@@ -7,6 +7,8 @@
 
 $press = get_field( 'featured_press', $post->ID );
 
+var_dump($press);
+
 get_header();
 
 the_partial('nav');
@@ -37,20 +39,15 @@ the_partial('nav');
         <?php endif; ?>
 
         <?php if ( $press ) : ?>
-            <div class="grid grid-4-up">
+            <div class="grid grid-3-up">
                 <?php foreach ( $press as $p ) : ?>
                     <div class="col">
                         <a href="<?php echo get_field( 'article_link', $p->ID ); ?>" class="press" target="_blank">
-                            <?php if ( has_post_thumbnail( $p->ID ) ) : ?>
-                                <?php the_post_thumbnail( 'press', $p->ID ); ?>
+                            <?php if ( true ) : ?>
+                                <img src="<?php echo get_field( 'logo',  $p->ID ); ?>" alt="">
+                            <?php else : ?>
+                                <h2 class="press__article-title"><?php echo get_field('display_name', $p->ID); ?></h2>
                             <?php endif; ?>
-
-                            <div class="press__overlay">
-                                <h3 class="press__article-title">
-                                    <?php echo get_field( 'article_title', $p->ID ); ?>
-                                </h3>
-                            </div>
-
                         </a>
                     </div>
                 <?php endforeach; ?>

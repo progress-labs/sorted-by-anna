@@ -38,7 +38,7 @@ the_partial('nav');
     if ( have_posts() ) : ?>
         <section class="page-container page-section">
             <?php while ( have_posts() ) : the_post(); ?>
-
+                
             <div class="page-content">
 
                 <?php the_content(); ?>
@@ -49,28 +49,34 @@ the_partial('nav');
         </section>
 
     <?php endif; ?>
+    
+    <section class="page-section">
+        <?php the_partial('how-to-list', [
+          'title' => 'How It Works',
+          'list'  => get_field( 'how_it_works' )
+        ]) ?>
+    </section>
 
     <section class="page-section">
         <?php if ( $services  ) : ?>
-            <div class="grid grid-3-up jc">
 
-                <?php foreach ( $services as $post ) : ?>
+            <?php foreach ( $services as $post ) : ?>
+                <?php the_partial('single-color-block', [
+                    'title' => $post->post_title,
+                    'image' => get_the_post_thumbnail_url( $post->ID ),
+                    'description' => get_field( 'service_blurb', $post->ID ),
+                    'list' => get_field( 'service_types', $post->ID )
+                ]); ?>
+            <?php endforeach;?>
 
-                    <div class="col">
-                        <?php the_partial( 'services-card', [
-                            'title' => $post->post_title,
-                            'list' => get_field( 'service_types', $post->ID ) ? array_map( function( $item ) {
-                                return [
-                                    'name' => $item['name']
-                                ];
-                            }, get_field( 'service_types', $post->ID )) : false
-                        ]); ?>
-                    </div>
-                <?php endforeach;?>
-
-            </div>
         <?php endif; wp_reset_postdata(); ?>
     </section>
+    
+    
+    <?php the_partial('consultation-cta', [
+        'text' => 'Can\'t find anything you like?',
+        'has_bg' => false
+    ]); ?>
 
     <?php if ( $testimonials ) : ?>
     <div class="page-section">
@@ -81,49 +87,17 @@ the_partial('nav');
     <?php endif; ?>
 
     <section class="page-section">
-        <?php the_partial('how-to-list', [
-          'title' => 'How It Works',
-          'list'  => get_field( 'how_it_works' )
-        ]) ?>
-    </section>
-
-
-
-    <div class="page-section">
-        <div class="service-statement">
-            <h2>We offer in-home and virtual organization. Take a look!</h2>
-        </div>
-        <div class="backdrop backdrop--white">
-            <div class="grid grid-3-up">
-
-                <?php while ( $related_projects->have_posts() ) : $related_projects->the_post(); ?>
-                    <div class="col">
-                        <?php the_partial('post-preview', [
-                            'id' => $post->ID,
-                            'url' => get_the_permalink( $post->ID ),
-                            'title' => $post->post_title,
-                            'img' => get_the_post_thumbnail_url( $post->ID ),
-                            'excerpt' => get_the_excerpt( $post->ID ) ? get_the_excerpt( $post->ID ) : false,
-                            'date' => false,
-                            'category' => false,
-                            'content' => false,
-                            'read_more' => true
-                        ]); ?>
-
-                    </div>
-                <?php endwhile; wp_reset_postdata(); ?>
-
-            </div>
-        </div>
-    </div>
-
-    <?php the_partial('consultation-cta', [
-        'has_bg' => true
-    ]); ?>
-
-    <section class="page-section">
-        <?php the_partial('image-collage', [
-            'large_images' => get_field('large_images')
+        <?php 
+        the_partial('image-collage', [
+            'large_images' => array_map(function( $image ) {
+                $image_url = $image['sizes'];
+                return [
+                    'image' => $image_url['large'],
+                    'image_lg' => $image_url['large'],
+                    '3x2' => $image_url['3x2'],
+                    'alt' => $image['alt'] ? $image['alt'] : $image['title']
+                ];
+            }, get_field('large_images'))
         ]); ?>
     </section>
 

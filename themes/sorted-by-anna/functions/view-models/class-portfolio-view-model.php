@@ -2,6 +2,10 @@
 require_once( dirname( __FILE__ ) . '/../lib/data/class-post-view-model.php' );
 
 class Portfolio_View_Model extends Post_View_Model {
+    
+    public function is_grid() {
+        return $this->image_grid;
+    }
 
     public function gallery() {
 
@@ -16,7 +20,8 @@ class Portfolio_View_Model extends Post_View_Model {
             $gallery[$index] = [
               'image' => $image_url['large'],
               'image_lg' => $image_url['large'],
-              'alt' => $image_url['title']
+              '3x2' => $image_url['3x2'],
+              'alt' => $image['alt'] ? $image['alt'] : $image['title']
             ];
         }
 

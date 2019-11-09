@@ -33,7 +33,14 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "templates\/service-details.tpl.php"
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/services.tpl.php"
             }
         ]
     ],
@@ -45,5 +52,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543898907
+    "modified": 1573324906
 }
