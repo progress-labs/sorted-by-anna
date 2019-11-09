@@ -848,7 +848,8 @@ body {
   font-family: "Argent", serif;
   font-style: normal;
   font-weight: 300;
-  font-size: 16px; }
+  font-size: 16px;
+  background-color: green; }
 
 body {
   background: #fff;
@@ -2973,7 +2974,8 @@ body .gform_wrapper ul li.gfield:first-child {
     font-weight: 700;
     margin-top: 5px;
     margin-bottom: 0;
-    font-size: 1.25rem; }
+    font-size: 1.25rem;
+    text-decoration: none; }
     .service-card__name:after {
       content: "";
       display: block;
@@ -2988,6 +2990,16 @@ body .gform_wrapper ul li.gfield:first-child {
     line-height: 1.5; }
     .service-card__content li {
       margin-bottom: 12px; }
+  .service-card__link {
+    font-family: "europa", "helvetica", "sans-serif";
+    font-weight: 700;
+    display: inline-block;
+    font-size: 1rem;
+    color: #181818;
+    text-decoration: none;
+    transition: color .25s ease-out; }
+    .service-card__link:hover {
+      color: #FF7676; }
   .service-card--centered {
     text-align: center; }
     .service-card--centered .service-card__name:after {

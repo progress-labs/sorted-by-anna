@@ -19,7 +19,7 @@ module.exports = {
              * Uncomment the below if you need to proxy to a local
              * server and delete server: true above.
              */
-            proxy: 'sorted-by-anna.loc'
+            proxy: 'wp-sorted.loc'
         }
     }
 };

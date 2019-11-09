@@ -19,29 +19,9 @@ $blog_args = array(
 );
 $blog_query = new WP_Query( $blog_args );
 
+$projects = [get_field('first_project', $post->ID ), get_field('second_project', $post->ID)];
 
-$featured_projects = array_map( function( $project ) {
-    $term = false;
-
-    if ( !empty(get_the_terms($project->ID, 'services') ) ) {
-        $term = [
-            'id' => get_the_terms($project->ID, 'services')[0]->term_id,
-            'slug' => get_the_terms($project->ID, 'services')[0]->slug,
-            'name' =>  get_the_terms($project->ID, 'services')[0]->name
-        ];
-    } else {
-        $term = false;
-    }
-
-    $content = get_field( 'project_testimonial', $project->ID ) ? get_field( 'project_testimonial', $project->ID )[0]->post_content : $project->post_title;
-
-    return [
-        'id' => $project->ID,
-        'content' => $content,
-        'term' => $term
-    ];
-
-}, get_field( 'featured_projects' ) );
+var_dump($projects);
 
 $press = get_field( 'featured_press', $post->ID );
 
@@ -68,8 +48,8 @@ the_partial('nav');
 </div>
 
 
-<?php if ( $featured_projects ) : ?>
-<?php foreach ( $featured_projects as $project ) {
+<?php if ( $projects ) : ?>
+<?php foreach ( $projects as $project ) {
     the_partial('featured-project', [
         'project' => $project
     ]);
@@ -79,7 +59,7 @@ the_partial('nav');
 
 <div class="page-section">
     <div class="service-statement">
-        <h2>Sorted By Anna offers a range of services to fit client needs to help make the most of your home. </h2>
+        <h2>Sorted By Anna offers a range of services to fit each client's needs.</h2>
     </div>
 </div>
 
@@ -92,6 +72,7 @@ the_partial('nav');
                 <?php foreach ( $services->posts as $service ) : ?>
                     <div class="col">
                         <?php the_partial( 'services-card', [
+                            'link' => get_field( 'services_page_link', $service->ID ),
                             'title' => $service->post_title,
                             'list' => get_field( 'service_types', $service->ID )
                         ]); ?>

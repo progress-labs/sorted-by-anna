@@ -7,8 +7,8 @@
         <div class="color-block__inner">
 
             <div class="color-block__content">
-            <h3 class="color-block__title">This is a title</h3>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum incidunt, cumque dolor? Doloribus libero quasi voluptatem enim magni, ab ipsa qui sunt aliquam recusandae accusamus repellat, error dignissimos! Eius, temporibus.
+                <h3 class="color-block__title">Sorted by Anna</h3>
+                <p>We are a Professional Organizing Expert with home, business, and moving services. We help set up long-term space-saving solutions that fit every busy lifestyle and personality. Packing and unpacking, decluttering, simplifying and room redesign consultations. We help clients achieve order, function, and efficiency so they can truly love their space again!</p>
             </div>
         </div>
     </div>

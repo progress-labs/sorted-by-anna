@@ -35,10 +35,6 @@ $terms = get_terms( [
                         <?php svg_icon( 'instagram', 24, 24); ?>
                         <span class="social-links__text">@sortedbyanna</span>
                     </a>
-                    <a href="<?php echo get_field( 'twitter', 'option' ); ?>" class="social-links__item">
-                        <?php svg_icon( 'twitter', 24, 24); ?>
-                        <span class="social-links__text">@sortedbyanna</span>
-                    </a>
                 </div>
             </div>
 
