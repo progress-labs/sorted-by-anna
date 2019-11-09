@@ -2,25 +2,26 @@
 
 get_header();
 
+
 $services_taxonomy = 'services';
 
-$terms = array_map( function($term){
+$terms = array_map( function( $term ) {
     return [
         'name' => $term->name,
         'id' => $term->term_id,
         'slug' => $term->slug
     ];
-},  get_terms(['taxonomy' => $services_taxonomy ]));
+},  get_terms([ 'taxonomy' => $services_taxonomy ]));
 
-$image = get_template_directory_uri() . '/assets/img/blog-bg.jpg';
 
 the_partial('nav');
 
 the_partial('hero', [
-    'image' => $image,
+    'image' => get_template_directory_uri() . '/assets/img/blog-bg.jpg',
     'media' => false,
     'title' => 'Projects'
-]); ?>
+]); 
+?>
 
 <div class="page-container">
     <?php if ( have_posts() ) : ?>
@@ -51,6 +52,7 @@ the_partial('hero', [
                     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
                         <div class="col">
                             <?php the_partial('post-preview', [
+                                'id' => $post->ID,
                                 'url' => get_the_permalink($post->ID),
                                 'title' => $post->post_title,
                                 'category' => false,
