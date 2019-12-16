@@ -1,7 +1,7 @@
 <div class="featured-project">
     <div class="featured-project__primary">
         <div class="featured-project__media-wrap">
-            <img class="featured-project__image" src="<?php echo $project['image']; ?>" alt="<?php echo $project['title']; ?>">
+            <img class="featured-project__image" src="<?php echo $project['image']['sizes']['large']; ?>" alt="<?php echo $project['title']; ?>">
         </div>
     </div>
 
