@@ -13,6 +13,10 @@
     height: 0;
     background-color: color(offwhite);
 
+    .col {
+        margin-bottom: 0;
+    }
+
     img {
         @include center-pinned;
         display: block;
@@ -43,10 +47,6 @@
 .press-grid {
     .grid {
         align-items: center;
-    }
-
-    .col + .col {
-        margin-top: 25px;
     }
 
     .press {

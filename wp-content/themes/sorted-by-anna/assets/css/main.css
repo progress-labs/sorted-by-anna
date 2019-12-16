@@ -3133,6 +3133,8 @@ body .gform_wrapper ul li.gfield:first-child {
   text-align: center;
   height: 0;
   background-color: #F4F4F4; }
+  .press .col {
+    margin-bottom: 0; }
   .press img {
     position: absolute;
     top: 50%;
@@ -3164,9 +3166,6 @@ body .gform_wrapper ul li.gfield:first-child {
 .press-grid .grid {
   -ms-flex-align: center;
       align-items: center; }
-
-.press-grid .col + .col {
-  margin-top: 25px; }
 
 .press-grid .press {
   margin-left: auto;
