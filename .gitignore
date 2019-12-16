@@ -17,6 +17,10 @@ wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 wp-content/cache/*
 wp-content/cache/supercache/*
+wp-content/themes/twentysixteen
+wp-content/themes/twentyseventeen
+wp-content/themes/twentyeighteen
+wp-content/themes/twentynineteen
 wp-activate.php
 wp-comments-post.php
 wp-cron.php
