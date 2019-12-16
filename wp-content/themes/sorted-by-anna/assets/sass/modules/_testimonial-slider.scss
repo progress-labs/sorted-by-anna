@@ -1,0 +1,78 @@
+/**
+ * Block: testimonial-slider
+ * Element: testimonial-slider__element
+ * Modifier: testimonial-slider--modifier
+ */
+
+.testimonial-slider {
+    overflow: hidden;
+
+    &__slide {
+        @include argent;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: auto;
+        min-height: 300px;
+        font-size: rem(18);
+        text-align: center;
+        background-color: color(pinkish);
+        color: color(white);
+    }
+
+    &__content {
+        @include centered(absolute);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__client {
+        @include europa-bold;
+        display: inline-block;
+        margin-top: 30px;
+        font-size: rem(18);
+    }
+    
+    .slick-arrow {
+        display: none;
+    }
+
+    @include respond-to('small and up') {
+        &__slide {
+            font-size: rem(24);
+        }
+
+        &__content {
+            width: 100%;
+            max-width: 75%;
+        }
+
+        &__client {
+            font-size: rem(16);
+            margin-top: 50px;
+        }
+        
+        .slick-arrow {
+            display: block;
+        }
+    }
+
+    @include respond-to('medium and up') {
+        &__slide {
+            min-height: 400px;
+        }
+    }
+
+    @include respond-to('large and up') {
+        &__content {
+            max-width: 900px;
+        }
+    }
+}

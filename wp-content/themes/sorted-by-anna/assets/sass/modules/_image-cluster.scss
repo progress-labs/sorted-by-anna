@@ -1,0 +1,77 @@
+/**
+ * Block: image-cluster
+ * Element: image-cluster__element
+ * Modifier: image-cluster--modifier
+ */
+
+$horz-spacing: 2.5%;
+$vert-spacing: 5%;
+
+.image-cluster {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-left: -$horz-spacing;
+    margin-right: -$horz-spacing;
+
+    @include respond-to('up to small') {
+        &__item {
+            display: block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+
+            & + & {
+                margin-top: $vert-spacing;
+                width: auto;
+            }
+        }
+    }
+
+    @include respond-to('small and up') {
+
+        & {
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-top: 50px;
+        }
+
+        &__item {
+            width: 50%;
+            padding-bottom: $vert-spacing;
+            padding-left: $horz-spacing;
+            padding-right: $horz-spacing;
+            box-sizing: border-box;
+        }
+    }
+}
+
+.featherlight-next {
+    left: 85%;
+    right: 0;
+}
+
+.featherlight-previous {
+    left: 0;
+    right: 85%;
+}
+
+.featherlight-next:hover, 
+.featherlight-previous:hover  {
+  background-color: transparent;
+}
+
+.featherlight-next span, 
+.featherlight-previous span {
+    font-size: 40px;
+    text-shadow: none;
+    color: color(coral);
+}
+
+.featherlight-next span {
+    right: 0;
+}
+
+.featherlight-previous span {
+    left: 0;
+}

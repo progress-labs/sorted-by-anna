@@ -1,0 +1,43 @@
+.feature-section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &__card {
+    width: 100%;
+    text-align: center;
+  }
+  
+  &__card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @include respond-to('small and up') {
+
+    &__card {
+      width: percentage(1/2);
+    }
+
+  }
+
+  @include respond-to('medium and up') {
+
+    &__card {
+      width: percentage(1/3);   
+    }
+
+  }
+}

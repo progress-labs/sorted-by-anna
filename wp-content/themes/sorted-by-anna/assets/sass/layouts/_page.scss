@@ -1,0 +1,69 @@
+/*-----------------------------------------------------------------------------
+ *-----------------------------------------------------------------------------
+ *
+ * LAYOUT
+ *
+ * Major layout container components (i.e. header, main content containers,
+ * footer, sidebar/aside)
+ *
+ *-----------------------------------------------------------------------------
+ *----------------------------------------------------------------------------- */
+
+/**
+ * Apply to the element that will be the outmost container of site content to
+ * contain the width to $page-container-width
+ */
+.page-container {
+    max-width: $page-container-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $page-container-padding;
+    padding-left: $page-container-padding;
+}
+
+.content-wrap {
+  @include clearfix;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  @include clearfix;
+}
+
+.page-section {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+
+@include respond-to('small and up') {
+
+  .page-content {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: rem(20);
+      line-height: 1.5;
+  }
+
+    .page-section {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+}
+
+.article {
+ overflow: hidden;
+}
+
+@include respond-to('medium and up') {
+
+    .page-section {
+        margin-top: 150px;
+        margin-bottom: 150px;
+    }
+
+}

@@ -1,0 +1,68 @@
+/**
+ * Block: press
+ * Element: press__element
+ * Modifier: press--modifier
+ */
+
+.press {
+    position: relative;
+    display: block;
+    background-color: white;
+    padding-bottom: 100vw;
+    text-align: center;
+    height: 0;
+    background-color: color(offwhite);
+    
+    img {
+        @include center-pinned;
+        display: block;
+        width: auto;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 60%;
+    }
+
+    &__article-title {
+        @include center-pinned;
+        font-size: rem(30);
+        padding-left: 8%;
+        padding-right: 8%;
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 1.1;
+    }
+    
+    @include respond-to('small and up') {
+        & {
+            padding-bottom: percentage(2/3);
+        }
+    }
+}
+
+.press-grid {
+    .grid {
+        align-items: center;
+    }
+
+    .col + .col {
+        margin-top: 25px;
+    }
+
+    .press {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0;
+    }
+
+    @include respond-to('medium and up') {
+        .col {
+            margin-top: 0;
+            margin-bottom: 0;
+
+            & + .col {
+                margin-top: 0;
+            }
+        }
+    }
+}

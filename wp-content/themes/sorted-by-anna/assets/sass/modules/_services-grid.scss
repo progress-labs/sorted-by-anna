@@ -1,0 +1,22 @@
+/**
+ * Block: services-grid
+ * Element: services-grid__element
+ * Modifier: services-grid--modifier
+ */
+
+.services-grid {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to('small and up') {
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin-top: 100px;
+
+
+        &__col {
+            width: 50%;
+            margin-bottom: 50px;
+        }
+    }
+}

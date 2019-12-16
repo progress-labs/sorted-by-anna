@@ -1,0 +1,67 @@
+/*-----------------------------------------------------------------------------
+ *-----------------------------------------------------------------------------
+ *
+ * FONT FACE
+ *
+ * Define any @font-face declarations below.
+ *
+ *-----------------------------------------------------------------------------
+ *----------------------------------------------------------------------------- */
+
+
+@include font-face("Argent", '../font/argent/ArgentCF-Regular', normal);
+@include font-face("Argent", '../font/argent/ArgentCF-Light', 300);
+@include font-face("Argent", '../font/argent/ArgentCF-LightItalic', 300, italic);
+
+$freight: 'freight-text-pro', 'Georgia', serif;
+$omnes: 'omnes-pro', sans-serif;
+
+$europa: 'europa', 'helvetica', 'sans-serif';
+$argent: 'Argent', serif;
+
+@mixin freight() {
+    font-family: $freight;
+    font-weight: 400;
+}
+
+@mixin omnes() {
+    font-family: $omnes;
+    font-weight: 400;
+};
+
+@mixin omnes-med() {
+    font-family: $omnes;
+    font-weight: 500;
+};
+
+@mixin omnes-semi() {
+    font-family: $omnes;
+    font-weight: 600;
+};
+
+@mixin argent() {
+    font-family: $argent;
+    font-weight: 400;
+}
+
+@mixin argent-light() {
+    font-family: $argent;
+    font-style: normal;
+    font-weight: 300;
+}
+
+@mixin argent-light-italic() {
+    font-family: $argent;
+    font-style: italic;
+    font-weight: 300;
+}
+
+@mixin europa() {
+    font-family: $europa;
+    font-weight: 400;
+}
+
+@mixin europa-bold() {
+    font-family: $europa;
+    font-weight: 700;
+}

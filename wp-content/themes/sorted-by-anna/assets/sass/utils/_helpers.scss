@@ -1,0 +1,61 @@
+/*-----------------------------------------------------------------------------
+ *-----------------------------------------------------------------------------
+ *
+ * HELPERS
+ *
+ * Define any custom site-wide helper classes below. Utility classes such as
+ * .centered or .hidden are good candidates to live in this file.
+ *
+ *-----------------------------------------------------------------------------
+ *----------------------------------------------------------------------------- */
+
+
+/**
+ * Responsive Visibility
+ */
+
+[class*="show-at"] {
+    display: none;
+}
+
+// Creates all "hide/show-at-*" sizes based on our
+// breakpoints map.
+@each $bp-size, $bp-value in $breakpoints-map {
+    @media (min-width: #{$bp-value}) {
+        .hide-at-#{$bp-size} {
+            display: none;
+        }
+
+        .show-at-#{$bp-size} {
+            display: block;
+        }
+    }
+}
+
+.hide-text {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-med {
+    margin-bottom: 50px;
+}
+
+.serif-italic {
+    font-family: 'Argent', serif !important;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.lg-title {
+    font-size: rem(30) !important;
+}

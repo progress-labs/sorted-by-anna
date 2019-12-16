@@ -1,0 +1,16 @@
+.featherlight {
+    .featherlight-content {
+        padding: 0;
+        border-bottom: 0;
+        transition: height .150s ease-out !important;
+
+        img {
+            transition: height .150s ease-out !important;            
+        }
+    }
+    
+    .featherlight-close-icon {
+        color: color(white);
+    }
+
+}

@@ -1,0 +1,145 @@
+/**
+ * Block: gallery
+ * Element: gallery__element
+ * Modifier: gallery--modifier
+ */
+
+$block: 'collage';
+
+.#{$block} {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &__row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__image-wrap {
+        margin-bottom: 10px;
+        width: 49%;
+        height: 50vw;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+    }
+
+    @include respond-to('small and up') {
+        &__row {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &__image-wrap {
+            position: relative;
+            height: 0;
+            padding-bottom: percentage(390/1200);
+            width: percentage(390/1200);
+            margin-bottom: 1.5%;
+        }
+
+        &__image-wrap img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}
+
+
+
+.gallery {
+    margin-top: 100px;
+    background-color: rgba(color(robin), .3);
+    margin-left: -#{$page-container-padding};
+    margin-right: -#{$page-container-padding};
+
+    &__slide-inner {
+        position: relative;
+        height: 0;
+        padding-bottom: percentage(540/809);
+    }
+
+    &__img-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img {
+        @include centered(absolute);
+        max-height: 100%;
+    }
+
+    @include respond-to('small and up') {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.slick-arrow {
+    appearance: none;
+    height: 50px;
+    width: 60px;
+    z-index: $z-1;
+    transition: background-color .250s ease-out;
+
+    &:before {
+        content: "";
+        color: color(white);
+        display: block;
+        height: 12px;
+        width: 13px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: rotate(45deg);
+        border-bottom: 2px solid color(white);
+        border-left: 2px solid color(white);
+        transition: transform .25s ease-out;
+    }
+
+    &:hover:before,
+    &:focus:before {
+        transform: scale(2) rotate(45deg);
+    }
+
+}
+
+.slick-next {
+    right: 0;
+
+    &:before {
+        left: 45%;
+        transform: rotate(225deg);
+    }
+    
+    &:hover:before,
+    &:focus:before {
+        transform: scale(2) rotate(225deg);
+    }
+}
+
+.slick-prev {
+    left: 0;
+
+}
+
+.slick-dots li {
+    width: auto;
+    height: auto;
+    margin: 0;
+}

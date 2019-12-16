@@ -1,0 +1,36 @@
+/**
+ * Block: callout
+ * Element: callout__element
+ * Modifier: callout--modifier
+ */
+
+.callout {
+    @include europa-bold;
+    padding-top: 25px;
+    padding-bottom: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.75;
+    text-align: center;
+    box-sizing: border-box;
+
+    &__cta {
+        margin-top: 0;
+        font-size: rem(24);
+        line-height: 1.2;
+    }
+
+    @include respond-to('medium and up') {
+
+        &__cta {
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-size: rem(48);
+        }
+
+    }
+}
