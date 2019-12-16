@@ -4,7 +4,7 @@
  * Modifier: color-block--modifier
  */
 
-$block: 'color-block';
+$block: "color-block";
 
 .color-block {
     max-width: 1200px;
@@ -42,7 +42,7 @@ $block: 'color-block';
 
     &__content {
         @include argent-light;
-        width: percentage( 450 / 700 );
+        width: percentage(600 / 700);
         margin-left: auto;
         margin-right: auto;
     }
@@ -53,7 +53,7 @@ $block: 'color-block';
         line-height: 1.0125;
         margin-bottom: 25px;
     }
-    
+
     &__list {
         list-style: none;
         display: flex;
@@ -61,7 +61,7 @@ $block: 'color-block';
         list-style: inherit;
         padding-left: 20px;
     }
-    
+
     &__list li {
         width: 50%;
         padding-right: 5px;
@@ -69,7 +69,7 @@ $block: 'color-block';
         box-sizing: border-box;
     }
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
         & {
             flex-direction: row;
         }
@@ -90,7 +90,7 @@ $block: 'color-block';
         &__content {
             font-size: rem(20);
             width: percentage(700/1200);
-            width: percentage( 550 / 700 );
+            width: percentage(550 / 700);
         }
 
         &__image {
@@ -100,21 +100,20 @@ $block: 'color-block';
         }
     }
 
-    @include respond-to('medium and up') {
+    @include respond-to("medium and up") {
         &__title {
             font-size: rem(42);
         }
 
         &__content {
             font-size: rem(24);
-            width: percentage( 500 / 700 );
+            width: percentage(500 / 700);
         }
     }
 
-    @include respond-to('large and up') {
-
+    @include respond-to("large and up") {
         &__content {
-            width: percentage( 475 / 700 );
+            width: percentage(475 / 700);
         }
     }
 }
