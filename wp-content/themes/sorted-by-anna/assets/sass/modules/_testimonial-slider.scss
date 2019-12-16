@@ -15,7 +15,7 @@
         justify-content: center;
         flex-direction: column;
         height: auto;
-        min-height: 300px;
+        min-height: 400px;
         font-size: rem(18);
         text-align: center;
         background-color: color(pinkish);
@@ -39,12 +39,12 @@
         margin-top: 30px;
         font-size: rem(18);
     }
-    
+
     .slick-arrow {
-        display: none;
+        display: none !important;
     }
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
         &__slide {
             font-size: rem(24);
         }
@@ -58,19 +58,19 @@
             font-size: rem(16);
             margin-top: 50px;
         }
-        
+
         .slick-arrow {
-            display: block;
+            display: block !important;
         }
     }
 
-    @include respond-to('medium and up') {
+    @include respond-to("medium and up") {
         &__slide {
             min-height: 400px;
         }
     }
 
-    @include respond-to('large and up') {
+    @include respond-to("large and up") {
         &__content {
             max-width: 900px;
         }

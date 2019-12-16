@@ -8,11 +8,11 @@
     position: relative;
     display: block;
     background-color: white;
-    padding-bottom: 100vw;
+    padding-bottom: 50vw;
     text-align: center;
     height: 0;
     background-color: color(offwhite);
-    
+
     img {
         @include center-pinned;
         display: block;
@@ -32,8 +32,8 @@
         margin-bottom: 0;
         line-height: 1.1;
     }
-    
-    @include respond-to('small and up') {
+
+    @include respond-to("small and up") {
         & {
             padding-bottom: percentage(2/3);
         }
@@ -55,7 +55,7 @@
         margin-bottom: 0;
     }
 
-    @include respond-to('medium and up') {
+    @include respond-to("medium and up") {
         .col {
             margin-top: 0;
             margin-bottom: 0;

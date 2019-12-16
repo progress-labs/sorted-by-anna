@@ -49,7 +49,7 @@ the_partial('nav');
 
             <div class="grid grid-3-up grid--small">
                 <?php foreach ($badges as $badge) : ?>
-                    <div class="col">
+                    <div class="col text-center">
                         <img src="<?php echo $badge['image']; ?>" alt="<?php echo $badge['title']; ?>">
                     </div>
                 <?php endforeach; ?>

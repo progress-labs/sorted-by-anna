@@ -60,13 +60,15 @@ $block: "color-block";
         flex-wrap: wrap;
         list-style: inherit;
         padding-left: 20px;
+        justify-content: space-between;
     }
 
     &__list li {
-        width: 50%;
+        width: 45%;
         padding-right: 5px;
         font-size: rem(16);
         box-sizing: border-box;
+        margin-bottom: rem(16);
     }
 
     @include respond-to("small and up") {

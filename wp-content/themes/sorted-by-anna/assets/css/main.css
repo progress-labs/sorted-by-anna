@@ -2217,7 +2217,7 @@ blockquote {
     -ms-flex-direction: column;
         flex-direction: column;
     height: auto;
-    min-height: 300px;
+    min-height: 400px;
     font-size: 1.125rem;
     text-align: center;
     background-color: #FB8985;
@@ -2246,7 +2246,7 @@ blockquote {
     margin-top: 30px;
     font-size: 1.125rem; }
   .testimonial-slider .slick-arrow {
-    display: none; }
+    display: none !important; }
   @media (min-width: 768px) {
     .testimonial-slider__slide {
       font-size: 1.5rem; }
@@ -2257,7 +2257,7 @@ blockquote {
       font-size: 1rem;
       margin-top: 50px; }
     .testimonial-slider .slick-arrow {
-      display: block; } }
+      display: block !important; } }
   @media (min-width: 992px) {
     .testimonial-slider__slide {
       min-height: 400px; } }
@@ -3118,7 +3118,7 @@ body .gform_wrapper ul li.gfield:first-child {
   position: relative;
   display: block;
   background-color: white;
-  padding-bottom: 100vw;
+  padding-bottom: 50vw;
   text-align: center;
   height: 0;
   background-color: #F4F4F4; }
@@ -3418,12 +3418,15 @@ body .gform_wrapper ul li.gfield:first-child {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     list-style: inherit;
-    padding-left: 20px; }
+    padding-left: 20px;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
   .color-block__list li {
-    width: 50%;
+    width: 45%;
     padding-right: 5px;
     font-size: 1rem;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    margin-bottom: 1rem; }
   @media (min-width: 768px) {
     .color-block {
       -ms-flex-direction: row;
