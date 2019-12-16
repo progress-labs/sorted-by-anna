@@ -1,6 +1,6 @@
-$block: 'nav';
+$block: "nav";
 
-$easing: .250s ease-out;
+$easing: 0.25s ease-out;
 $nav-size: 45px;
 
 .#{$block} {
@@ -10,7 +10,6 @@ $nav-size: 45px;
     box-sizing: border-box;
 
     &.is-open {
-
         .nav-wrap {
             transform: scale(1);
             opacity: 1;
@@ -44,8 +43,8 @@ $nav-size: 45px;
         overflow: hidden;
         cursor: pointer;
         z-index: $z-zeus;
-        background-color: rgba(color(white), .8);
-        transition: background-color .250s ease-out;
+        background-color: rgba(color(white), 0.8);
+        transition: background-color 0.25s ease-out;
     }
 
     &-menu {
@@ -53,13 +52,13 @@ $nav-size: 45px;
         width: 23px;
         height: 17px;
 
-       &.is-open {
+        &.is-open {
             .nav-menu__bar:first-child {
                 transform: rotate(45deg);
             }
 
             .nav-menu__bar:last-child {
-                transform: rotate(-45deg);          
+                transform: rotate(-45deg);
             }
 
             .nav-menu__bar:not(:first-child):not(:last-child) {
@@ -76,8 +75,7 @@ $nav-size: 45px;
         background: color(black);
         transform: rotate(0deg);
         transform-origin: left center;
-        transition: transform .250s ease-in-out,
-                    opacity .250s ease-in-out;
+        transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
 
         &:first-child {
             top: 0;
@@ -90,9 +88,8 @@ $nav-size: 45px;
         }
 
         &:last-child {
-            top: 16px;          
+            top: 16px;
         }
-
     }
 
     &-wrap {
@@ -103,17 +100,15 @@ $nav-size: 45px;
         bottom: 0;
         background-color: transparent;
         height: calc(100vh);
-        transition: transform .250s ease-out,
-                    opacity .250s ease-out;
+        transition: transform 0.25s ease-out, opacity 0.25s ease-out;
         transform: scale(0.95);
         opacity: 0;
         z-index: -1;
-
     }
 
     .logo {
         color: color(white);
-        transition: color .250s ease-out;
+        transition: color 0.25s ease-out;
 
         &:hover {
             color: color(aqua);
@@ -124,7 +119,7 @@ $nav-size: 45px;
         }
     }
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
         & {
             position: fixed;
             display: flex;
@@ -141,9 +136,8 @@ $nav-size: 45px;
             color: color(white);
             border-bottom: 2px solid transparent;
             z-index: $z-9;
-            transition: background-color $easing,
-                        border-color $easing,
-                        color $easing;
+            transition: background-color $easing, border-color $easing,
+                color $easing;
         }
 
         &-header {
@@ -159,7 +153,7 @@ $nav-size: 45px;
             z-index: auto;
             left: 0;
             right: 0;
-            // TODO: have open-nav CSS removed 
+            // TODO: have open-nav CSS removed
             // on matchMedia checks
             background-color: transparent !important;
         }
@@ -173,7 +167,18 @@ $nav-size: 45px;
 .nav-spacer {
     margin-top: 50px;
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
         margin-top: 125px;
+    }
+}
+
+.home-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: $z-zeus;
+
+    .logo {
+        color: color(dark-aqua);
     }
 }

@@ -4,55 +4,58 @@
     max-width: 2000px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 70px;
 
+    &__image-wrap,
+    .responsive-embed {
+        display: none;
+    }
 
-  &__image-wrap,
-  .responsive-embed {
-    display: none;
-  }
+    &__content {
+        left: 0;
+        right: 0;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        z-index: 1;
+    }
 
-  &__content {
-    left: 0;
-    right: 0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    z-index: 1;
-  }
+    &__title {
+        $color: color(black);
 
-  &__title {
-    $color:color(black);
+        max-width: 75%;
+        padding-top: 8%;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: auto;
+        margin-right: auto;
+        color: $color;
+        font-size: rem(38);
+        text-align: center;
+        z-index: $z-1;
 
-    max-width: 75%;
-    padding-top: 8%;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    color: $color;
-    font-size: rem(38);
-    text-align: center;
-    z-index: $z-1;
-
-      &:after {
-          content: "";
-          display: block;
-          width: 80%;
-          max-width: 100px;
-          margin-top: 10px;
-          margin-left: auto;
-          margin-right: auto;
-          height: 5px;
-          background-color: $color;
-      }
-  }
+        &:after {
+            content: "";
+            display: block;
+            width: 80%;
+            max-width: 100px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 5px;
+            background-color: $color;
+        }
+    }
 
     .responsive-embed {
         margin-top: 0;
     }
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
+        & {
+            padding-top: 0;
+        }
 
         &__image-wrap {
             @include intrinsic-ratio(false, 1200, 400);
@@ -84,5 +87,5 @@
             display: block;
             margin-bottom: 0;
         }
-  }
+    }
 }
