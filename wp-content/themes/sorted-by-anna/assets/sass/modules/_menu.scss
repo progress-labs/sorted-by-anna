@@ -1,4 +1,4 @@
-$block: 'menu';
+$block: "menu";
 
 .#{$block} {
     display: block;
@@ -19,7 +19,6 @@ $block: 'menu';
         }
     }
 
-
     &-item a {
         @include europa;
         position: relative;
@@ -27,7 +26,7 @@ $block: 'menu';
         color: color(black);
         font-size: rem(20);
         text-decoration: none;
-        transition: color .250s ease-out;
+        transition: color 0.25s ease-out;
 
         &:hover {
             color: color(coral);
@@ -38,16 +37,16 @@ $block: 'menu';
         .sub-menu {
             left: 50%;
             opacity: 1;
-            transition: left 0s linear,
-                opacity .250s ease-out 0.1s;
+            transition: left 0s linear, opacity 0.25s ease-out 0.1s;
         }
     }
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
         & {
             display: table;
             width: auto;
             height: 100%;
+            margin-left: 100px;
         }
 
         &-item {
@@ -64,6 +63,18 @@ $block: 'menu';
             align-items: center;
             height: 100%;
             color: color(white);
+            font-size: 14px;
+        }
+    }
+
+    @include respond-to("medium and up") {
+        & {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &-item a {
+            font-size: 20px;
         }
     }
 }
@@ -87,7 +98,7 @@ $block: 'menu';
     left: 0;
     right: 0;
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
         height: 100%;
     }
 }
@@ -97,8 +108,7 @@ $block: 'menu';
     opacity: 0;
     display: none;
 
-    transition: left 0s linear .251s,
-                opacity .250s ease-out;
+    transition: left 0s linear 0.251s, opacity 0.25s ease-out;
 
     .menu-item {
         display: block;
@@ -120,10 +130,9 @@ $block: 'menu';
         &:hover {
             color: color(coral);
         }
-        
     }
 
-    @include respond-to('small and up') {
+    @include respond-to("small and up") {
         position: absolute;
         min-width: 180px;
         background-color: color(white);
@@ -133,7 +142,6 @@ $block: 'menu';
         display: block;
 
         .is-opaque & {
-
             &:before {
                 border-width: 2px;
                 border-color: color(coral);
@@ -143,7 +151,6 @@ $block: 'menu';
                 right: 0;
                 width: auto;
                 height: auto;
-
             }
         }
 
@@ -155,17 +162,15 @@ $block: 'menu';
             content: "";
             position: absolute;
             top: -($height - 1);
-            width: 0; 
+            width: 0;
             left: 0;
             right: 0;
             margin-left: auto;
             margin-right: auto;
-            height: 0; 
+            height: 0;
             border-left: $width solid transparent;
             border-right: $width solid transparent;
-            border-bottom: $height solid color(white); 
+            border-bottom: $height solid color(white);
         }
-
     }
-
 }
